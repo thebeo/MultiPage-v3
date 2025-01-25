@@ -1,0 +1,240 @@
+\def\tbpaver{V100}
+
+
+\ExplSyntaxOn
+% Usage ParsePages {file name with content}
+% split each Page ||| separator
+\NewDocumentCommand\ParsePages{m}
+{
+   % Temp variables
+    \ior_new:N \l__Music_ior
+    \tl_clear_new:N \l__Pages_tl
+    \tl_clear_new:N \l__Left_tl
+    
+    % Result variables at the Pages level
+    \seq_clear_new:N \l__Pages_seq % raw page seq
+    %\tl_clear_new:N \l__PageTitle_tl % Overall Title
+
+       
+    % read file and delate \par
+    \file_if_exist:nTF {#1 }
+        {   
+        \ior_open:Nn \l__Music_ior { music.txt }
+        \ior_str_map_inline:Nn \l__Music_ior 
+            { \tl_gput_right:Nn \l__Pages_tl {##1~} }
+        \ior_close:N \l__Music_ior
+        }
+        {no file! rerun}
+
+     % split by |||
+    \seq_set_split:Nnx \l__Pages_seq {|||} {\l__Pages_tl}
+    % clean if the left is empty
+    \seq_get_left:NN \l__Pages_seq \l__Left_tl
+    \tl_if_empty:NTF \l__Left_tl 
+        {%yes empty filter
+        \seq_pop_left:NN \l__Pages_seq \l__Left_tl}
+        {}
+
+        % Trace
+        \iow_term:n {ParsePages-Pagesplit}
+        \tl_show:N \l__Pages_tl
+        \seq_show:N \l__Pages_seq  
+}
+
+% Usage ParsePage {content}
+% split the Page in lines || separator
+\NewDocumentCommand\ParsePage{m}
+{
+   % Temp variables
+    \tl_clear_new:N \l__Page_tl
+    \tl_set:Nn \l__Page_tl {#1}
+    \tl_clear_new:N \l__Left_tl
+    
+    % Result variables at the Page level
+    \seq_clear_new:N \l__Page_seq % raw page seq
+    \tl_clear_new:N \l__PageTitle_tl % Overall Title
+
+     % split by ||
+    \seq_set_split:Nnx \l__Page_seq {||} {\l__Page_tl}
+    % clean if the left is empty
+    \seq_get_left:NN \l__Page_seq \l__Left_tl
+    \tl_if_empty:NTF \l__Left_tl 
+        {%yes empty filter
+            \seq_pop_left:NN \l__Page_seq \l__Left_tl
+        }
+        {}
+    % Title if the first is not a ligne (do not contain |)
+    \seq_get_left:NN \l__Page_seq \l__Left_tl
+    \tl_if_in:NnTF \l__Left_tl {|}
+        {}% not a title
+        {% No extract the title
+            \seq_pop_left:NN \l__Page_seq \l__PageTitle_tl
+        }
+    
+        % Trace
+        \iow_term:n {ParsePage-Pagesplit}
+        \tl_show:N \l__Page_tl
+        \seq_show:N \l__Page_seq
+        \tl_show:N \l__PageTitle_tl
+}
+
+% Usage ParseLine {content}
+% split the Line in Content | separator
+\NewDocumentCommand\ParseLine{m}
+{
+   % Temp variables
+    \tl_clear_new:N \l__Line_tl
+    \tl_set:Nn \l__Line_tl {#1}
+    \tl_clear_new:N \l__Left_tl
+        
+    % Result variables at the Page level
+    \tl_clear_new:N \l__LineTitle_tl % Line Titles
+    \seq_clear_new:N \l__Line_seq % raw page seq
+
+     % split by |
+    \seq_set_split:Nnx \l__Line_seq {|} {\l__Line_tl}
+    % clean if the left is empty (no title)
+    \seq_get_left:NN \l__Line_seq \l__Left_tl
+    \tl_if_empty:NTF \l__Left_tl 
+        {%yes empty filter
+            \seq_pop_left:NN \l__Line_seq \l__Left_tl
+        }
+        {% not empty so title
+            \seq_pop_left:NN \l__Line_seq \l__LineTitle_tl
+        }
+
+        % Trace
+        \iow_term:n {ParseLine-Linesplit}
+        \tl_show:N \l__Line_tl
+        \seq_show:N \l__Line_seq
+        \tl_show:N \l__LineTitle_tl
+}
+
+% Usage ParseContent {content}
+% Get the Class
+\NewDocumentCommand\ParseContent{m}
+{
+   % Temp variables
+    \tl_clear_new:N \l__Content_tl
+    \tl_set:Nn \l__Content_tl {#1}
+    \tl_clear_new:N \l__Left_tl
+    \seq_clear_new:N \l__Regex_seq
+    
+    
+    % Result variables at the Page level
+    \tl_clear_new:N \l__Class_tl % Content Class
+    \tl_clear_new:N \l__CleanContent_tl % The content itself
+
+     % Extract Class Before the first space (if len=1)
+    \regex_extract_once:nVN {^(.*?)\s|^(.)$} \l__Content_tl \l__Regex_seq
+    \seq_remove_all:Nn \l__Regex_seq {} % try to merge find 1 and Find 2
+    \tl_set:Ne \l__Left_tl {\seq_item:Nn \l__Regex_seq 2}
+    \tl_if_single:NTF \l__Left_tl
+        {% len = 1 Class
+        \tl_set_eq:NN \l__Class_tl \l__Left_tl
+        \regex_replace_once:nnN {^(.*?)\s|^(.)$} {} \l__Content_tl
+        \tl_set_eq:NN \l__CleanContent_tl \l__Content_tl      
+        }
+        {% Len <> 1 Content
+        \tl_set_eq:NN \l__CleanContent_tl \l__Content_tl
+        }
+
+        % Trace
+        \iow_term:n {ParseContent-parse}
+        \tl_show:N \l__Content_tl
+        \seq_show:N \l__Regex_seq
+        \tl_show:N \l__Class_tl
+        \tl_show:N \l__CleanContent_tl
+}
+
+% Usage ParsePageTitle D/H(Title)
+% Get the Class
+\NewDocumentCommand\ParsePageTitle{m}
+{
+    % Temp variables
+    \tl_clear_new:N \l__PageTitle_tl
+    \tl_set:Nn \l__PageTitle_tl {#1}
+    \tl_clear_new:N \l__Left_tl
+    \seq_clear_new:N \l__Regex_seq
+    
+    % Result variables at the Page level
+    \bool_set_false:N \l__Half_bool % true if Double
+    \tl_clear_new:N \l__CleanPageTitle_tl % Overall Title
+     
+     % Extract Class 
+    \regex_extract_once:nVN {^(.*?)\s|^(.)$|^(.)\(} \l__PageTitle_tl \l__Regex_seq
+    \seq_remove_all:Nn \l__Regex_seq {} % try to merge find 1 and Find 2 and Find 3          
+    \tl_set:Ne \l__Left_tl {\seq_item:Nn \l__Regex_seq 2}
+
+    \str_case:NnTF \l__Left_tl % not tl_case
+        {
+        {H}{\bool_set_true:N \l__Half_bool}
+        {D}{}
+        }
+        {}% nothing else if found
+        {}% nothing else if other
+           
+    % Extract Title
+    \regex_extract_once:nVN {\(([^)]*)\)} \l__PageTitle_tl \l__Regex_seq
+    \int_compare:nNnTF {\seq_count:N \l__Regex_seq}>{1} % test if found
+        {% yes found
+        \tl_set:Ne \l__CleanPageTitle_tl {\seq_item:Nn \l__Regex_seq 2 } 
+        }
+        {}% no        
+
+        % Trace
+        \iow_term:n {ParsePageTitle}
+        \tl_show:N \l__PageTitle_tl
+        \bool_show:N \l__Half_bool
+        \tl_show:N \l__CleanPageTitle_tl            
+}
+
+% Usage ParseLineTitle T(Title1)..up to 4 title
+% Get the Class
+\NewDocumentCommand\ParseLineTitle{m}
+{
+    % Temp variables
+    \tl_clear_new:N \l__LineTitle_tl
+    \tl_set:Ne \l__LineTitle_tl {#1}
+    \tl_clear_new:N \l__Left_tl
+    \tl_clear_new:N \l__Inside_tl
+    \seq_clear_new:N \l__Regex_seq
+
+    % Result variables at the Line level
+    \seq_clear_new:N \l__LineTitles_seq
+
+    % Extract Class 
+    \regex_extract_once:nVN {^(.*?)\s|^(.)$|^(.)\(} \l__LineTitle_tl \l__Regex_seq
+    \seq_remove_all:Nn \l__Regex_seq {} % try to merge find 1 and Find 2 and Find 3          
+    \tl_set:Ne \l__Left_tl {\seq_item:Nn \l__Regex_seq 2}
+
+    \str_case:NnTF \l__Left_tl % not tl_case
+        {
+        {T} % Title with name
+            {
+            \regex_extract_all:nVN {\([^)]*\)} \l__LineTitle_tl \l__Regex_seq
+            \int_compare:nNnTF {\seq_count:N \l__Regex_seq}>{1} % test if found
+                {% yes found Title found
+                    \seq_map_inline:Nn  \l__Regex_seq
+                        {
+                        \tl_set:Ne \l__Inside_tl {##1}
+                        % clean ()
+                        \tl_replace_all:Nnn \l__Inside_tl {(} {}
+                        \tl_replace_all:Nnn \l__Inside_tl {)} {}
+                        % store
+                        \seq_put_right:NV \l__LineTitles_seq \l__Inside_tl
+                        }                   
+                }
+                {}% no Title  
+            }
+        }
+        {}% nothing else if found
+        {}% nothing else if other
+
+        % Trace
+        \iow_term:n {ParseLineTitle}
+        \tl_show:N \l__LineTitle_tl
+        \seq_show:N \l__LineTitles_seq
+}
+
+\ExplSyntaxOff

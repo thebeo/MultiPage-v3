@@ -1,0 +1,143 @@
+\def\mspaver{V101}
+
+
+\ExplSyntaxOn
+% Parse Master and push the result in variable
+    % Extract R/L
+    % Prepare seq(s)
+    % Parse the notes
+% #1 = Master
+\NewDocumentCommand\MSTParseMaster{m}
+{
+    % Temp variables
+    \tl_set:Ne \l__Master_tl {#1} % fill by Cadence
+    
+    % Result variables at the Master level
+    \seq_clear_new:N \l__Master_seq % raw Master seq
+    \bool_set_false:N \l__Left_bool % true if start with a left hand
+
+    % Result variables at the Notes level
+    \seq_clear_new:N \l__Note_seq
+    \seq_clear_new:N \l__NoteScale_seq
+
+         % Trace
+        \iow_term:n {MSTParseMaster}
+        \tl_show:N \l__Master_tl
+
+    % Parse R/L
+    \MstParseRL \l__Master_tl \l__Left_bool
+
+         % Trace
+        \iow_term:n {ParseMaster-RL}
+        \tl_show:N \l__Master_tl
+        \bool_show:n \l__Left_bool
+
+    
+    % Parse each Note
+    % Split the Notes on space
+    \seq_set_split:NnV \l__Master_seq {~} \l__Master_tl
+        % Trace
+        \iow_term:n {ParseMaster-split}
+        \seq_show:N \l__Master_seq
+
+    % Parse each Note
+    \seq_map_inline:Nn \l__Master_seq
+    {
+        \MstParseNote{##1}
+        \seq_put_right:NV \l__Note_seq \l__Note_tl
+        \seq_put_right:NV \l__NoteScale_seq \l__NoteScale_tl
+    }
+        % Trace
+        \iow_term:n {ParseMaster-end}
+        \seq_show:N \l__Master_seq
+        \seq_show:N \l__Note_seq
+        \seq_show:N \l__NoteScale_seq
+
+}
+
+% Parse Master and Detect R or L
+% #1 = Master
+% #2 = Boolean true if left
+\NewDocumentCommand\MstParseRL{mm}
+{
+    % Temp variables
+    \tl_set:Ne \l__MstTmp_tl {#1} % fill by Master to be parsed
+    \seq_clear_new:N \l__MstTmp_seq
+    
+    % extract [R/L]
+    \regex_extract_once:nVN {\[(.*?)\]} \l__MstTmp_tl \l__MstTmp_seq
+
+        % Trace
+        \iow_term:n {MstParseRL}
+        \seq_show:N \l__MstTmp_seq
+    
+    \int_compare:nNnTF {\seq_count:N \l__MstTmp_seq} > {1} % test if found
+        {% yes found
+                % Trace
+                \iow_term:n {MstParseRL-Found} 
+            
+            \bool_set_true:N #2            
+            % delete R/L +  no space
+            \regex_replace_once:nnN {\[.*?\]} {} \l__MstTmp_tl
+        }
+        {% no R by default
+                % Trace
+                \iow_term:n {MstParseRL-not Found}
+                
+            \bool_set_false:N #2
+        }
+
+        % Trim space 
+        \tl_set:Ne \l__MstTmp_tl {\tl_trim_spaces:V \l__MstTmp_tl}
+        % store result
+        \tl_set_eq:NN #1 \l__MstTmp_tl
+        
+        % Trace
+        \iow_term:n {MstParseRL-end}
+        \tl_show:N \l__MstTmp_tl
+        \tl_show:N #1
+        \bool_show:N #2
+}
+
+% Parse Note and detect musical scale
+% #1 = Notes
+\NewDocumentCommand\MstParseNote{m}
+{
+    % Temp variables
+    \tl_set:Ne \l__NoteTmp_tl {#1}
+    \tl_set:Ne \l__ScaleTmp_tl {#1}
+
+        % Trace
+        \iow_term:n {MstParseNote}
+        \tl_show:N \l__NoteTmp_tl
+        
+    % Result variables at the Notes level
+    \tl_clear_new:N \l__Note_tl
+    \tl_clear_new:N \l__NoteScale_tl    
+    
+    % do nothing if void
+    \tl_if_empty:NTF \l__NoteTmp_tl
+    {%void
+    }
+    {%Not Void
+       % Extract the last char for the Scale
+        \tl_reverse:N \l__ScaleTmp_tl
+        \tl_set:Ne \l__NoteScale_tl {\tl_head:N \l__ScaleTmp_tl}
+    
+        % Clean the Note but find the last one
+        % to correct the MiM BUG
+        \tl_reverse:N \l__NoteTmp_tl
+        \tl_remove_once:NV \l__NoteTmp_tl \l__NoteScale_tl
+        \tl_reverse:N \l__NoteTmp_tl
+        
+        \tl_set_eq:NN \l__Note_tl \l__NoteTmp_tl
+    }
+        % Trace
+        \iow_term:n {MstParseNote-end}
+        \tl_show:N \l__Note_tl
+        \tl_show:N \l__NoteScale_tl
+
+}
+
+\ExplSyntaxOff
+   

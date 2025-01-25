@@ -1,0 +1,19 @@
+so what !!
+design the data structure to collect the parsing
+
+structure
+Page list -> Page = PageTitle + Ligne list -> LineTitle + content list -> Class + CleanContent
+
+By SEQ:
+l__allPageTitle_seq
+l__allNbLignebyPage_seq
+
+l__allLineTitle_seq
+l__allNbContentbyLine_seq
+
+l__allClass_seq
+l__allCleanContent_seq
+
+
+
+
