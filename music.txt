@@ -2,10 +2,10 @@
 ||T(T1)(T2)(T3)(T4)
 |O FAu DOb (name) | REd SIb 2xDOb SIb 3xREm SIb DOu SIb (name) | DOu SIb (name)>
 ||
-|C XDOb=MIm=SOLu[T] | REm=FAu=XLAu[Q] |s \TD{la} | \RO{la}
-|S \UA{black}\DA{black}\UDA{black}
-|n DOb REm MIm |1 |n DOb REm MIm - FAu SOLu LAu
-|N DOb REm MIm - FAu SOLu LAu - SIb DOb
+|C XDOb=MIm=SOLu[T] |c REm=FAu=XLAu[Q] |1 |s BFL | RO{la}
+|S UA{black} DA{black} UDA{black}
+|n DOb REm MIm |n DOb REm MIm - FAu SOLu LAu
+|2 |N DOb REm MIm - FAu SOLu LAu - SIb DOb
 |||H(Demi)
 ||T(L1)(L2)
 |M REd GOq GOs GOq GOs GOq GOs REd |2 |M [L] REd FAl SIb MIm SOLu LAh GOq GOs

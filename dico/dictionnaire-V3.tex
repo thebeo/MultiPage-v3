@@ -4,7 +4,6 @@
 \usepackage{tikz} % dessin
 \usetikzlibrary{arrows.meta,bending,shapes.geometric,shapes.misc,positioning}
 \usepackage{xparse} % for NewDocumentCommand
-\usepackage{ifthen}
 
 %%%%
 \input{dico/dc-parse-v1}
@@ -128,20 +127,23 @@
 \ExplSyntaxOn
 \NewDocumentCommand\note{mmm}
 {
-	\str_clear_new:N \l__note_str
-    \str_set:Ne \l__note_str {\textcolor{#1}{\textbf{#2}}}
-    
+     \tl_clear_new:N \l__note_tl
+%     \str_set:Ne \l__note_str {\textcolor{#1}{\textbf{#2}}}
+    \tl_set:Nn \l__note_tl {\textcolor{#1}{\textbf{#2}}}    
+
     \str_clear_new:N \l__gamme_str
     \str_set:Ne \l__gamme_str {#3}
 
 	\str_case:NnTF \l__gamme_str % what gamme
 	{
-		{-2} 	{ \DDC	{\l__note_str} }
-		{-1} 	{ \DC	{\l__note_str} }
-		{0}     { \UL	{\l__note_str} }
-		{1} 	{ \UC	{\l__note_str} }
-		{2} 	{\DUC	{\l__note_str} }
-		{9} 	{ \l__note_str}
+		{-2} 	{ \DDC	{\l__note_tl} }
+		{-1} 	{ \DC	{\l__note_tl} }
+		{0}     { \UL	{\l__note_tl} }
+		{1} 	{ \UC	{\l__note_tl} }
+        {+1} 	{ \UC	{\l__note_tl} }
+		{2} 	{ \DUC	{\l__note_tl} }
+        {+2} 	{ \DUC	{\l__note_tl} }
+		{9} 	{        \l__note_tl  }
 	}
 	{}% additional things if found
 	{}% additional things if other
@@ -539,6 +541,10 @@
     }}}
 % usage: \FL{color}[note][scale] - Flamme
 \NewDocumentCommand\FL{mo O{1.0}}{\IfNoValueTF{#2}{\LO{#1}[#3]}{\LO{#1}[#3] #2}}
+
+% usage: \BFL[note][scale] - Flamme
+% for debug only
+\NewDocumentCommand\BFL{O{1.0}}{\LO{red}}
 
 % usage: \CR{color}[text] - [ text ]
 \NewDocumentCommand\CR{mo}{\IfNoValueTF{#2}{{\space}{\textcolor{#1}{\lbrack \rbrack}}{\space}}

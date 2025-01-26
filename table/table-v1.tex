@@ -251,9 +251,9 @@
 	{n}
 			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\NotesBox{\l__TheContent_tl}}}		}
 	{S}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\l__TheContent_tl}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Direct{\l__TheContent_tl}}}		}
 	{s}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\l__TheContent_tl}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Direct{\l__TheContent_tl}}}		}
 	{2}
 			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{}}		}
 	{1}
@@ -275,6 +275,44 @@
 }
 \ExplSyntaxOff
 
+
+\ExplSyntaxOn
+
+\NewDocumentCommand\Direct{m}
+{
+	% Temp variables
+	\tl_clear_new:N \l__Todraw_tl
+	\tl_set:Ne \l__Todraw_tl {#1}
+	\seq_clear_new:N \l__Split_seq
+    \tl_clear_new:N \l__JustOneCS_tl
+    \tl_clear_new:N \l__CSHead_tl
+
+	
+	% split the lines by 
+	\seq_set_split:Nnx \l__Split_seq {~} {\l__Todraw_tl}
+
+    % proceed with each cs
+    \seq_map_inline:Nn \l__Split_seq
+    {% just draw
+    	\tl_set:Ne \l__JustOneCS_tl {##1}
+        \tl_set_eq:NN \l__CSHead_tl \l__JustOneCS_tl
+        %\tl_regex_replace_once:Nnn \l__CSHead_tl {\{(.*?)$} {}
+        % GO_ON HERE
+        % split the Cs in head and Tail -> in Regex first
+        % Proceed
+        \cs_if_exist:cTF {\l__CSHead_tl}
+        {\use:c {\l__CSHead_tl}}
+        {+}
+    }
+		
+	      % Trace
+		\iow_term:n {Direct}
+		\tl_show:N \l__Todraw_tl
+		\seq_show:N \l__Split_seq
+        \tl_show:N \l__Todraw_tl
+		
+}
+\ExplSyntaxOff
 
 \ExplSyntaxOn
 % \NotesBox Draw a box of Notes 1/2 or 3 lines { Notes  - Notes} / -  = new line
@@ -352,75 +390,6 @@
 \newpage
 }
 
-
-
-% Usage PhraseA/B
-\NewDocumentCommand\PhraseA{m O{white} ooo}
-{
-\rowcolor{#2}
-\RowTitle{#1}
-\IfNoValueTF{#3}{}{&&&&\RowTitle{#3}}
-\IfNoValueTF{#4}{}{&&&&\RowTitle{#4}}
-\IfNoValueTF{#5}{}{&&&&\RowTitle{#5}}
-\\ \rowcolor{#2}
-}
-
-\NewDocumentCommand\PhraseB{mm mm mm mm}
-{
-\BTwo{\Phrase{#1}}&\BTwo{\Phrase{#2}}&
-\BTwo{\Phrase{#3}}&\BTwo{\Phrase{#4}}&
-\BTwo{\Phrase{#5}}&\BTwo{\Phrase{#6}}&
-\BTwo{\Phrase{#7}}&\BTwo{\Phrase{#8}}
-\\
-\hline
-}
-
-% Usage Master A/B 
-\NewDocumentCommand\MasterA{m O{white} ooo}
-{
-\rowcolor{#2}
-\RowTitle{#1}
-\IfNoValueTF{#3}{}{&&&&\RowTitle{#3}}
-\IfNoValueTF{#4}{}{&&&&\RowTitle{#4}}
-\IfNoValueTF{#5}{}{&&&&\RowTitle{#5}}
-\\ \rowcolor{#2}
-}
-
-\NewDocumentCommand\MasterB{mm mm mm mm}
-{
-\BTwo{\Master{#1}}&\BTwo{\Master{#2}}&
-\BTwo{\Master{#3}}&\BTwo{\Master{#4}}&
-\BTwo{\Master{#5}}&\BTwo{\Master{#6}}&
-\BTwo{\Master{#7}}&\BTwo{\Master{#8}}
-\\
-\hline
-}
-
-% Simple A/B/C
-\NewDocumentCommand\SimpleRowA{m O{white}}
-{
-\rowcolor{#2}
-\RowTitle{#1}\\
-\rowcolor{#2}
-}
-
-\NewDocumentCommand\SimpleRowB{mm mm mm mm}
-{
-\BOne{#1}&\BOne{#2}&
-\BOne{#3}&\BOne{#4}&
-\BOne{#5}&\BOne{#6}&
-\BOne{#7}&\BOne{#8}&
-}
-
-\NewDocumentCommand\SimpleRowC{mm mm mm mm}
-{
-\BOne{#1}&\BOne{#2}&
-\BOne{#3}&\BOne{#4}&
-\BOne{#5}&\BOne{#6}&
-\BOne{#7}&\BOne{#8}
-\\
-\hline
-}
 
 % Usage RowTitle - Print the title of a row {Text}
 \NewDocumentCommand\RowTitle{m}{
