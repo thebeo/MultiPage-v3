@@ -1,11 +1,11 @@
 |||D(Full table)
 ||T(T1)(T2)(T3)(T4)
-|O FAu!DOb (name) | REd!SIb 2xDOb!SIb 3xREm!SIb DOu!SIb (name) | DOu!SIb (name)>
+|O FAu DOb (name) | REd SIb 2xDOb SIb 3xREm SIb DOu SIb (name) | DOu SIb (name)>
 ||
-|C XDOb=MIm=SOLu[T] | REm=FAu=XLAu[Q] |S \TD{la} | \RO{la}
+|C XDOb=MIm=SOLu[T] | REm=FAu=XLAu[Q] |s \TD{la} | \RO{la}
 |c \Phrase{REd FAl >} | \Phrase{REd FAl >}
 |S \UA{black}\DA{black}\UDA{black}
-|N DOb REm MIm |1 |N DOb REm MIm - FAu SOLu LAu
+|n DOb REm MIm |1 |n DOb REm MIm - FAu SOLu LAu
 |N DOb REm MIm - FAu SOLu LAu - SIb DOu
 |||H(Demi)
 ||T(L1)(L2)

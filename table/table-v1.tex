@@ -56,6 +56,7 @@
     \tl_clear_new:N \l__contentNB_tl
 
     % at the content level
+    \tl_clear_new:N \l__CurrentClass_tl
     \tl_clear_new:N \l__ContentClass_tl
     \tl_clear_new:N \l__Content_tl
     
@@ -103,7 +104,7 @@
                             {                   
                                 %Parse to get Class
                                 \ParseContent{########1}
-
+                                
                                 % store at the Content level
                                 \seq_put_right:NV \l__allClass_seq \l__Class_tl
                                 \seq_put_right:NV \l__allCleanContent_seq \l__CleanContent_tl
@@ -152,12 +153,14 @@
                 %draw
                 \seq_map_indexed_inline:Nn \l__LineTitles_seq
                     {
-                    \tl_put_right:Ne \l__PageContent_tl {\RowTitle{####2}&&&&}
+                    \tl_put_right:Ne \l__PageContent_tl {\RowTitle{####2}}
                     }
                 \tl_put_right:Ne \l__PageContent_tl {\EOL}
             
             % Draw the content line of the line
                 % consume the number of content
+                % default Class = s
+                \tl_set:Nn \l__CurrentClass_tl {s}
                 \seq_pop_left:NN \l__allNbContentbyLine_seq \l__contentNB_tl
                 \int_set:Nn \l__contentNB_int {\l__contentNB_tl}
                 \int_while_do:nn {\l__contentNB_int > 0}
@@ -167,8 +170,11 @@
                     \seq_pop_left:NN \l__allCleanContent_seq \l__Content_tl
 
                     % HERE !!!!!! Draw Content with Class
-					
+					\DrawContent{\l__ContentClass_tl}{\l__Content_tl}
+					\tl_put_right:Ne \l__PageContent_tl { \l__DrawableContent_tl}
 
+%					\tl_put_right:NV \l__PageContent_tl {  \l__Content_tl&}
+ 
                      % mandatory
                     \int_decr:N \l__contentNB_int
                     }
@@ -182,6 +188,132 @@
             {\PageH{\l__PageContent_tl}}
             {\PageD{\l__PageContent_tl}}    
     }       
+}
+\ExplSyntaxOff
+
+\ExplSyntaxOn
+% DrawContent with the right class {Class}{Content}
+\NewDocumentCommand\DrawContent{mm}
+{
+	 % Temp variables
+	\tl_clear_new:N \l__TheClass_tl
+	\tl_set:Ne \l__TheClass_tl {#1}
+	\tl_clear_new:N \l__TheContent_tl
+	\tl_set:Ne \l__TheContent_tl {#2}
+
+
+	% Result variables at the Content level
+	\tl_clear_new:N \l__DrawableContent_tl
+	
+	
+	% init default Class if required
+	\tl_if_empty:NTF \l__TheClass_tl
+	{% empty put the Current
+		\tl_set:NV  \l__TheClass_tl  \l__CurrentClass_tl
+	}
+	{} %not empty
+	
+% |O = Phrase scale =1 - 2 col
+% |o = Phrase scale=.5 - 1 col
+% |C = suite de Chords - 2 col
+% |c = suite de Chords - 1 col
+% |M = Master- 2 col
+% |m = Master - 1 col
+% |N = suite de Notes séparateur de block - 2 col
+% |n = suite de Notes séparateur de block - 1 col
+% |S = suite de symboles (commandes latex) - 2 col
+% |s = suite de symboles (commandes latex) - 1 col
+% | = identique au précedant defaut s
+% |1 ou 2 = une ou deux colonnes vide
+
+
+	\str_case:NnTF \l__TheClass_tl % what Class
+	{
+	{O}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Phrase{\l__TheContent_tl}}}				}
+%			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{{\l__TheContent_tl}}}				}
+	{o}
+%			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Phrase{\l__TheContent_tl}[0.5]}}	}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{{\l__TheContent_tl}[0.5]}}	}
+	{C}
+%			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Cadence{\l__TheContent_tl}}}	}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{{\l__TheContent_tl}}}		}
+	{c}
+%			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Cadence{\l__TheContent_tl}}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{{\l__TheContent_tl}}}		}
+	{M}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Master{\l__TheContent_tl}}}		}
+%			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{{\l__TheContent_tl}}}		}
+	{m}
+%			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Master{\l__TheContent_tl}}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{{\l__TheContent_tl}}}		}
+	{N}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\NotesBox{\l__TheContent_tl}}}		}
+%			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{{\l__TheContent_tl}}}		}
+	{n}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\NotesBox{\l__TheContent_tl}}}		}
+%			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{{\l__TheContent_tl}}}		}
+	{S}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\l__TheContent_tl}}		}
+	{s}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\l__TheContent_tl}}		}
+	{2}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{}}		}
+	{1}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{}}		}
+	
+	}
+	{% additional things if found
+		\tl_set:NV  \l__CurrentClass_tl  \l__TheClass_tl
+		}
+	{% additional things if other
+		\tl_set:Nn  \l__DrawableContent_tl  {Not Found&}
+	}
+	
+        % Trace
+		\iow_term:n {\DrawContent}
+		\tl_show:N \l__TheClass_tl
+		\tl_show:N \l__TheContent_tl 
+		\tl_show:N \l__DrawableContent_tl
+}
+\ExplSyntaxOff
+
+
+\ExplSyntaxOn
+% \NotesBox Draw a box of Notes 1/2 or 3 lines { Notes  - Notes} / -  = new line
+\NewDocumentCommand\NotesBox{m}
+{
+	% Temp variables
+	\tl_clear_new:N \l__TheNotes_tl
+	\tl_set:Ne \l__TheNotes_tl {#1}
+	\seq_clear_new:N \l__Split_seq
+	\tl_clear_new:N \l__NBLines_tl
+	
+	% split the lines
+	\seq_set_split:Nnx \l__Split_seq {-} {\l__TheNotes_tl}
+	\tl_set:Ne \l__NBLines_tl {\seq_count:N  \l__Split_seq }
+	
+	\str_case:NnTF \l__NBLines_tl % Nb ligne
+	{
+	{0}
+			{}
+	{1}
+			{\BTx{\Notes{\seq_item:Nn \l__Split_seq 1 }}}
+	{2}
+			{\BTx{\Notes{\seq_item:Nn \l__Split_seq 1 }[\seq_item:Nn \l__Split_seq 2 ]}}
+	{3}
+			{\BTx{\Notes{\seq_item:Nn \l__Split_seq 1 }[\seq_item:Nn \l__Split_seq 2 ][\seq_item:Nn \l__Split_seq 4]}}					
+	
+	}
+	{}% nothing else if found
+	{Error in NotesBox} % if not Fount
+	
+	      % Trace
+		\iow_term:n {NotesBox}
+		\tl_show:N \l__TheNotes_tl
+		\seq_show:N \l__Split_seq
+		\tl_show:N \l__NBLines_tl 
+		
 }
 \ExplSyntaxOff
 
@@ -294,16 +426,16 @@
 
 % Usage RowTitle - Print the title of a row {Text}
 \NewDocumentCommand\RowTitle{m}{
-    \Block[l]{1-4}{\textbf{#1}}
+    \Block[l]{1-4}{\textbf{#1}}&&&&
 }
 
 % Usage BTwo - Block of 2 Columns {Content}
 \NewDocumentCommand\BTwo{m}{
-    \Block{1-2}{#1}&
+    \Block{1-2}{#1}&&
 }
 % Usage BOne - Block of 1 Columns {Content}
 \NewDocumentCommand\BOne{m}{
-\Block{1-1}{#1}
+\Block{1-1}{#1}&
 }
 % Usage BTx - Text Block 1,2 or 3 lignes {Content}[Content][Content]
 \NewDocumentCommand\BTx{moo O{1.0}}{\scalebox{#4}{\tikz[baseline=0.ex]{
@@ -329,7 +461,7 @@
             }     
         \node [above=of T,anchor=south] (H) {};% extra space at TOP
         \node [below=of B,anchor=north] (L) {};% extra space at BOTTOM
-    \end{scope}
+    \end{scope}&
     }}}
 
 % Usage EOL - insert \\
