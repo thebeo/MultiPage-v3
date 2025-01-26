@@ -169,11 +169,10 @@
                     \seq_pop_left:NN \l__allClass_seq \l__ContentClass_tl
                     \seq_pop_left:NN \l__allCleanContent_seq \l__Content_tl
 
-                    % HERE !!!!!! Draw Content with Class
+                    % Draw Content with Class
 					\DrawContent{\l__ContentClass_tl}{\l__Content_tl}
 					\tl_put_right:Ne \l__PageContent_tl { \l__DrawableContent_tl}
 
-%					\tl_put_right:NV \l__PageContent_tl {  \l__Content_tl&}
  
                      % mandatory
                     \int_decr:N \l__contentNB_int
@@ -183,10 +182,16 @@
                 % mandatory
                 \int_decr:N \l__LineNB_int
             }
-        
+            
+       
         \bool_if:NTF \l__Half_bool
             {\PageH{\l__PageContent_tl}}
-            {\PageD{\l__PageContent_tl}}    
+            {\PageD{\l__PageContent_tl}}
+            
+        % Trace
+        \iow_term:n {Pages-end}
+        \tl_show:N \l__PageContent_tl
+  
     }       
 }
 \ExplSyntaxOff
@@ -231,28 +236,20 @@
 	{
 	{O}
 			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Phrase{\l__TheContent_tl}}}				}
-%			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{{\l__TheContent_tl}}}				}
 	{o}
-%			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Phrase{\l__TheContent_tl}[0.5]}}	}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{{\l__TheContent_tl}[0.5]}}	}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Phrase{\l__TheContent_tl}[0.5]}}	}
 	{C}
-%			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Cadence{\l__TheContent_tl}}}	}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{{\l__TheContent_tl}}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Cadence{\l__TheContent_tl}}}	}
 	{c}
-%			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Cadence{\l__TheContent_tl}}}		}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{{\l__TheContent_tl}}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Cadence{\l__TheContent_tl}}}		}
 	{M}
 			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Master{\l__TheContent_tl}}}		}
-%			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{{\l__TheContent_tl}}}		}
 	{m}
-%			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Master{\l__TheContent_tl}}}		}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{{\l__TheContent_tl}}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Master{\l__TheContent_tl}}}		}
 	{N}
 			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\NotesBox{\l__TheContent_tl}}}		}
-%			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{{\l__TheContent_tl}}}		}
 	{n}
 			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\NotesBox{\l__TheContent_tl}}}		}
-%			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{{\l__TheContent_tl}}}		}
 	{S}
 			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\l__TheContent_tl}}		}
 	{s}
@@ -298,11 +295,11 @@
 	{0}
 			{}
 	{1}
-			{\BTx{\Notes{\seq_item:Nn \l__Split_seq 1 }}}
+			{	\BTx{\seq_item:Nn \l__Split_seq 1 }		}
 	{2}
-			{\BTx{\Notes{\seq_item:Nn \l__Split_seq 1 }[\seq_item:Nn \l__Split_seq 2 ]}}
+			{	\BTx{\seq_item:Nn \l__Split_seq 1 }[\seq_item:Nn \l__Split_seq 2 ]		}
 	{3}
-			{\BTx{\Notes{\seq_item:Nn \l__Split_seq 1 }[\seq_item:Nn \l__Split_seq 2 ][\seq_item:Nn \l__Split_seq 4]}}					
+			{	\BTx{\seq_item:Nn \l__Split_seq 1 }[\seq_item:Nn \l__Split_seq 2 ][\seq_item:Nn \l__Split_seq 3]	}					
 	
 	}
 	{}% nothing else if found
@@ -330,9 +327,10 @@
     \hline
     1&2&3&4&5&6&7&8&9&10&11&12&13&14&15&16\\
     \hline 
-    #1
+    #1    
     \end{NiceTabular}
 \end{table} 
+
 \newpage
 }
 % Usage Page 8 col- Print a table in a page
@@ -461,7 +459,7 @@
             }     
         \node [above=of T,anchor=south] (H) {};% extra space at TOP
         \node [below=of B,anchor=north] (L) {};% extra space at BOTTOM
-    \end{scope}&
+    \end{scope}
     }}}
 
 % Usage EOL - insert \\

@@ -19,12 +19,14 @@
 \NewDocumentCommand\Notes{m O{1.0}}
 {
     \ParseNotes{#1}       
-    \dcDrawNotes[#2]
+   \dcDrawNotes[#2]
+   
 }
 \ExplSyntaxOff
 
 \ExplSyntaxOn
-\NewDocumentCommand\dcDrawNotes{O{1.0}}
+
+ \NewDocumentCommand\dcDrawNotes{O{1.0}}
 {
     \tl_set_eq:NN \l__Size_tl \text
     \fp_zero_new:N \l__Scale_fp
@@ -84,6 +86,7 @@
                 {\use:c {dcUKw}[\l__Size_tl]}
             }
         }
+
     }
 }
 \ExplSyntaxOff
@@ -293,7 +296,8 @@
     \path[draw=#1,line width=1pt] (-\tdsize/2,-\tdsize/2)--(-\tdsize/2,\tdsize/2)--(1.2*\tdsize/2,0)--cycle;
     }}}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
     \path[draw=#1,line width=1pt] (-\tdsize/2,-\tdsize/2)--(-\tdsize/2,\tdsize/2)--(1.2*\tdsize/2,1/4*\tdsize/2)--(1.2*\tdsize/2,-1/4*\tdsize/2)--cycle; \node at (0,0){\small{#2}};
-    }}}}
+   }}}}
+
 
 % usage: \TU{color}[inside][scale]  - triangle up
 \newdimen\tusize
@@ -316,6 +320,7 @@
     \path[draw=#1,line width=1pt,->](0ex,-1ex)--(0ex,1ex);
     }}\space}
 
+
 % usage: \DA{color}[scale] - Down Arrow
 \NewDocumentCommand\DA{m O{1.0}}{\scalebox{#2}{\tikz[baseline=-0.5ex,>={Stealth}]{
     \path[draw=#1,line width=1pt,->](0ex,1ex)--(0ex,-1ex);
@@ -331,7 +336,7 @@
 % Chord
 %%%%%%
 
-% Usage \ST{B}{M}{H}[scale] - draw a stack of 3 notes
+% Usage \ST{B}{M}{H}[scale] - draw a stac 3 notes
 \NewDocumentCommand\ST{mmm O{1.0}}{\scalebox{#4}{\tikz[baseline=0.ex]{
     \begin{scope}[node distance=0.4ex,inner sep=0pt,node font=\Large]
         \node[anchor=base] (M) at (0,0) {#2};
@@ -357,8 +362,22 @@
 \NewDocumentCommand\FU{m O{1.0}}{\LS[#2]#1\LS[#2]}
 
 
-% usage: \CH{note F}{note T}{note Q}{F or T or Q}[scale]  - Triple 
-\NewDocumentCommand\CH{mmmm O{1.0}}{\ifthenelse{\equal{#4}{F}}{\ST{\FU{#1}[#5]}{#2}{#3}}{}\ifthenelse{\equal{#4}{T}}{\ST{#2}{#3}{\FU{#1}[#5]}}{}\ifthenelse{\equal{#4}{Q}}{\ST{#3}{\FU{#1}[#5]}{#2}}{}}
+\ExplSyntaxOn
+\NewDocumentCommand\CH{mmmm O{1.0}}
+{
+	\str_case:NnTF #4 % what Inversion
+	{
+		{F}{\ST{\FU{#1}[#5]}{#2}{#3}}
+		{T}{\ST{#2}{#3}{\FU{#1}[#5]}}
+		{Q}{\ST{#3}{\FU{#1}[#5]}{#2}}
+	}
+	{% additional things if found
+	}
+	{% additional things if other
+	}
+		
+}
+\ExplSyntaxOff
 
 % usage: \CE{color}[scale] - Empty in chord
 %\NewDocumentCommand\CE{m}{\color{#1}{X}}
@@ -396,6 +415,7 @@
 \NewDocumentCommand\Cadence{m O{1.0}}
 {
     \ParseCadence{#1}
+    
     
     % Parse each Chord
     \seq_map_indexed_inline:Nn \l__Cadence_seq   
@@ -479,7 +499,7 @@
                 \UCA{\use:c {\l__F_tl}}{\use:c {\l__T_tl}}{\use:c {\l__Q_tl}}{\l__Inversion_tl}[#2] \quad
             }
         }
-        {% NO Chords
+        {% NO Arpege
             \CH{\use:c {\l__F_tl}}{\use:c {\l__T_tl}}{\use:c {\l__Q_tl}}{\l__Inversion_tl}[#2] \quad
         }    
     }
