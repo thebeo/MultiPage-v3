@@ -53,6 +53,7 @@
     % at the Line level
     \tl_clear_new:N \l__FullLineTitle_tl
     \int_zero_new:N \l__contentNB_int
+    \tl_clear_new:N \l__contentNB_tl
 
     % at the content level
     \tl_clear_new:N \l__ContentClass_tl
@@ -157,7 +158,8 @@
             
             % Draw the content line of the line
                 % consume the number of content
-                \seq_pop_left:NN \l__allNbContentbyLine_seq \l__contentNB_int
+                \seq_pop_left:NN \l__allNbContentbyLine_seq \l__contentNB_tl
+                \int_set:Nn \l__contentNB_int {\l__contentNB_tl}
                 \int_while_do:nn {\l__contentNB_int > 0}
                     {
                     % read and consume the Class & Content
@@ -165,7 +167,7 @@
                     \seq_pop_left:NN \l__allCleanContent_seq \l__Content_tl
 
                     % HERE !!!!!! Draw Content with Class
-
+					
 
                      % mandatory
                     \int_decr:N \l__contentNB_int
