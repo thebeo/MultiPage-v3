@@ -125,7 +125,29 @@
 \NewDocumentCommand\ML{mm}{\textcolor{#1}{\scriptsize{#2}x}}
 
 % usage: \note{color}{texte}{gamme}  9=no deco
-\NewDocumentCommand\note{mmm}{\def\mytext{\textcolor{#1}{\textbf{#2}}}\comparestrict\ifthenelse{#3 = -2}{\DDC{\mytext}}{}\ifthenelse {#3 = -1}{\DC{\mytext}}{}\ifthenelse {#3 = 0}{\UL{\mytext}}{}\ifthenelse {#3 = 1}{\UC{\mytext}}{}\ifthenelse {#3 = 2}{\DUC{\mytext}}{}\ifthenelse {#3 = 9}{\mytext}{}}
+\ExplSyntaxOn
+\NewDocumentCommand\note{mmm}
+{
+	\str_clear_new:N \l__note_str
+    \str_set:Ne \l__note_str {\textcolor{#1}{\textbf{#2}}}
+    
+    \str_clear_new:N \l__gamme_str
+    \str_set:Ne \l__gamme_str {#3}
+
+	\str_case:NnTF \l__gamme_str % what gamme
+	{
+		{-2} 	{ \DDC	{\l__note_str} }
+		{-1} 	{ \DC	{\l__note_str} }
+		{0}     { \UL	{\l__note_str} }
+		{1} 	{ \UC	{\l__note_str} }
+		{2} 	{\DUC	{\l__note_str} }
+		{9} 	{ \l__note_str}
+	}
+	{}% additional things if found
+	{}% additional things if other
+}
+\ExplSyntaxOff
+
 
 % usage: \do [gamme]
 \definecolor{do}{RGB}{255, 147, 0}
