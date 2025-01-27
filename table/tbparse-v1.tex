@@ -7,7 +7,8 @@
 \NewDocumentCommand\ParsePages{m}
 {
    % Temp variables
-    \ior_new:N \l__Music_ior
+    % use \g_tmpa_ior to avoid error on the second Pages
+    % \ior_new:N \l__Music_ior
     \tl_clear_new:N \l__Pages_tl
     \tl_clear_new:N \l__Left_tl
     
@@ -19,10 +20,10 @@
     % read file and delate \par
     \file_if_exist:nTF {#1}
         {   
-        \ior_open:Nn \l__Music_ior { #1 }
-        \ior_str_map_inline:Nn \l__Music_ior 
+        \ior_open:Nn \g_tmpa_ior { #1 }
+        \ior_str_map_inline:Nn \g_tmpa_ior 
             { \tl_gput_right:Nn \l__Pages_tl {##1~} }
-        \ior_close:N \l__Music_ior
+        \ior_close:N \g_tmpa_ior
         }
         {no file! rerun}
 
@@ -211,7 +212,7 @@
     \seq_clear_new:N \l__LineTitles_seq
 
     % Extract Class 
-    \regex_extract_once:nVN {^(.*?)\s|^(.)$|^(.)\(} \l__LineTitle_tl \l__Regex_seq
+    \regex_extract_once:nVN {^(.)\s|^(.)$|^(.)\(|^(.)\[} \l__LineTitle_tl \l__Regex_seq
     \seq_remove_all:Nn \l__Regex_seq {} % try to merge find 1 and Find 2 and Find 3          
     \tl_set:Ne \l__Left_tl {\seq_item:Nn \l__Regex_seq 2}
 
@@ -231,10 +232,10 @@
                 \iow_term:n {ParseLineTitle-extract Title}
                 \tl_show:N \l__LineTitle_tl
                 \seq_show:N \l__Regex_seq         
-            
-            
-            \int_compare:nNnTF {\seq_count:N \l__Regex_seq}>{1} % test if found
-                {% yes found Title found
+                       
+            \seq_if_empty:NTF \l__Regex_seq
+                {}% no Title 
+                {% yes Title found
                     \seq_map_inline:Nn  \l__Regex_seq
                         {
                         \tl_set:Ne \l__Inside_tl {##1}
@@ -245,7 +246,7 @@
                         \seq_put_right:NV \l__LineTitles_seq \l__Inside_tl
                         }                   
                 }
-                {}% no Title  
+ 
             }
         }
         {}% nothing else if found

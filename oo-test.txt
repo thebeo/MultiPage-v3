@@ -1,32 +1,32 @@
 |||D(oo-test)
-||T(PRE and Link)
+||T(PRE and Link)()
 |O 2xREd 2xMIl 2xDOb 2xLAb 2xSOLl 2xFAl >
 |O 2xREm- 2xSIb- 2xMIm- 2xSOLu- 2xDOu 2xMIh-
 |O 2xREm- 2xSIb- 2xMIm- 2xSOLu- 2xDOu 2xMIh
 |O 2xSOLh- 2xLAh- 2xFAh- 2xREh 2xFAu- 2xLAu >
 
-||T(Double,Name and Loop)
+||T(Double)(Name)(Loop)
 |O REd=SIb 2xDOb=SIb SOLl=SIb- 3xREm=SIb- DOu=SIb
 |O MIl=SIb- 2xSOLl=SIb- 2xFAl=SIb >|O MIh=SIb- SOLh=SIb- LAh=SIb- FAh=SIb- REh=SIb
 |O REd DOb!LAb- DOb 3xREm- DOu!FAu (new)>
 |O DOb SOLu SOLu FAu (2x court)
 
-||T(Explicite double)
+||T(Explicite double)()
 |O FAu!DOb (name)
 |O REd!SIb 2xDOb!SIb 3xREm!SIb DOu!SIb (name)
 |O DOu!SIb (name)>
 
-||T(Alternate & Empty)
+||T(Alternate)(no stroke)
 |O MIm FAu SOLu [MIm DOb FAu]
 |O MIm FAu 0xSOLu [MIm 0xDOb FAu]
 |O 0xMIm FAu
 
 |||D(oo-test)
-||T(Beat)
+||T(Beat)(Beat on loop)
 |O MImXii FAu-iii SOLu- DOb|O MIm FAu 0xSOLu [MIm-2 DOb-3 FAu]
 |O REdX8 REd-8 REd
 
-||T(Gost and Unkwown void)
+||T(Gost)(Unkwown)(void)
 |O REd- GOq- MIm- GOs
 |O GOq GOs
 |O 2xSIb 2xGOq

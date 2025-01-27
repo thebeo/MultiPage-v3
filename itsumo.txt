@@ -42,13 +42,13 @@
 | DOb REm MIm (TION)> | FAu SOLu DOb (fa) 
 | FAu- SOLu LAu /REm- LAu (Flame) | SOLu SOLu [SOLu FAu] (Aller) 
 
-||T[milight](THEME 3/1-2) 
+||T[milight](THEME 3/1-2)
 |O FAu- SOLu- LAu FAu LAu | SOLu MIm LAb 
 | MIm- REm- SIb | DOb REm MIm 
 | 2xREm DOb SIb > | LAb DOb 
 | DOb REm- MIm- FAu SOLu > | 2xLAu SOLu [LAu- FAu]  
 
-||T[relight](THEME crt/1+2) 
+||T[relight](THEME crt/1+2)
 |O REm- MIm- FAu- REm- LAu | FAu MIm DOb 
 | REm- MIm- FAu MIm REm | MIm- FAu- DOb 
 | REm- MIm- FAu- REm- LAu | FAu MIm DOb 
