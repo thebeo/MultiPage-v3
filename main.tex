@@ -8,14 +8,7 @@
 
  % mise en page
 \usepackage[paperheight=30cm,paperwidth=44cm,left=0cm,right=0cm,top=2cm,bottom=2cm,showframe=false] {geometry}
-\usepackage{fancyhdr}
 
-\pagestyle{fancy}
-\setlength{\headheight}{15pt}
-\fancyhead[L,R]{}
-\fancyhead[C]{\textbf{Titre}}
-\fancyfoot[C,R]{}
-\fancyfoot[L]{\tiny{versions dico:\oover-\dicover \thinspace code:\codever}\newline}
 
 
 
@@ -24,6 +17,7 @@
 \renewcommand{\sfdefault}{phv} % Arial
 
 %%%%
+\input{common/common}
 \input{oo/notes-oo-v5}
 \input{dico/dictionnaire-V3}
 \input{master/master-v1}

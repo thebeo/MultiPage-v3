@@ -2,29 +2,19 @@
 
 \usepackage{nicematrix} %Block
 
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\setlength{\headheight}{15pt}
+\fancyhead[L,R]{}
+\fancyhead[C]{\textbf{Titre}}
+\fancyfoot[C,R]{}
+\fancyfoot[L]{\tiny{versions dico:\oover-\dicover \thinspace code:\codever}\newline}
+
 %%%%
 \input{table/tbparse-v1}
 %%%%
 
-% background
-\def\LIGHT{10}
-\colorlet{dolight}{do!\LIGHT!white}
-\colorlet{relight}{re!\LIGHT!white}
-\colorlet{milight}{mi!\LIGHT!white}
-\colorlet{falight}{fa!\LIGHT!white}
-\colorlet{sollight}{sol!\LIGHT!white}
-\colorlet{lalight}{la!\LIGHT!white}
-\colorlet{silight}{si!\LIGHT!white}
-
-\def\VLIGHT{05}
-\colorlet{dovlight}{do!\VLIGHT!white}
-\colorlet{revlight}{re!\VLIGHT!white}
-\colorlet{mivlight}{mi!\VLIGHT!white}
-\colorlet{favlight}{fa!\VLIGHT!white}
-\colorlet{solvlight}{sol!\VLIGHT!white}
-\colorlet{lavlight}{la!\VLIGHT!white}
-\colorlet{sivlight}{si!\VLIGHT!white}
-\colorlet{grayvlight}{gray!\VLIGHT!white}
 
 \newcolumntype{P}[1]{>{\centering\arraybackslash}b{#1}}
 \newcolumntype{N}{@{}m{0pt}@{}}
