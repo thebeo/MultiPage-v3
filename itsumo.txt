@@ -1,0 +1,62 @@
+|||D(Itsumo) 
+||T[grayvlight](BASS) 
+|O FAl FAu LAu (F) | MIl MIm SOLu (C) 
+| REd REm FAu (Dm) | LAb LAu DOu (Am) 
+| SIb- FAu- REh (Bb) | FAl- LAu- FAh (F) 
+| SIb REh FAh (Bb) | DOb- MIh- SOLh (C) 
+
+||T[relight](THEME 1/1)
+|O FAu- SOLu LAu FAu DOu (BR-1) | LAu SOLu DOb (Des-1) 
+| SOLu FAu- REm- LAu (BR-2) | FAu MIm (Des-2) 
+| FAu MIm REm (Lié)> | MIm FAu SOLu- DOb 
+| FAu- SOLu- 3xLAu (le-3x)> | SOLu FAu SOLu (AR) 
+
+||T[milight](THEME 1/2)
+|O FAu- SOLu LAu FAu DOu (BR-1) | LAu SOLu DOb (Des-1) 
+| SOLu FAu- REm (Sans-LA) | MIm- FAu- DOb (mi) 
+| DOb REm MIm (do)> | FAu SOLu DOb (fa) 
+| FAu- SOLu LAu /REm- LAu (Flame) | SOLu FAu (Aller) 
+
+||T[falight](THEME 2/1)
+|O LAb SIb DOb (Bas-1) | LAu- SOLu 2xLAu DOu (Haut-1) 
+| DOb- REm DOb- SIb- LAb (Bas-2) | FAu- MIm FAu- SOLu- LAu (Haut-2) 
+| LAb SIb LAb SOLl FAl (Bas-3) | FAu MIm REm (Saut-F)> 
+| 2xMIm FAu 2xSOLu (les-2x)> | LAu SOLu LAu SOLu- (2-fois) 
+
+||T[lalight](THEME 2/2)
+|O LAb SIb DOb (Bas-1) | LAu- SOLu 2xLAu DOu (Haut-1) 
+| DOb- REm DOb- SIb- LAb (Bas-2) | FAu- MIm FAu- SOLu- LAu (Haut-2)> 
+| SIb LAb SOLl FAl MIl REd (Descente) | REm- MIm FAu SOLu- DOb (Saut-D) 
+| FAu- SOLu- LAu (Simple) | 2xSOLu 2xFAu (2x2x) 
+
+|||D(Itsumo)
+||T[lalight](THEME 1-v/1-2)
+|O FAu- SOLu LAu FAu DOu (BR-1) | LAu 2xSOLu (VAR) 
+| MIm FAu MIm FAu (2x)> | DOb 2xLAb DOb 
+| 2xREm DOb SIb (Lié)> | FAl DOb- SIb- LAb 
+| SIb LAb SIb DOb- REm > | LAu SOLu [LAu- FAu] 
+
+||T[falight](THEME 1-v2/1-2)
+|O FAu- SOLu LAu FAu DOu (BR-1) | LAu SOLu DOb (Des-1) 
+| SOLu- FAu REm REh (VAR) | MIh- FAh- DOu (IA) 
+| DOb REm MIm (TION)> | FAu SOLu DOb (fa) 
+| FAu- SOLu LAu /REm- LAu (Flame) | SOLu SOLu [SOLu FAu] (Aller) 
+
+||T[milight](THEME 3/1-2) 
+|O FAu- SOLu- LAu FAu LAu | SOLu MIm LAb 
+| MIm- REm- SIb | DOb REm MIm 
+| 2xREm DOb SIb > | LAb DOb 
+| DOb REm- MIm- FAu SOLu > | 2xLAu SOLu [LAu- FAu]  
+
+||T[relight](THEME crt/1+2) 
+|O REm- MIm- FAu- REm- LAu | FAu MIm DOb 
+| REm- MIm- FAu MIm REm | MIm- FAu- DOb 
+| REm- MIm- FAu- REm- LAu | FAu MIm DOb 
+| REm- MIm- FAu MIm REm | MIm DOb FAu [MIm FAu SOLu] 
+   
+||T[grayvlight](BASS)
+|O 0xFAl FAu LAu (F) | 0xMIl MIm SOLu (C) 
+| 0xREd REm FAu (Dm) | 0xLAb LAu DOu (Am) 
+| 0xSIb- FAu- REh (Bb) | 0xFAl- LAu- FAh (F) 
+| 0xSIb REh FAh (Bb) | 0xDOb- MIh- SOLh (C) 
+

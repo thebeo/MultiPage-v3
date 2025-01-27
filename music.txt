@@ -1,6 +1,6 @@
 |||D(Full table)
 ||T(T1)(T2)(T3)(T4)
-|O FAu DOb (name) | REd SIb 2xDOb SIb 3xREm SIb DOu SIb (name) | DOu SIb (name)>
+|O FAu 2xDOb (name) | REd SIb 2xDOb SIb 3xREm SIb DOu SIb (name) | DOu SIb (name)>
 ||
 |C XDOb=MIm=SOLu[T] |c REm=FAu=XLAu[Q] |1 |s BFL | RO{la}
 |S UA{black} DA{black} UDA{black}

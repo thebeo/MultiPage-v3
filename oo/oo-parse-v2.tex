@@ -132,9 +132,9 @@
     \seq_clear_new:N \l__Double_seq % filled if Double type
     \seq_clear_new:N \l__DoubleNote_seq % filled if Double Note
             
-    % Trace
-    \iow_term:n {ParsePhrase}
-    \tl_show:N \l__Phrase_tl
+        % Trace
+        \iow_term:n {ParsePhrase}
+        \tl_show:N \l__Phrase_tl
     
     % Pretraitement for the Post
     % ADD X before - to ease parsing (if not already an X)      
@@ -147,9 +147,9 @@
     % Pretraitement for the Pre
     % ADD x before / to ease parsing 
     \regex_replace_all:nnN {\s/|^/} {\0x} \l__Phrase_tl
-    % Trace
-    \iow_term:n {After regex}
-    \tl_show:N \l__Phrase_tl
+        % Trace
+        \iow_term:n {ParsePhrase-After regex}
+        \tl_show:N \l__Phrase_tl
 
     % extract the potential Alternate
     \parse_ExtractAlternate:NNN \l__Phrase_tl \l__Alternate_bool \l__Alternate_tl
@@ -163,9 +163,9 @@
         }
         {}% no Alternate
 
-    % Trace
-    \iow_term:n {After alternate}
-    \tl_show:N \l__Phrase_tl  
+        % Trace
+        \iow_term:n {ParsePhrase-After alternate}
+        \tl_show:N \l__Phrase_tl  
    
     % Extract potential Name and Link
 
@@ -178,7 +178,7 @@
     % Split the Notes
     \seq_set_split:NnV \l__Phrase_seq {~} \l__Phrase_tl
     % Trace
-    \iow_term:n {Phrase}
+    \iow_term:n {ParsePhrase-split}
     \seq_show:N \l__Phrase_seq
 
     % Parse each Note
@@ -199,7 +199,7 @@
         \seq_put_right:NV \l__DoubleNote_seq \l__DoubleNote_tl    
     }
     % Trace
-    \iow_term:n {CleanNote}
+    \iow_term:n {ParsePhrase-CleanNote}
     \seq_show:N \l__CleanNote_seq
     \iow_term:n {Prebol}
     \seq_show:N \l__Pre_bool_seq
@@ -279,8 +279,23 @@
 % #5 String Found
 \cs_set:Npn \parse_SplitandSearch:NnnNN #1#2#3#4#5
 {
-    \seq_set_split:NnV \l__SeqTmp_seq #2 #1 % split the String
-%    \tl_analysis_show:n {\seq_set_split:NnV \l__SeqTmp_seq #2 #1}
+    % due to some bug somewhere
+    \str_set:Ne \l__Source_str {#1} % To analyse
+    \tl_set:Ne \l__Source_tl {\l__Source_str} % To analyse
+    \str_set:Ne \l__Del_str {#2} % delimiter
+    \tl_set:Ne \l__Del_tl {\l__Del_str} % delimiter
+    
+    \seq_set_split:NVV \l__SeqTmp_seq \l__Del_tl \l__Source_str % split the String
+    
+        % Trace
+        \iow_term:n {parse_SplitandSearch}
+        %\tl_analysis_show:n {#1} 
+        \iow_term:n {#1}
+        %\iow_term:n {#2}
+        \tl_show:N \l__Source_tl
+        \tl_show:N \l__Del_tl
+        \seq_show:N \l__SeqTmp_seq
+    
     \int_compare:nNnTF {\seq_count:N \l__SeqTmp_seq}={2} % test if x has been found
         {% yes found
             \bool_set_true:N #4

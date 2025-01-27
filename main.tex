@@ -28,7 +28,6 @@
 % MultiPage
 % POUVOIR mélanger les styles (Tableaux/Symboles, ...)
 % 
-% TODO Nouvelle syntaxe
 % data in file music.txt
 % PAGE
 %|||D/H(Titre) D=16 colonne H = 8 colonne (default 16)
@@ -53,22 +52,19 @@
 % | = identique au précedant defaut N
 % |1 ou 2 = une ou deux colonnes vide
 %
+% TODO Nouvelle syntaxe
 %
-% dictionnaire-V3.tex
-%	
+% Table
+%   finalize color
+%
+% dictionnaire-V3.tex	
 %   Ajouter nom à Shape
-%
-% table-v1
 %  
-%   
-%
-%
 % Master
 % 
 % BUG
-% dans Cadence les X ne sont pas en couleur
 % S & s ne marche pas
-%  
+% ParseLineTitle : bug in regex if Title has space / if only one title
 
 
 %\newcolumntype{P}[1]{>{\centering\arraybackslash}b{#1}|} % FOR TEST
@@ -78,7 +74,10 @@
 \begin{document}
 
 
-\Pages{music.txt}
+%\Pages{music.txt}
+%\Pages{test.txt}
+\Pages{oo-test.txt}
+%\Pages{itsumo.txt}
 
 
 	
