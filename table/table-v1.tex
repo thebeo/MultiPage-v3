@@ -146,9 +146,9 @@
                 
                 % read and consume the title
                 \seq_pop_left:NN \l__allLineTitle_seq \l__FullLineTitle_tl
-                %parse
+                %cparse
                 \ParseLineTitle{\l__FullLineTitle_tl}
-                %draw
+                %cdraw
                 \seq_map_indexed_inline:Nn \l__LineTitles_seq
                     {
                     \tl_put_right:Ne \l__PageContent_tl {\RowTitle{####2}}
@@ -174,7 +174,6 @@
 					\DrawContent{\l__ContentClass_tl}{\l__Content_tl}
 					\tl_put_right:Ne \l__PageContent_tl { \l__DrawableContent_tl}
 
- 
                      % mandatory
                     \int_decr:N \l__contentNB_int
                     }
@@ -183,8 +182,7 @@
                 % mandatory
                 \int_decr:N \l__LineNB_int
             }
-            
-       
+                 
         \bool_if:NTF \l__Half_bool
             {\PageH{\l__PageContent_tl}}
             {\PageD{\l__PageContent_tl}}
@@ -287,7 +285,6 @@
 	\seq_clear_new:N \l__Split_seq
     \tl_clear_new:N \l__JustOneCS_tl
     \tl_clear_new:N \l__CSHead_tl
-
 	
 	% split the lines by 
 	\seq_set_split:Nnx \l__Split_seq {~} {\l__Todraw_tl}
@@ -307,7 +304,7 @@
         {+}
     }
 		
-	      % Trace
+	    % Trace
 		\iow_term:n {Direct}
 		\tl_show:N \l__Todraw_tl
 		\seq_show:N \l__Split_seq
@@ -345,7 +342,7 @@
 	{}% nothing else if found
 	{Error in NotesBox} % if not Fount
 	
-	      % Trace
+	    % Trace
 		\iow_term:n {NotesBox}
 		\tl_show:N \l__TheNotes_tl
 		\seq_show:N \l__Split_seq

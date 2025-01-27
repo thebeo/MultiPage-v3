@@ -1,0 +1,10 @@
+|||D(Master-test)
+||T(right)(left)
+|M REd FAl SIb MIm SOLu LAh GOs GOq
+|M REm GOq MIm
+|M [L] REm GOs
+|M [L] REd FAl SIb MIm SOLu LAh GOq GOs
+||T (real)(empty)
+|M REd GOq GOs GOq GOs GOq GOs REd 
+|M REd GOq GOs GOq MIm GOq GOs REd 
+|M 
