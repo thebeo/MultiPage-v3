@@ -117,6 +117,7 @@
     % #2 color or Pic or angle
     % #3 radius for the symbol
     \method DrawBeat(#1,#2,#3) {
+        
         \IfEqCase{#1} % what is requested ?
         {
         {D} % draw
@@ -325,7 +326,9 @@
     % for each note
     \seq_map_indexed_inline:Nn \l__NoteScale_seq
     {
-        \IfEqCase{##2} % what scale
+        \tl_clear_new:N \l__TheScale_tl
+	    \tl_set:Ne \l__TheScale_tl {##2}
+        \str_case:NnTF \l__TheScale_tl %what scale
         {        
         {d} % Ding
             {
@@ -367,7 +370,9 @@
             \RGhost
             \DrawBeatFromSeq {##1} {F} [RGhost]
             }
-        }                                  
+        }
+        {} % additionnal inst if found
+        {} % additionnal inst if not found
     }    
 }
 \ExplSyntaxOff

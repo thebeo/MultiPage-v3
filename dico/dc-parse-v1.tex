@@ -61,7 +61,7 @@
                 
     }
     % Trace
-    \iow_term:n {CleanF}
+    \iow_term:n {ParseCadence-end}
     \seq_show:N \l__CleanF_seq
     \seq_show:N \l__CleanT_seq
     \seq_show:N \l__CleanQ_seq
@@ -120,20 +120,30 @@
 % #2 Bool to raise if Muted
 \cs_set:Npn \dcparse_DetectMute:NN #1#2
 {
-    \str_set:Ne \l__head_str {\tl_head:N #1}
-    %Trace
-    \iow_term:n {dcparse_DetectMute}
-    \tl_show:N #1
-    \str_show:N \l__head_str
- 
+
+    % temp variables
+    % BUG HERE X not deleted with tl
+    \str_clear_new:N \l__TheNote_str
+    \str_set:Ne \l__TheNote_str {#1}
+
+    \str_set:Ne \l__head_str {\tl_head:N #1} 
     
     \str_if_eq:VnTF \l__head_str {X}
         {% yes Muted
             \bool_set_true:N #2
-            \tl_remove_once:Nn #1 {X}
+            % in str not in tl
+            \str_remove_once:Nn \l__TheNote_str {X}
+            \tl_set:Ne #1 {\l__TheNote_str}
         }
         {% no
         }
+
+    %Trace
+    \iow_term:n {dcparse_DetectMute}
+    \tl_show:N #1
+    \str_show:N \l__head_str
+    \bool_show:N #2
+
 }
 
 % Search for 3 notes with = between 
@@ -154,7 +164,16 @@
         \dcparse_DetectMute:NN \l__CleanQ_tl \l__MuteQ_bool
         }
         {% no
-        }   
+        }
+    %Trace
+    \iow_term:n {dcparse_ExtractNotes}
+    \tl_show:N #1
+    \tl_show:N \l__CleanF_tl
+    \bool_show:N \l__MuteF_bool
+    \tl_show:N \l__CleanT_tl
+    \bool_show:N \l__MuteT_bool
+    \tl_show:N \l__CleanQ_tl
+    \bool_show:N \l__MuteQ_bool
 }
 
 % Extract the Arpege after [] in the Chord
@@ -265,10 +284,10 @@
     % collect Inversion [ ]
     \dcparse_ExtractInversion:NN \l__Chord_tl \l__Inversion_tl
 
-    % Trace
-    \iow_term:n {ParseChord-Inversion}
-    \tl_show:N \l__Chord_tl
-    \tl_show:N \l__Inversion_tl
+        % Trace
+        \iow_term:n {ParseChord-Inversion}
+        \tl_show:N \l__Chord_tl
+        \tl_show:N \l__Inversion_tl
 
     % collect the Notes
     \dcparse_ExtractNotes:N \l__Chord_tl

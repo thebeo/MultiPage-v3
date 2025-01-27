@@ -87,10 +87,11 @@
     \tl_set:Nn \l__Line_tl {#1}
     \tl_clear_new:N \l__Left_tl
         
-    % Result variables at the Page level
+    % Result variables at the Line level
     \tl_clear_new:N \l__LineTitle_tl % Line Titles
-    \seq_clear_new:N \l__Line_seq % raw page seq
-
+    \seq_clear_new:N \l__Line_seq % raw Content seq
+    \tl_set:Nn \l__LineColor_tl {white}
+    
      % split by |
     \seq_set_split:Nnx \l__Line_seq {|} {\l__Line_tl}
     % clean if the left is empty (no title)
@@ -101,6 +102,7 @@
         }
         {% not empty so title
             \seq_pop_left:NN \l__Line_seq \l__LineTitle_tl
+            %% Add here the code to extract the color
         }
 
         % Trace
