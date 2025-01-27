@@ -90,8 +90,10 @@
     % Result variables at the Line level
     \tl_clear_new:N \l__LineTitle_tl % Line Titles
     \seq_clear_new:N \l__Line_seq % raw Content seq
+
+    % add default color
     \tl_set:Nn \l__LineColor_tl {white}
-    
+
      % split by |
     \seq_set_split:Nnx \l__Line_seq {|} {\l__Line_tl}
     % clean if the left is empty (no title)
@@ -102,7 +104,7 @@
         }
         {% not empty so title
             \seq_pop_left:NN \l__Line_seq \l__LineTitle_tl
-            %% Add here the code to extract the color
+            % Here add code to extract color
         }
 
         % Trace
@@ -110,6 +112,7 @@
         \tl_show:N \l__Line_tl
         \seq_show:N \l__Line_seq
         \tl_show:N \l__LineTitle_tl
+        \tl_show:N \l__LineColor_tl
 }
 
 % Usage ParseContent {content}

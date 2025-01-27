@@ -94,9 +94,9 @@
                     \ParseLine{####1}
                     
                     % store at the Line level
+                    \seq_put_right:NV \l__allLineColor_seq \l__LineColor_tl
                     \seq_put_right:NV \l__allLineTitle_seq \l__LineTitle_tl
                     \seq_put_right:Ne \l__allNbContentbyLine_seq {\seq_count:N \l__Line_seq}
-                    \seq_put_right:Ne \l__allLineColor_seq \l__LineColor_tl
                     
                     % go-on if not empty
                     \tl_if_blank:nTF {\l__Line_tl}
@@ -150,10 +150,6 @@
         \int_while_do:nn {\l__LineNB_int > 0}
             {
             % Draw the title line of the line
-                % read and consume the color
-                \seq_pop_left:NN \l__allLineTitle_seq \l__LineColor_tl
-                %\tl_put_right:Ne \l__PageContent_tl {\rowcolor{\l__LineColor_tl}}
-                
                 % read and consume the title
                 \seq_pop_left:NN \l__allLineTitle_seq \l__FullLineTitle_tl
                 %parse
@@ -166,8 +162,6 @@
                 \tl_put_right:Ne \l__PageContent_tl {\EOL}
             
             % Draw the content line of the line
-                % same color
-                %\tl_put_right:Ne \l__PageContent_tl {\rowcolor{\l__LineColor_tl}}
                 % consume the number of content
                 % default Class = s
                 \tl_set:Nn \l__CurrentClass_tl {s}
