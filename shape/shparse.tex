@@ -114,7 +114,12 @@
     \tl_replace_all:Nnn \l__Shape_tl {~}{}
     \tl_replace_all:Nnn \l__Shape_tl {\\}{}
     \tl_set_eq:NN \l__ShapeCmd_tl \l__Shape_tl
-    
+
+            % Trace
+            \iow_term:n {ParseShape-end}
+            \tl_show:N \l__ShapeCmd_tl 
+            \tl_show:N \l__ShapeOptionPar_tl
+            \tl_show:N \l__Shape_tl
     
 }
 
