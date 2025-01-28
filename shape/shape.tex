@@ -18,28 +18,42 @@
 \NewDocumentCommand\Shapes{m O{1.0}}
 {
     \ParseShapes{#1}       
-    \dcDrawShapes[#2]   
+    \shDrawShapes[#2]   
 }
 
 \ExplSyntaxOn
-%usage \dcDrawShapes[scale]
-% draw the shapes in \l__CleanShape_seq
- \NewDocumentCommand\dcDrawShapes{O{1.0}}
+%usage \shDrawShapes[scale]
+% draw the shapes in \l__ShapeCmd_seq
+ \NewDocumentCommand\shDrawShapes{O{1.0}}
 {
     \fp_zero_new:N \l__Scale_fp
     \fp_set:Nn \l__Scale_fp {#1}
+    
+	   %TODO DEBUG seems never reach here
+	   % Trace
+	    \iow_term:n {shDrawShapes}
            
     % Draw each Shape
-    \seq_map_indexed_inline:Nn \l__CleanShape_seq  
+    \seq_map_indexed_inline:Nn \l__ShapeCmd_seq  
     {    
+		\tl_set:Ne \l__ShapeCmd_tl {##2}
+		\tl_set:Ne \l__ShapeMandatoryPar_tl {\seq_item:Nn\l__ShapeMandatoryPar_seq ##1 }
+		\tl_set:Ne \l__ShapeOptionPar_tl {\seq_item:Nn\l__ShapeOptionPar_seq ##1 }
+		
+	
+	    % If not exist replace by the unkwow shape
+	    \cs_if_exist:cTF{\l__ShapeCmd_tl}
+	        {\use:c {\l__ShapeCmd_tl}{\l__ShapeMandatoryPar_tl}[\l__ShapeOptionPar_tl]}
+	        {\use:c {dcUKw}}           
+        
+		    % Trace
+		    \iow_term:n {shDrawShapes-end}
+		    \tl_show:N \l__ShapeCmd_tl 
+		    \tl_show:N \l__ShapeMandatoryPar_tl
+		    \tl_show:N \l__ShapeOptionPar_tl
+       
 
-    %TODO change draw
-    % If not exist replace by the unkwow shape
-    \cs_if_exist:cTF{dc##2}
-        {-\use:c {dc##2}[\l__Size_tl]}
-        {-\use:c {dcUKw}[\l__Size_tl]}              
-
-    }
+   	 }
 }
 \ExplSyntaxOff
 

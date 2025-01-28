@@ -47,7 +47,6 @@
 \NewDocumentCommand\ParseShape{m}
 {
 
-    % TODO GO-ON
     % Temp variables
     \tl_set:Ne \l__Shape_tl {#1} % fill by Note to be parsed
     \seq_clear_new:N \l__Regex_seq
@@ -58,9 +57,11 @@
 
 
     % Result variables
-    \tl_clear_new:N \l__ShapeCmd_tl
+    \tl_set_eq:NN \l__ShapeCmd_tl \l__Shape_tl
     \tl_clear_new:N \l__ShapeMandatoryPar_tl
     \tl_clear_new:N \l__ShapeOptionPar_tl
+    
+
 
     % Collect the ShapeMandatoryPar
     \regex_extract_all:nVN {\{[^\}]*\}} \l__Shape_tl \l__Regex_seq
@@ -72,18 +73,20 @@
         \tl_set:Ne \l__ShapeMandatoryPar_tl {\seq_item:Nn \l__Regex_seq 1}
 
         % clean the Shape
-        \tl_replace_once:NVn \l__Shape_tl \l__ShapeMandatoryPar_tl {}
+        \tl_replace_once:NVn \l__ShapeCmd_tl \l__ShapeMandatoryPar_tl {}
         
-        \tl_regex_replace_once:Nnn \l__ShapeMandatoryPar_tl {\{} {}
-        \tl_regex_replace_once:Nnn \l__ShapeMandatoryPar_tl {\}} {}
+		\tl_remove_all:NV \l__ShapeMandatoryPar_tl \c_left_brace_str
+		\tl_remove_all:NV \l__ShapeMandatoryPar_tl \c_right_brace_str
 
         
     }
             % Trace
-            \iow_term:n {ParseShape-extract m-parameter}
-            \seq_show:N \l__Regex_seq 
-            \tl_show:N \l__ShapeMandatoryPar_tl
-            \tl_show:N \l__Shape_tl
+			\iow_term:n {ParseShape-extract m-parameter}
+			\tl_show:N \l__Shape_tl
+			\seq_show:N \l__Regex_seq 
+			\tl_show:N \l__ShapeMandatoryPar_tl
+			\tl_show:N \l__ShapeCmd_tl
+
 
     % Collect the ShapeOptionPar
     \regex_extract_all:nVN {\[[^\]]*\]}  \l__Shape_tl \l__Regex_seq
@@ -95,27 +98,30 @@
         \tl_set:Ne \l__ShapeOptionPar_tl {\seq_item:Nn \l__Regex_seq 1}
 
         % clean the Shape
-        \tl_replace_once:NVn \l__Shape_tl \l__ShapeOptionPar_tl {}
+        \tl_replace_once:NVn \l__ShapeCmd_tl \l__ShapeOptionPar_tl {}
         
-        \tl_replace_all:Nnn \l__ShapeOptionPar_tl {[}{}
-        \tl_replace_all:Nnn \l__ShapeOptionPar_tl {]}{}
+         \tl_remove_all:Nn \l__ShapeOptionPar_tl {[}
+         \tl_remove_all:Nn \l__ShapeOptionPar_tl {]}
     }
             % Trace
-            \iow_term:n {ParseShape-extract m-parameter}
+            \iow_term:n {ParseShape-extract 0-parameter}
             \seq_show:N \l__Regex_seq 
             \tl_show:N \l__ShapeOptionPar_tl
-            \tl_show:N \l__Shape_tl
+            \tl_show:N \l__ShapeCmd_tl
 
      % Collect the Cmd
-    \tl_replace_all:Nnn \l__Shape_tl {~}{}
-    \tl_regex_replace_once:Nnn \l__ShapeMandatoryPar_tl {\\} {}
-    \tl_set_eq:NN \l__ShapeCmd_tl \l__Shape_tl
 
-            % Trace
-            \iow_term:n {ParseShape-end}
-            \tl_show:N \l__ShapeCmd_tl 
-            \tl_show:N \l__ShapeOptionPar_tl
-            \tl_show:N \l__Shape_tl
+      \tl_remove_all:Nn  \l__ShapeCmd_tl {~}
+      \tl_remove_all:NV  \l__ShapeCmd_tl \c_backslash_str
+ 
+
+		% Trace
+		\iow_term:n {ParseShape-end}
+		\tl_show:N \l__Shape_tl
+		\tl_show:N \l__ShapeCmd_tl 
+		\tl_show:N \l__ShapeMandatoryPar_tl
+		\tl_show:N \l__ShapeOptionPar_tl
+
     
 }
 
