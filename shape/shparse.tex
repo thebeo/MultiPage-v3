@@ -1,0 +1,121 @@
+\def\shparsever{V100}
+
+\ExplSyntaxOn
+
+% Parse Shapes and push the result in variable
+    % Prepare seq(s)
+    % Parse the Shapes
+% #1 = Shapes
+\NewDocumentCommand\ParseShapes{m}
+{
+    % Temp variables
+    \tl_set:Ne \l__shapes_tl {#1} % fill by Shapes
+    
+    % Result variables at the Shapes list level
+    \seq_clear_new:N \l__Shape_seq % raw shape seq
+
+    % Result variables at the Shape level
+    \seq_clear_new:N \l__ShapeCmd_seq
+    \seq_clear_new:N \l__ShapeMandatoryPar_seq
+    \seq_clear_new:N \l__ShapeOptionPar_seq
+
+   
+    % Split the Shape
+    \seq_set_split:NnV \l__Shape_seq {~} \l__shapes_tl
+       
+        % Trace
+        \iow_term:n {ParseShapes-split}
+        \seq_show:N \l__Shape_seq
+
+    % Parse each Shape
+    \seq_map_inline:Nn \l__Shape_seq 
+    {
+        \ParseShape{##1}
+        \seq_put_right:NV \l__ShapeCmd_seq \l__ShapeCmd_tl
+        \seq_put_right:NV \l__ShapeMandatoryPar_seq \l__ShapeMandatoryPar_tl
+        \seq_put_right:NV \l__ShapeOptionPar_seq \l__ShapeOptionPar_tl                
+    }
+        % Trace
+        \iow_term:n {ParseShapes-end}
+        \seq_show:N \l__ShapeCmd_seq
+        \seq_show:N \l__ShapeMandatoryPar_seq
+        \seq_show:N \l__ShapeOptionPar_seq    
+}
+
+% Parse a Shape
+% #1 = Shape
+\NewDocumentCommand\ParseShape{m}
+{
+
+    % TODO GO-ON
+    % Temp variables
+    \tl_set:Ne \l__Shape_tl {#1} % fill by Note to be parsed
+    \seq_clear_new:N \l__Regex_seq
+    
+        % Trace
+        \iow_term:n {ParseShape}
+        \tl_show:N \l__Shape_tl
+
+
+    % Result variables
+    \tl_clear_new:N \l__ShapeCmd_tl
+    \tl_clear_new:N \l__ShapeMandatoryPar_tl
+    \tl_clear_new:N \l__ShapeOptionPar_tl
+
+    % Collect the ShapeMandatoryPar
+    \regex_extract_all:nVN {\{[^\}]*\}} \l__Shape_tl \l__Regex_seq
+               
+    \seq_if_empty:NTF \l__Regex_seq
+    {}% no m-Parameter 
+    {% yes m-parameter found
+        % TODO have a look to test if several parameters
+        \tl_set:Ne \l__ShapeMandatoryPar_tl {\seq_item:Nn \l__Regex_seq 1}
+
+        % clean the Shape
+        \tl_replace_once:NVn \l__Shape_tl \l__ShapeMandatoryPar_tl {}
+        
+        \tl_regex_replace_once:Nnn \l__ShapeMandatoryPar_tl {\{} {}
+        \tl_regex_replace_once:Nnn \l__ShapeMandatoryPar_tl {\}} {}
+
+        % \tl_replace_all:Nnn \l__ShapeMandatoryPar_tl {\{} {}
+        % \tl_replace_all:Nnn \l__ShapeMandatoryPar_tl {\}} {}
+        
+        %\tl_set:Ne \l__ShapeMandatoryPar_tl {\use:n \l__ShapeMandatoryPar_tl}
+        
+    }
+            % Trace
+            \iow_term:n {ParseShape-extract m-parameter}
+            \seq_show:N \l__Regex_seq 
+            \tl_show:N \l__ShapeMandatoryPar_tl
+            \tl_show:N \l__Shape_tl
+
+    % Collect the ShapeOptionPar
+    \regex_extract_all:nVN {\[[^\]]*\]}  \l__Shape_tl \l__Regex_seq
+               
+    \seq_if_empty:NTF \l__Regex_seq
+    {}% no O-Parameter 
+    {% yes O-parameter found
+        % TODO have a look to test if several parameters
+        \tl_set:Ne \l__ShapeOptionPar_tl {\seq_item:Nn \l__Regex_seq 1}
+
+        % clean the Shape
+        \tl_replace_once:NVn \l__Shape_tl \l__ShapeOptionPar_tl {}
+        
+        \tl_replace_all:Nnn \l__ShapeOptionPar_tl {[}{}
+        \tl_replace_all:Nnn \l__ShapeOptionPar_tl {]}{}
+    }
+            % Trace
+            \iow_term:n {ParseShape-extract m-parameter}
+            \seq_show:N \l__Regex_seq 
+            \tl_show:N \l__ShapeOptionPar_tl
+            \tl_show:N \l__Shape_tl
+
+     % Collect the Cmd
+    \tl_replace_all:Nnn \l__Shape_tl {~}{}
+    \tl_replace_all:Nnn \l__Shape_tl {\\}{}
+    \tl_set_eq:NN \l__ShapeCmd_tl \l__Shape_tl
+    
+    
+}
+
+

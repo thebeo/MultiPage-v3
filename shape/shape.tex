@@ -1,0 +1,85 @@
+\def\shapver{V100}
+
+\usepackage{tikz} % dessin
+\usetikzlibrary{arrows.meta,bending,shapes.geometric,shapes.misc,positioning}
+\usepackage{xparse} % for NewDocumentCommand
+
+%%%%
+\input{shape/shparse}
+%%%%
+
+
+%%%%%%
+% shapes
+%%%%%%
+
+
+%usage \Shapes{shape shape ...shape}[scale]
+\NewDocumentCommand\Shapes{m O{1.0}}
+{
+    \ParseShapes{#1}       
+    \dcDrawShapes[#2]   
+}
+
+\ExplSyntaxOn
+%usage \dcDrawShapes[scale]
+% draw the shapes in \l__CleanShape_seq
+ \NewDocumentCommand\dcDrawShapes{O{1.0}}
+{
+    \fp_zero_new:N \l__Scale_fp
+    \fp_set:Nn \l__Scale_fp {#1}
+           
+    % Draw each Shape
+    \seq_map_indexed_inline:Nn \l__CleanShape_seq  
+    {    
+
+    %TODO change draw
+    % If not exist replace by the unkwow shape
+    \cs_if_exist:cTF{dc##2}
+        {-\use:c {dc##2}[\l__Size_tl]}
+        {-\use:c {dcUKw}[\l__Size_tl]}              
+
+    }
+}
+\ExplSyntaxOff
+
+%size
+\newdimen\fgsize
+\fgsize=10ex
+
+% usage: \RO {color}[inside][scale] - Rond
+\def\rdsize{\fgsize}
+\newlength{\txtinsidelg}
+\newlength{\txtinsideht}
+
+\NewDocumentCommand\RO{mo O{1.0}}{\IfNoValueTF{#2}{\scalebox{#3}{
+    \tikz[baseline=-0.5ex]
+    {
+        \path[draw=#1,line width=1pt]  circle(\rdsize/2);
+    }}}{\scalebox{#3}{\settowidth{\txtinsidelg}{#2}\settoheight{\txtinsideht}{#2}\tikz[baseline=-0.5ex]{
+        \node [draw=#1,line width=1pt, minimum width=\rdsize/2,text width=\txtinsidelg, text height=\txtinsideht,rounded rectangle,inner sep=\rdsize/2-\txtinsideht/2] {};
+        \node at (0,0){{\small{#2}}};
+    }}}}
+
+% usage: \TD{color}[inside][scale] - triangle right
+\newdimen\tdsize
+\tdsize=\fgsize
+
+\NewDocumentCommand\TD{mo O{1.0}}{\IfNoValueTF{#2}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
+    \path[draw=#1,line width=1pt] (-\tdsize/2,-\tdsize/2)--(-\tdsize/2,\tdsize/2)--(1.2*\tdsize/2,0)--cycle;
+    }}}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
+    \path[draw=#1,line width=1pt] (-\tdsize/2,-\tdsize/2)--(-\tdsize/2,\tdsize/2)--(1.2*\tdsize/2,1/4*\tdsize/2)--(1.2*\tdsize/2,-1/4*\tdsize/2)--cycle; \node at (0,0){\small{#2}};
+   }}}}
+
+
+% usage: \TU{color}[inside][scale]  - triangle up
+\newdimen\tusize
+\tusize=\fgsize %-0.1ex
+
+\NewDocumentCommand\TU{mo O{1.0}}{\IfNoValueTF{#2}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
+    \path[draw=#1,line width=1pt] (-\tusize/2,-\tusize/2)--(\tusize/2,-\tusize/2)--(0,\tusize/2)--cycle;
+    }}}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
+    \path[draw=#1,line width=1pt] (-\tusize/2,-\tusize/2)--(\tusize/2,-\tusize/2)--(0,\tusize/2)--cycle;
+    \node at (0,-0.5ex){\small{#2}};
+    }}}
+}

@@ -5,7 +5,7 @@
 \usepackage{xparse} % for NewDocumentCommand
 
 %%%%
-\input{dico/dc-parse-v1}
+\input{dico/dcparse.tex}
 %%%%
 
 %%%%%%
@@ -13,17 +13,17 @@
 %%%%%%
 
 %usage \Notes{note Note ...Note}[scale]
-\ExplSyntaxOn
+
 \NewDocumentCommand\Notes{m O{1.0}}
 {
     \ParseNotes{#1}       
-   \dcDrawNotes[#2]
-   
+    \dcDrawNotes[#2]   
 }
-\ExplSyntaxOff
+
 
 \ExplSyntaxOn
-
+%usage \dcDrawNotes[scale]
+% draw the notes in \l__CleanNote_seq
  \NewDocumentCommand\dcDrawNotes{O{1.0}}
 {
     \tl_set_eq:NN \l__Size_tl \text
@@ -281,50 +281,7 @@
         \draw [line width=\linwd] [transform canvas={yshift=\sep +\betw}] (arced node.north west) -- (arced node.north east);
     }}}
 
-%%%%%%
-% shapes
-%%%%%%
 
-%size
-\newdimen\fgsize
-\fgsize=10ex
-
-% usage: \RO {color}[inside][scale] - Rond
-\def\rdsize{\fgsize}
-\newlength{\txtinsidelg}
-\newlength{\txtinsideht}
-
-\NewDocumentCommand\RO{mo O{1.0}}{\IfNoValueTF{#2}{\scalebox{#3}{
-    \tikz[baseline=-0.5ex]
-    {
-        \path[draw=#1,line width=1pt]  circle(\rdsize/2);
-    }}}{\scalebox{#3}{\settowidth{\txtinsidelg}{#2}\settoheight{\txtinsideht}{#2}\tikz[baseline=-0.5ex]{
-        \node [draw=#1,line width=1pt, minimum width=\rdsize/2,text width=\txtinsidelg, text height=\txtinsideht,rounded rectangle,inner sep=\rdsize/2-\txtinsideht/2] {};
-        \node at (0,0){{\small{#2}}};
-    }}}}
-
-% usage: \TD{color}[inside][scale] - triangle right
-\newdimen\tdsize
-\tdsize=\fgsize
-
-\NewDocumentCommand\TD{mo O{1.0}}{\IfNoValueTF{#2}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
-    \path[draw=#1,line width=1pt] (-\tdsize/2,-\tdsize/2)--(-\tdsize/2,\tdsize/2)--(1.2*\tdsize/2,0)--cycle;
-    }}}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
-    \path[draw=#1,line width=1pt] (-\tdsize/2,-\tdsize/2)--(-\tdsize/2,\tdsize/2)--(1.2*\tdsize/2,1/4*\tdsize/2)--(1.2*\tdsize/2,-1/4*\tdsize/2)--cycle; \node at (0,0){\small{#2}};
-   }}}}
-
-
-% usage: \TU{color}[inside][scale]  - triangle up
-\newdimen\tusize
-\tusize=\fgsize %-0.1ex
-
-\NewDocumentCommand\TU{mo O{1.0}}{\IfNoValueTF{#2}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
-    \path[draw=#1,line width=1pt] (-\tusize/2,-\tusize/2)--(\tusize/2,-\tusize/2)--(0,\tusize/2)--cycle;
-    }}}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
-    \path[draw=#1,line width=1pt] (-\tusize/2,-\tusize/2)--(\tusize/2,-\tusize/2)--(0,\tusize/2)--cycle;
-    \node at (0,-0.5ex){\small{#2}};
-    }}}
-}
 
 %%%%%%
 % Arrows
