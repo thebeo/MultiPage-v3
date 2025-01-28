@@ -1,13 +1,15 @@
 |||D(Full table)
-||T(T1)(T2)(T3)(T4)
-|O FAu 2xDOb (name) | REd SIb 2xDOb SIb 3xREm SIb DOu SIb (name) | DOu SIb (name)>
-||T[dolight]
-|C XDOb=MIm=SOLu[T] |c REm=FAu=XLAu[Q] |1 |s BFL | RO{la}
-|S UA{black} DA{black} UDA{black}
-|n DOb REm MIm |n DOb REm MIm - FAu SOLu LAu
-|2 |N DOb REm MIm - FAu SOLu LAu - SIb DOb
-|||H(Demi)
+||T(T 1)(T 2)(T3)(T4)
+|O FAu 2xDOb (O test) | REd SIb 2xDOb SIb 3xREm SIb DOu SIb (previous test) |o DOu SIb (o test)>
+||T[dolight] (color C-c-void test )(s - S test) (n-void test)(N test) 
+|C XDOb=MIm=SOLu[T] |c REm=FAu=XLAu[Q] |1 
+|s BFL | RO{la} |S UA{black} DA{black} UDA{black}
+|n DOb REm MIm |n DOb REm MIm - FAu SOLu LAu |2
+|N DOb REm MIm - FAu SOLu LAu - SIb DOb
+||T(M test)(m test)
+|M REd GOq GOs GOq GOs GOq GOs REd |2 |m [L] REd FAl SIb MIm SOLu LAh GOq GOs
+|||H(Demi test)
 ||T(L1)(L2)
-|M REd GOq GOs GOq GOs GOq GOs REd |2 |M [L] REd FAl SIb MIm SOLu LAh GOq GOs
+|M REd GOq GOs GOq GOs GOq GOs REd |2 |m [L] REd FAl SIb MIm SOLu LAh GOq GOs
 
 

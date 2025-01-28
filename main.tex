@@ -29,16 +29,15 @@
 % POUVOIR mélanger les styles (Tableaux/Symboles, ...)
 % 
 % data in file music.txt
-% PAGE
+% PAGE = |||
 %|||D/H(Titre) D=16 colonne H = 8 colonne (default 16)
-%   Suite de Ligne
+%   + une Suite de Lignes
 %
-% LIGNE
-%||T[color] (titre 1) .. (titre 4)  T est une option (2 ou 4 titres) (T tinted or title ...)
-%   Couleur-TBD
+% LIGNE = ||
+%||T[color] (titre 1) .. (titre 4)  T est une option (2 ou 4 titres) - T for tinted or title ...
+% + suite de contenus
 %
-% CONTENU
-% |
+% CONTENU= |
 % |O = Phrase scale =1 - 2 col
 % |o = Phrase scale=.5 - 1 col
 % |C = suite de Chords - 2 col
@@ -59,9 +58,10 @@
 %
 % dictionnaire-V3.tex	
 %   Ajouter nom à Shape
+% \ML ?
 %  
 % Master
-%
+% Regarder le Scale pour entrer en une colonne
 %
 % oo
 %
@@ -74,10 +74,10 @@
 \begin{document}
 
 
-%\Pages{music.txt}
+\Pages{music.txt}
 %\Pages{test-data/test.txt}
 %\Pages{test-data/oo-test.txt}
-\Pages{test-data/master-test.txt}
+%\Pages{test-data/master-test.txt}
 
 
 %\Pages{itsumo.txt}
