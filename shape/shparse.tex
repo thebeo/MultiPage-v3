@@ -77,10 +77,6 @@
         \tl_regex_replace_once:Nnn \l__ShapeMandatoryPar_tl {\{} {}
         \tl_regex_replace_once:Nnn \l__ShapeMandatoryPar_tl {\}} {}
 
-        % \tl_replace_all:Nnn \l__ShapeMandatoryPar_tl {\{} {}
-        % \tl_replace_all:Nnn \l__ShapeMandatoryPar_tl {\}} {}
-        
-        %\tl_set:Ne \l__ShapeMandatoryPar_tl {\use:n \l__ShapeMandatoryPar_tl}
         
     }
             % Trace
@@ -112,7 +108,7 @@
 
      % Collect the Cmd
     \tl_replace_all:Nnn \l__Shape_tl {~}{}
-    \tl_replace_all:Nnn \l__Shape_tl {\\}{}
+    \tl_regex_replace_once:Nnn \l__ShapeMandatoryPar_tl {\\} {}
     \tl_set_eq:NN \l__ShapeCmd_tl \l__Shape_tl
 
             % Trace
