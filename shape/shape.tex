@@ -17,8 +17,8 @@
 %usage \Shapes{shape shape ...shape}[scale]
 \NewDocumentCommand\Shapes{m O{1.0}}
 {
-    \ParseShapes{#1}       
-    \shDrawShapes[#2]   
+    \ParseShapes{#1}  
+    \shDrawShapes[#2]     
 }
 
 \ExplSyntaxOn
@@ -28,11 +28,7 @@
 {
     \fp_zero_new:N \l__Scale_fp
     \fp_set:Nn \l__Scale_fp {#1}
-    
-	   %TODO DEBUG seems never reach here
-	   % Trace
-	    \iow_term:n {shDrawShapes}
-           
+               
     % Draw each Shape
     \seq_map_indexed_inline:Nn \l__ShapeCmd_seq  
     {    
@@ -41,17 +37,31 @@
 		\tl_set:Ne \l__ShapeOptionPar_tl {\seq_item:Nn\l__ShapeOptionPar_seq ##1 }
 		
 	
-	    % If not exist replace by the unkwow shape
-	    \cs_if_exist:cTF{\l__ShapeCmd_tl}
-	        {\use:c {\l__ShapeCmd_tl}{\l__ShapeMandatoryPar_tl}[\l__ShapeOptionPar_tl]}
-	        {\use:c {dcUKw}}           
-        
-		    % Trace
-		    \iow_term:n {shDrawShapes-end}
-		    \tl_show:N \l__ShapeCmd_tl 
-		    \tl_show:N \l__ShapeMandatoryPar_tl
-		    \tl_show:N \l__ShapeOptionPar_tl
-       
+	    \tl_if_empty:VTF \l__ShapeOptionPar_tl
+	    {% no Optional parameter
+		    % If not exist replace by the unkwow shape
+		    \cs_if_exist:cTF{\l__ShapeCmd_tl}
+		        {\use:c {\l__ShapeCmd_tl}{\l__ShapeMandatoryPar_tl}}
+		        {\use:c {shUK}{\l__ShapeMandatoryPar_tl}}           
+	        
+			    % Trace
+			    \iow_term:n {shDrawShapes-end}
+			    \tl_show:N \l__ShapeCmd_tl 
+			    \tl_show:N \l__ShapeMandatoryPar_tl
+			    \tl_show:N \l__ShapeOptionPar_tl
+       }
+	    {% Optional parameter
+			% If not exist replace by the unkwow shape
+			\cs_if_exist:cTF{\l__ShapeCmd_tl}
+			{\use:c {\l__ShapeCmd_tl}{\l__ShapeMandatoryPar_tl}[\l__ShapeOptionPar_tl]}
+			{\use:c {shUK}{\l__ShapeMandatoryPar_tl}[\l__ShapeOptionPar_tl]}           
+			
+			% Trace
+			\iow_term:n {shDrawShapes-end}
+			\tl_show:N \l__ShapeCmd_tl 
+			\tl_show:N \l__ShapeMandatoryPar_tl
+			\tl_show:N \l__ShapeOptionPar_tl
+}
 
    	 }
 }
@@ -96,4 +106,18 @@
     \path[draw=#1,line width=1pt] (-\tusize/2,-\tusize/2)--(\tusize/2,-\tusize/2)--(0,\tusize/2)--cycle;
     \node at (0,-0.5ex){\small{#2}};
     }}}
+}
+
+% usage: \shUK{color}[inside][scale]  - Unknown Shape
+\newdimen\uksize
+\uksize=5ex % \fgsize/2
+
+\NewDocumentCommand\shUK{mo O{1.0}}{\IfNoValueTF{#2}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
+				\path[draw=#1,line width=2pt] (-\uksize/2,-\uksize/2)--(\uksize/2,\uksize/2);
+				\path[draw=#1,line width=2pt] (-\uksize/2,\uksize/2)--(\uksize/2,-\uksize/2);
+	}}}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
+				\path[draw=#1,line width=2pt] (-\uksize/2,-\uksize/2)--(\uksize/2,\uksize/2);
+				\path[draw=#1,line width=2pt] (-\uksize/2,\uksize/2)--(\uksize/2,-\uksize/2);
+				\node at (0,-0.5ex){\small{#2}};
+	}}}
 }

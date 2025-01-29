@@ -234,25 +234,25 @@
 	\str_case:NnTF \l__TheClass_tl % what Class
 	{
 	{O}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Phrase{\l__TheContent_tl}}}				}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Phrase{\l__TheContent_tl}[1.0]}}				}
 	{o}
 			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Phrase{\l__TheContent_tl}[0.5]}}	}
 	{C}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Cadence{\l__TheContent_tl}}}	}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Cadence{\l__TheContent_tl}[1.0]}}	}
 	{c}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Cadence{\l__TheContent_tl}}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Cadence{\l__TheContent_tl}[0.5]}}		}
 	{M}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Master{\l__TheContent_tl}}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Master{\l__TheContent_tl}[1.0]}}		}
 	{m}
 			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Master{\l__TheContent_tl}[0.5]}}		}
 	{N}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\NotesBox{\l__TheContent_tl}}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\NotesBox{\l__TheContent_tl}[1.0]}}		}
 	{n}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\NotesBox{\l__TheContent_tl}}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\NotesBox{\l__TheContent_tl}[0.5]}}		}
 	{S}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\ParseShapes{\l__TheContent_tl}}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Shapes{\l__TheContent_tl}[1.0]}}		}
 	{s}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\ParseShapes{\l__TheContent_tl}}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Shapes{\l__TheContent_tl}[0.5]}}		}
 	{2}
 			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{}}		}
 	{1}
@@ -276,7 +276,7 @@
 
 \ExplSyntaxOn
 % \NotesBox Draw a box of Notes 1/2 or 3 lines { Notes  - Notes} / -  = new line
-\NewDocumentCommand\NotesBox{m}
+\NewDocumentCommand\NotesBox{m O{1.0}}
 {
 	% Temp variables
 	\tl_clear_new:N \l__TheNotes_tl

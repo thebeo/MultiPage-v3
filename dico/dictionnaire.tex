@@ -490,10 +490,6 @@
 % usage: \FL{color}[note][scale] - Flamme
 \NewDocumentCommand\FL{mo O{1.0}}{\IfNoValueTF{#2}{\LO{#1}[#3]}{\LO{#1}[#3] #2}}
 
-% usage: \BFL[note][scale] - Flamme
-% for debug only test with no parameter
-% TODO delete
-\NewDocumentCommand\BFL{O{1.0}}{\LO{red}}
 
 % usage: \CR{color}[text] - [ text ]
 \NewDocumentCommand\CR{mo}{\IfNoValueTF{#2}{{\space}{\textcolor{#1}{\lbrack \rbrack}}{\space}}

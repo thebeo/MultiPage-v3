@@ -1,4 +1,4 @@
+% comment
 |||D(test)
 ||T
-|S \BFL | \RO{la}[ici]
-|s \RO{re}[non] \TD{black}
+|S \UA{black}
