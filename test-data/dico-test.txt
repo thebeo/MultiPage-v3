@@ -3,7 +3,8 @@
 |N REd MIl FAl SOLl LAb SIb DOb  
 |N REm MIm FAu SOLu LAu DOu 
 |N REh MIh FAh SOLh LAh
-|2 
+||T(pre)
+|N ↑DOb /REm 2xMIm 
 ||T(Arrows)(deco)
 |s \UA{fa} \DA{la} \UDA{black} |1
 |2

@@ -91,10 +91,24 @@
 % #5 String Found
 \cs_set:Npn \dcparse_SplitandSearch:NnnNN #1#2#3#4#5
 {
-\seq_set_split:NnV \l__SeqTmp_seq {#2} #1 % split the String
+	
+% due to some bug somewhere
+\str_set:Ne \l__Source_str {#1} % To analyse
+\tl_set:Ne \l__Source_tl {\l__Source_str} % To analyse
+\str_set:Ne \l__Del_str {#2} % delimiter
+\tl_set:Ne \l__Del_tl {\l__Del_str} % delimiter
+	
+\seq_set_split:NVV \l__SeqTmp_seq \l__Del_tl \l__Source_str % split the String
     %Trace
     \tl_analysis_show:n {\seq_set_split:NnV \l__SeqTmp_seq {#2} #1}
     \tl_show:N \l__SeqTmp_seq
+    
+		    % Trace
+		    \iow_term:n {dcparse_SplitandSearch}
+		    \iow_term:n {#1}
+		    \tl_show:N \l__Source_tl
+		    \tl_show:N \l__Del_tl
+		    \seq_show:N \l__SeqTmp_seq
     
     \int_compare:nNnTF {\seq_count:N \l__SeqTmp_seq}={2} % test if x has been found
         {% yes found

@@ -1,4 +1,4 @@
 % comment
 |||D(test)
 ||T
-|S \MIm
+|N ↑DOb /REm 2xMIm 

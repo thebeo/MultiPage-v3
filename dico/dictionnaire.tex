@@ -91,31 +91,33 @@
 
 % Usage dcPreDraw: Draw Pre {Pre}
 \ExplSyntaxOn
-\NewDocumentCommand\dcPreDraw{m O{1.0}}{
-
+\NewDocumentCommand\dcPreDraw{m O{1.0}}{     
         % Trace
         \iow_term:n {dcPreDraw}
         \iow_term:n {#1}
-        
+           
+  \str_clear_new:N \l__Pre_str
+  \str_set:Ne \l__Pre_str {#1}
+  
+  \str_case:NnTF \l__Pre_str % what gamme
+ 	 {
 
-    \IfEqCase{#1} % what is requested ?
-        {
-        {/} %flame
-            {
-                \FL{black}[][#2]
-            }
-         {↓} %Down arrow
-            {
-                \DA{black}[#2]
-            }
-         {↑} %Up arrow
-            {
-                \UA{black}[#2]
-            }
-        }
-        [% other
-        #1x       
-        ]
+ 		{/} %flame
+ 		{
+ 			\FL{black}[][#2]
+ 		}
+ 		{↓} %Down arrow
+ 		{
+ 			\DA{black}[#2]
+ 		}
+ 		{↑} %Up arrow
+ 		{
+ 			\UA{black}[#2]
+ 		}
+ 	}
+ 	{}% additional things if found
+ 	{#1x}% additional things if other
+
 }
 \ExplSyntaxOff
 
@@ -127,7 +129,6 @@
 \NewDocumentCommand\note{mmm}
 {
      \tl_clear_new:N \l__note_tl
-%     \str_set:Ne \l__note_str {\textcolor{#1}{\textbf{#2}}}
     \tl_set:Nn \l__note_tl {\textcolor{#1}{\textbf{#2}}}    
 
     \str_clear_new:N \l__gamme_str
