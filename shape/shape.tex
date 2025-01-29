@@ -25,12 +25,7 @@
 %usage \shDrawShapes[scale]
 % draw the shapes in \l__ShapeCmd_seq
  \NewDocumentCommand\shDrawShapes{O{1.0}}
-{
-    \fp_zero_new:N \l__Scale_fp
-    \fp_set:Nn \l__Scale_fp {#1}
-               
-     
-    
+{   
 	% Draw each Shape
 	\seq_map_indexed_inline:Nn \l__ShapeCmd_seq  
 	    {    
@@ -56,6 +51,7 @@
 					 	}					
 				}         
 		     	   	   
+		   % allowed signature : no parameter or if parameter [someting][scale] at the end
 		   % execute with the right parameters
 		   \tl_if_empty:VTF \l__ShapeMandatoryPar_tl
 			   {% no m-parameter
@@ -64,16 +60,16 @@
 					   			\use:c {\l__ShapeCmd_tl}			   		
 					   	}
 					   	{% Optional parameter
-					   			\use:c {\l__ShapeCmd_tl}[\l__ShapeOptionPar_tl]
+					   			\use:c {\l__ShapeCmd_tl}[\l__ShapeOptionPar_tl][#1]
 					   	}    
 			   }
 		   		{% m-parameter
 					\tl_if_empty:VTF \l__ShapeOptionPar_tl
 						{% no Optional parameter
-							\use:c {\l__ShapeCmd_tl}{\l__ShapeMandatoryPar_tl}			   		
+							\use:c {\l__ShapeCmd_tl}{\l__ShapeMandatoryPar_tl}[][#1]			   		
 						}
 						{% Optional parameter
-							\use:c {\l__ShapeCmd_tl}{\l__ShapeMandatoryPar_tl}[\l__ShapeOptionPar_tl]
+							\use:c {\l__ShapeCmd_tl}{\l__ShapeMandatoryPar_tl}[\l__ShapeOptionPar_tl][#1]
 						}    
 		   		}
 			
@@ -142,3 +138,46 @@
 				\node at (0,-0.5ex){\small{#2}};
 	}}}
 }
+
+%%%%%%
+% Arrows
+%%%%%%
+
+% usage: \UA{color}[inside][scale] - Up Arrow
+\NewDocumentCommand\UA{mo O{1.0}}{\scalebox{#3}{\tikz[baseline=-0.5ex,>={Stealth}]{
+			\path[draw=#1,line width=1pt,->](0ex,-1ex)--(0ex,1ex);
+	}}\space}
+
+
+% usage: \DA{color}[inside][scale] - Down Arrow
+\NewDocumentCommand\DA{mo O{1.0}}{\scalebox{#3}{\tikz[baseline=-0.5ex,>={Stealth}]{
+			\path[draw=#1,line width=1pt,->](0ex,1ex)--(0ex,-1ex);
+	}}\space}
+
+% usage: \UDA{color}[inside][scale] - -Up-Down Arrow
+\NewDocumentCommand\UDA{mo O{1.0}}{\scalebox{#3}{\tikz[baseline=-0.5ex,,>={Stealth[round]}]{
+			\path[draw=#1,line width=1pt,<->](0ex,1ex)--(0ex,-1ex);
+	}}\space}
+
+
+%%%%%%
+% Decoration
+%%%%%%
+
+% usage: \LO{color}[scale] - Flamme Symbol
+\NewDocumentCommand\LO{m O{1.0}}{\scalebox{#2}{\tikz[baseline=-0.5ex]{
+			\path[draw=#1,line width=1.5pt,-] (0ex,-0.5ex)--(1ex,1ex);
+}}}
+% usage: \FL{color}[note][scale] - Flamme
+\NewDocumentCommand\FL{mo O{1.0}}{\IfNoValueTF{#2}{\LO{#1}[#3]}{\LO{#1}[#3] #2}}
+
+
+% usage: \CR{color}[text][scale] - [ text ]
+\NewDocumentCommand\CR{moo}{\IfNoValueTF{#2}{{\space}{\textcolor{#1}{\lbrack \rbrack}}{\space}}
+	{{\space}{\textcolor{#1}{\lbrack}}{\space}#2{\space}{\textcolor{#1}{\rbrack}}{\space}}}
+	
+% usage: \ML{nb}[color][scale] - multiply
+\NewDocumentCommand\ML{mO{black}O{1.0}}{\textcolor{#2}{\scriptsize{#1}x}}
+
+% usage: \SP - space
+\NewDocumentCommand\SP{}{\quad}

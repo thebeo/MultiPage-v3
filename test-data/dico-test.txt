@@ -5,10 +5,6 @@
 |N REh MIh FAh SOLh LAh
 ||T(pre)
 |N ↑DOb /REm 2xMIm 
-||T(Arrows)(deco)
-|s \UA{fa} \DA{la} \UDA{black} |1
-|2
-|S \FL{do}[\MIm] \ML{3}[re] \MIm \FL{re} \CR{fa}[text]
 ||T(Cadence)(scale 0.5)
 |C XDOb=MIm=SOLu[T] REm=FAu=XLAu[Q]
 |C XDOb=MIm=SOLu[T] REm=FAu=XLAu[Q]
@@ -18,5 +14,4 @@
 |C DOb=MIm=SOLu[F]U DOb=MIm=SOLu[F]D 
 ||T(Unknown)
 |N DoB REm |C DoB=MIm=SOLu[F] DOb=MIM=SOLu[F]
-|s XX{blue}
 
