@@ -29,41 +29,62 @@
     \fp_zero_new:N \l__Scale_fp
     \fp_set:Nn \l__Scale_fp {#1}
                
-    % Draw each Shape
-    \seq_map_indexed_inline:Nn \l__ShapeCmd_seq  
-    {    
-		\tl_set:Ne \l__ShapeCmd_tl {##2}
-		\tl_set:Ne \l__ShapeMandatoryPar_tl {\seq_item:Nn\l__ShapeMandatoryPar_seq ##1 }
-		\tl_set:Ne \l__ShapeOptionPar_tl {\seq_item:Nn\l__ShapeOptionPar_seq ##1 }
-		
-	
-	    \tl_if_empty:VTF \l__ShapeOptionPar_tl
-	    {% no Optional parameter
-		    % If not exist replace by the unkwow shape
-		    \cs_if_exist:cTF{\l__ShapeCmd_tl}
-		        {\use:c {\l__ShapeCmd_tl}{\l__ShapeMandatoryPar_tl}}
-		        {\use:c {shUK}{\l__ShapeMandatoryPar_tl}}           
-	        
-			    % Trace
-			    \iow_term:n {shDrawShapes-end}
-			    \tl_show:N \l__ShapeCmd_tl 
-			    \tl_show:N \l__ShapeMandatoryPar_tl
-			    \tl_show:N \l__ShapeOptionPar_tl
-       }
-	    {% Optional parameter
-			% If not exist replace by the unkwow shape
-			\cs_if_exist:cTF{\l__ShapeCmd_tl}
-			{\use:c {\l__ShapeCmd_tl}{\l__ShapeMandatoryPar_tl}[\l__ShapeOptionPar_tl]}
-			{\use:c {shUK}{\l__ShapeMandatoryPar_tl}[\l__ShapeOptionPar_tl]}           
+     
+    
+	% Draw each Shape
+	\seq_map_indexed_inline:Nn \l__ShapeCmd_seq  
+	    {    
+			\tl_set:Ne \l__ShapeCmd_tl {##2}
+			\tl_set:Ne \l__ShapeMandatoryPar_tl {\seq_item:Nn\l__ShapeMandatoryPar_seq ##1 }
+			\tl_set:Ne \l__ShapeOptionPar_tl {\seq_item:Nn\l__ShapeOptionPar_seq ##1 }
 			
-			% Trace
-			\iow_term:n {shDrawShapes-end}
-			\tl_show:N \l__ShapeCmd_tl 
-			\tl_show:N \l__ShapeMandatoryPar_tl
-			\tl_show:N \l__ShapeOptionPar_tl
-}
-
-   	 }
+			%if CMD do not exist use Unknown shape
+			\cs_if_exist:cTF{\l__ShapeCmd_tl}
+				{} % exist do nothing
+				{% CMD not exist replace with UK
+					% try with a Note
+					\tl_put_left:Nn \l__ShapeCmd_tl {dc}					
+					\cs_if_exist:cTF{\l__ShapeCmd_tl}
+						{}% exist do nothing
+						{% CMD not exist replace with UK						
+							\tl_set:Ne \l__ShapeCmd_tl {shUK}
+							\tl_if_empty:VTF \l__ShapeMandatoryPar_tl
+								{% no m-parameter
+									\tl_set:Nn \l__ShapeMandatoryPar_tl {red}
+								}
+								{} % reuse parameter
+					 	}					
+				}         
+		     	   	   
+		   % execute with the right parameters
+		   \tl_if_empty:VTF \l__ShapeMandatoryPar_tl
+			   {% no m-parameter
+			   		\tl_if_empty:VTF \l__ShapeOptionPar_tl
+					   	{% no Optional parameter
+					   			\use:c {\l__ShapeCmd_tl}			   		
+					   	}
+					   	{% Optional parameter
+					   			\use:c {\l__ShapeCmd_tl}[\l__ShapeOptionPar_tl]
+					   	}    
+			   }
+		   		{% m-parameter
+					\tl_if_empty:VTF \l__ShapeOptionPar_tl
+						{% no Optional parameter
+							\use:c {\l__ShapeCmd_tl}{\l__ShapeMandatoryPar_tl}			   		
+						}
+						{% Optional parameter
+							\use:c {\l__ShapeCmd_tl}{\l__ShapeMandatoryPar_tl}[\l__ShapeOptionPar_tl]
+						}    
+		   		}
+			
+				% Trace
+				\iow_term:n {shDrawShapes-end}
+				\tl_show:N \l__Shape_seq
+				\tl_show:N \l__ShapeCmd_tl 
+				\tl_show:N \l__ShapeMandatoryPar_tl
+				\tl_show:N \l__ShapeOptionPar_tl
+						
+		}
 }
 \ExplSyntaxOff
 

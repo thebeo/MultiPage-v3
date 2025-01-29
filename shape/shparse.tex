@@ -22,6 +22,9 @@
    
     % Split the Shape
     \seq_set_split:NnV \l__Shape_seq {~} \l__shapes_tl
+    
+    % clean (double space create empty)
+    \seq_remove_all:Nn \l__Shape_seq {}
        
         % Trace
         \iow_term:n {ParseShapes-split}

@@ -119,8 +119,8 @@
 }
 \ExplSyntaxOff
 
-% usage: \ML{color}{nb} - multiply
-\NewDocumentCommand\ML{mm}{\textcolor{#1}{\scriptsize{#2}x}}
+% usage: \ML{nb}[color] - multiply
+\NewDocumentCommand\ML{mO{black}}{\textcolor{#2}{\scriptsize{#1}x}}
 
 % usage: \note{color}{texte}{gamme}  9=no deco
 \ExplSyntaxOn
