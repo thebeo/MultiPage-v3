@@ -276,6 +276,8 @@
             }        
 }
 
+\newdimen\LW
+\LW=1.5pt
 
 % Usage ARDraw: Right Arrow Draw {NoteName}{NoteName}{color}{beat}
 \NewDocumentCommand\ARDraw{mmmm}{
@@ -284,10 +286,10 @@
         \SDraw{#1}{S}{N}{1} % draw empty node   
         \IfStrEq{#4}{} % if beat
         {% No beat
-            \path[draw=#3,line width=1pt] (S) edge [loop right] (S);  
+            \path[draw=#3,line width=\LW] (S) edge [loop right] (S);  
         }
         {% beat
-            \path[draw=#3,line width=1pt] (S) edge [loop right] node[fill=white,inner sep=0pt,midway]{#4} (S);            
+            \path[draw=#3,line width=\LW] (S) edge [loop right] node[fill=white,inner sep=0pt,midway]{#4} (S);            
         }
  
     }
@@ -297,10 +299,10 @@
         
         \IfStrEq{#4}{} % if beat
         {% No beat
-            \path[draw=#3,line width=1pt,->] (S) to[bend right] (E);
+            \path[draw=#3,line width=\LW,->] (S) to[bend right] (E);
         }
         {% beat
-            \path[draw=#3,line width=1pt,->] (S) to[bend right] node[fill=white,inner sep=0pt,sloped,midway]{#4} (E);
+            \path[draw=#3,line width=\LW,->] (S) to[bend right] node[fill=white,inner sep=0pt,sloped,midway]{#4} (E);
         } 
     }
 }
@@ -312,10 +314,10 @@
         \SDraw{#1}{S}{N}{1} % draw empty node    
         \IfStrEq{#4}{} % if beat
         {% No beat
-            \path[draw=#3,line width=1pt] (S) edge [loop left] (S);  
+            \path[draw=#3,line width=\LW] (S) edge [loop left] (S);  
         }
         {% beat
-            \path[draw=#3,line width=1pt] (S) edge [loop left] node[fill=white,inner sep=0pt,midway]{#4} (S);            
+            \path[draw=#3,line width=\LW] (S) edge [loop left] node[fill=white,inner sep=0pt,midway]{#4} (S);            
         }  
     }
     {
@@ -324,10 +326,10 @@
         
         \IfStrEq{#4}{} % if beat
         {% No beat
-            \path[draw=#3,line width=1pt,->] (S) to[bend left] (E);
+            \path[draw=#3,line width=\LW,->] (S) to[bend left] (E);
         }
         {% beat
-            \path[draw=#3,line width=1pt,->] (S) to[bend left] node[fill=white,inner sep=0pt,sloped,midway]{#4} (E);
+            \path[draw=#3,line width=\LW,->] (S) to[bend left] node[fill=white,inner sep=0pt,sloped,midway]{#4} (E);
         } 
 
     }
@@ -338,8 +340,8 @@
     %debug
     %\draw[help lines] (-\ooextfgsize,-\ooextfgsize) grid (\ooextfgsize,\ooextfgsize);
     
-    \path[draw=black,line width=0.5pt] circle(\oofgsize);
-    \path[draw=white,line width=0.5pt] circle(\ooextfgsize); % define the overall size
+    \path[draw=black,line width=0.25pt] circle(\oofgsize);
+    \path[draw=white,line width=0.25pt] circle(\ooextfgsize); % define the overall size
 }
 
 \NewDocumentCommand\DrawLink{}{

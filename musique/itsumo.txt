@@ -34,7 +34,7 @@
 |O FAu- SOLu LAu FAu DOu (BR-1) | LAu 2xSOLu (VAR) 
 | MIm FAu MIm FAu (2x)> | DOb 2xLAb DOb 
 | 2xREm DOb SIb (Lié)> | FAl DOb- SIb- LAb 
-| SIb LAb SIb DOb- REm > | LAu SOLu [LAu- FAu] 
+| SIb LAb SIb DOb- REm > | LAu-fl /LAu- SOLu [LAu- FAu] 
 
 ||T[falight](THEME 1-v2/1-2)
 |O FAu- SOLu LAu FAu DOu (BR-1) | LAu SOLu DOb (Des-1) 
@@ -46,13 +46,13 @@
 |O FAu- SOLu- LAu FAu LAu | SOLu MIm LAb 
 | MIm- REm- SIb | DOb REm MIm 
 | 2xREm DOb SIb > | LAb DOb 
-| DOb REm- MIm- FAu SOLu > | 2xLAu SOLu [LAu- FAu]  
+| DOb REm- MIm- FAu SOLu > | 2xLAu-fl /LAu- SOLu [LAu- FAu]  
 
 ||T[relight](THEME crt/1+2)
 |O REm- MIm- FAu- REm- LAu | FAu MIm DOb 
 | REm- MIm- FAu MIm REm | MIm- FAu- DOb 
 | REm- MIm- FAu- REm- LAu | FAu MIm DOb 
-| REm- MIm- FAu MIm REm | MIm DOb FAu [MIm FAu SOLu] 
+| REm- MIm- FAu MIm REm | MIm DOb-fl /DOb FAu [MIm FAuXfl /FAu SOLu] 
    
 ||T[grayvlight](BASS)
 |O 0xFAl FAu LAu (F) | 0xMIl MIm SOLu (C) 

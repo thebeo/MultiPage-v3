@@ -1,0 +1,128 @@
+|||D(Lucid Dream) 
+
+||T(FA)()(RE)
+|O FAu- REm >
+|O FAu MIm DOb REm 
+|2
+|2
+
+|O REm FAu MIm REm >
+|2
+|O FAu- REm >
+|O FAu MIm DOb REm 
+
+
+||T(DO)() (SOL)
+|O DOb REm FAu LAu- >
+|O FAu MIm FAu >
+|O LAb REm FAu MIm >
+|O DOb REm
+
+|O DOb REm- MIm FAu >
+|O SOLu- FAu MIm FAu >
+|O LAb REm FAu MIm >
+|O DOb REm
+
+
+||T(Triplet)() (Montée LA)
+|O DOb REm LAu DOu- LAu >
+|O FAu >
+|O LAb REm FAu MIm >
+|O MIm REm
+
+|O DOb REm- MIm FAu >
+|O MIm REm FAu >
+|O LAb REm >
+|O MIh- REh- DOu- LAu
+
+
+||T(3xLA)() (/SOL)
+|O 3xLAh- DOu REh >
+|O MIh- REh- FAu >
+|O LAb REm FAu MIm >
+|O MIm REm
+
+|O DOb REm /FAu SOLu MIm>
+|O FAu >
+|O LAb REm FAu MIm >
+|O DOb REm
+
+
+|||D(Lucid Dream)
+
+||T(Longue)
+|O DOb REm FAu >
+|O LAb REm  FAu MIm >
+|O REh DOu LAu FAu >
+|O REh DOu LAu FAu >
+
+
+|O REh DOu LAu- SOLu FAu >
+|O LAb REm FAu MIm >
+|O DOb REm
+|1
+
+||T(Double simple)()(Double complexe)
+|O DOb REm 2xFAu=REm >
+|O FAu!REd >
+|O LAb REm FAu MIm >
+|O DOb REm
+
+|O DOb REm 2xFAu=REm >
+|O FAu!REd >
+|O LAb REm FAu MIm >
+|O MIm- FAu MIm REm- DOb REm
+
+||T(2ieme montée la)() (2xfa)
+|O DOb REm FAu LAu- >
+|O FAu >
+|O MIm FAu >
+|O MIh REh DOu LAu >
+
+|O LAu DOu FAh MIh >
+|O REh MIh FAh >
+|O LAb REm FAu MIh>
+|O 2xLAu
+
+||T(Tout haut)
+|O DOu 2xREh >
+|O DOu LAu FAu FAh >
+|O LAh- REh- FAh- MIh >
+|O DOu REh
+
+
+||T(Encore la-haut)
+|O DOu REh >
+|O MIh- FAh >
+|O MIh REh >
+|O MIh FAh >
+
+|O LAu REh >
+|O FAh MIh >
+|O SOLh- FAh- MIh REh >
+|O DOu- LAu- FAu
+
+
+|||D(Lucid Dream)
+
+||T(4xRE)() (3xRE 4xDbl)
+|O DOb 4xREm
+|O FAu!REd >
+|O LAb REm- FAu MIm=DOb >
+|O DOb REm
+
+|O DOb 2xREm
+|O REm=LAb- MIm=DOb- 2xFAu=REm FAu!REd >
+|O LAb REm- FAu MIm >
+|O 2xLAu- FAu- REm
+
+||T(Saut RE)() (/montée la)
+|O DOb REm
+|O REh DOu LAu=REm FAu >
+|O LAb REm FAu MIm >
+|O DOb REm
+
+|O DOb REm /FAu SOLu MIm>
+|O FAu >
+|O LAb REm FAu MIh >
+|O REh- DOu- LAu
