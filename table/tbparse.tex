@@ -208,6 +208,10 @@
     \seq_remove_all:Nn \l__Regex_seq {} % try to merge find 1 and Find 2 and Find 3          
     \tl_set:Ne \l__Left_tl {\seq_item:Nn \l__Regex_seq 2}
 
+            \iow_term:n {ParsePageTitle-regex}
+    		\tl_show:N \l__Left_tl
+    		\seq_show:N \l__Regex_seq
+    
     \str_case:NnTF \l__Left_tl % not tl_case
         {
         {H}{\bool_set_true:N \l__Half_bool}

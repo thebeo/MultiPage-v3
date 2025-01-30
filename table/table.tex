@@ -313,43 +313,69 @@
 \ExplSyntaxOff
 
 % Usage Page 16 col- Print a table in a page
+\ExplSyntaxOn
 \NewDocumentCommand\PageD{+m}
 {
+	% Temp variables
+	\tl_clear_new:N \l__PageD_tl
+	\tl_set:Ne \l__PageD_tl {#1}
+	
+	% Trace
+	\iow_term:n {PageD}
+	\tl_show:N \l__PageD_tl
+	
 \begin{table}[h!]
 \centering
     \newdimen\CellWidth
     \CellWidth=10ex
     \newdimen\smallCellWidth
     \smallCellWidth=0.25pt
-    \begin{NiceTabular}{|*{4}{P{\CellWidth}}|*{4}{P{\CellWidth}}|*{4}{P{\CellWidth}}|*{4}{P{\CellWidth}}|P{\smallCellWidth}}        
+    \begin{NiceTabular}{|*{4}{P{\CellWidth}}|*{4}{P{\CellWidth}}|*{4}{P{\CellWidth}}|*{4}{P{\CellWidth}}|N}        
     \hline
     1&2&3&4&5&6&7&8&9&10&11&12&13&14&15&16\\
-    \hline 
-    #1    
+    \hline
+     
+    \l__PageD_tl 
+        
     \end{NiceTabular}
 \end{table} 
 
 \newpage
+
 }
+\ExplSyntaxOff
+
 % Usage Page 8 col- Print a table in a page
+\ExplSyntaxOn
 \NewDocumentCommand\PageH{+m}
 {
+% Temp variables
+\tl_clear_new:N \l__PageH_tl
+\tl_set:Ne \l__PageH_tl {#1}
+
+% Trace
+\iow_term:n {PageH}
+\tl_show:N \l__PageH_tl	
+	
+		
 \begin{table}[h!]
 \centering
     \newdimen\CellWidth
     \CellWidth=10ex
     \newdimen\smallCellWidth
     \smallCellWidth=0.25pt
-    \begin{NiceTabular}{|*{4}{P{\CellWidth}}|*{4}{P{\CellWidth}}|P{\smallCellWidth}}        
+    \begin{NiceTabular}{|*{4}{P{\CellWidth}}|*{4}{P{\CellWidth}}|N}        
     \hline
     1&2&3&4&5&6&7&8\\
     \hline 
-    #1
+    
+	\l__PageH_tl
+	
     \end{NiceTabular}
 \end{table} 
 \newpage
 }
-
+\ExplSyntaxOff
 
 % Usage RowColor - set the line to a bckground color {color}
 \NewDocumentCommand\RowColor{m}{\rowcolor{#1}}

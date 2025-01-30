@@ -116,7 +116,7 @@
 |O LAb REm- FAu MIm >
 |O 2xLAu- FAu- REm
 
-||T(Saut RE)() (/montée la)
+||T(Saut RE)() (/montée LA)
 |O DOb REm
 |O REh DOu LAu=REm FAu >
 |O LAb REm FAu MIm >
@@ -126,3 +126,11 @@
 |O FAu >
 |O LAb REm FAu MIh >
 |O REh- DOu- LAu
+
+||T(/LA DO)() ()
+|N LAu-/LAu DOu LAu
+|N /LAu DOu LAu-FAu
+|O LAb REm FAu MIm >
+|O MIm REm
+
+

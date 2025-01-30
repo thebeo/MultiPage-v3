@@ -1,4 +1,5 @@
 % comment
 |||D(test)
 ||T
-|N ↑DOb /REm 2xMIm 
+|N DOb |n DOb |1
+|O REd /FAu=REm

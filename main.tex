@@ -31,7 +31,11 @@
 % MultiPage
 % POUVOIR mélanger les styles (Tableaux/Symboles, ...)
 % 
-% data in file music.txt
+% data in file
+%
+%
+% COMMENTAIRE = %
+%
 % PAGE = |||
 %|||D/H(Titre) D=16 colonne H = 8 colonne (default 16)
 %   + une Suite de Lignes
@@ -56,48 +60,50 @@
 %
 % 
 %
-% TODO Nouvelle syntaxe
 %
 % Table
-% 	Couleur par demi-tableau [color-color]
+% 	TODO Couleur par demi-tableau [color-color] or |O[color]
+%	TODO Half table no longer work-need space after D/H
 %
 % Dico
 %   Ajouter nom à Shape
+%   TODO BUG N or n do not change the size
+%	split Note & Chord 
 %
-%   text in Notes
+%   Add text in Notes
 %  
 % Master
-% Regarder le Scale pour entrer en une colonne
+% 	Regarder le Scale pour entrer en une colonne
 %
 % Oo
-% filtre les 2xspace
+% TODO filtrer les 2xspace
 %
 %
 % Shape
 %	Extend in number of Mandatory and Optional parameters ( today 0/1 mandatory 0/1 optional)
 %				What about Scale ?? (would add an optional parameter)
-%  	ML has 2 parameter so do not work (change but 2 parameter would still not work)
-%	latex in shape
-
-% 	
+%  	ML has 2 parameter so do not work (change but 2 parameters would still not work)
+%	TODO BUG latex in shape
+%
+% MUSIQUE
+% tester les flammes comme des double dans Itsumo	
 
 
 %%%%%%%%
 \begin{document}
 	
 	
-	
-	%\Pages{test-data/test.txt}
-	%\Pages{test-data/multi-test.txt}
+	\Pages{test-data/test.txt}
+	\Pages{test-data/multi-test.txt}
 	
 	%\Pages{test-data/dico-test.txt}
-	%\Pages{test-data/shape-test.txt}
+	\Pages{test-data/shape-test.txt}
 	%\Pages{test-data/oo-test.txt}
 	%\Pages{test-data/master-test.txt}
 	
 		
     %\Pages{musique/itsumo.txt}
-    \Pages{musique/Lucid Dream.txt}
+    %\Pages{musique/Lucid Dream.txt}
 	
 	
 	

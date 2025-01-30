@@ -152,6 +152,8 @@
 % usage: \do [gamme]
 \NewDocumentCommand\DO{O{-1}}{\text{\note{do}{do}{#1}}}
 % [size] \text to do nothing
+
+%TODO debug why Size do not work
 \NewDocumentCommand\dcDOb{O{\text}}{{#1{\DO[-1]}}}
 \NewDocumentCommand\dcDOu{O{\text}}{{#1{\DO[+1]}}}
 \NewDocumentCommand\dcXDOb{O{\text}}{\CE{do}}
