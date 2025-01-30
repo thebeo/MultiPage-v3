@@ -157,6 +157,10 @@
         {% yes Alternate found
             \seq_clear_new:N \l__Alternate_seq
             \seq_set_split:Nnx \l__Alternate_seq {~} { \l__Alternate_tl }
+                           
+             % clean (double space create empty)
+            \seq_remove_all:Nn \l__Shape_seq {}
+            
             % Trace
             \iow_term:n {Alternate}
             \seq_show:N \l__Alternate_seq
@@ -177,6 +181,10 @@
        
     % Split the Notes
     \seq_set_split:NnV \l__Phrase_seq {~} \l__Phrase_tl
+                                  
+    % clean (double space create empty)
+    \seq_remove_all:Nn \l__Phrase_seq {}
+    
     % Trace
     \iow_term:n {ParsePhrase-split}
     \seq_show:N \l__Phrase_seq

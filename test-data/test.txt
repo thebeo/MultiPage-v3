@@ -1,5 +1,8 @@
 % comment
-|||D(test)
+|||D(test with space)()
 ||T
-|N DOb |n DOb |1
-|O REd /FAu=REm
+|O DOb     MIm   >
+
+|||H(demi with space)()
+||T
+|N DOb MIm

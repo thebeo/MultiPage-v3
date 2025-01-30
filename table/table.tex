@@ -127,7 +127,8 @@
     {% for each Page
 
         % Parse and Draw Title
-        \ParsePageTitle{##2}
+        \ParsePageTitle
+       {##2}
         \fancyhead[C]{\textbf{\l__CleanPageTitle_tl}}
         
         % Prepare the content to draw clean the content
@@ -281,6 +282,8 @@
 	% Temp variables
 	\tl_clear_new:N \l__TheNotes_tl
 	\tl_set:Ne \l__TheNotes_tl {#1}
+	\tl_clear_new:N \l__Scale_tl
+	\tl_set:Ne \l__Scale_tl {#2}
 	\seq_clear_new:N \l__Split_seq
 	\tl_clear_new:N \l__NBLines_tl
 	
@@ -293,11 +296,11 @@
 	{0}
 			{}
 	{1}
-			{	\BTx{\seq_item:Nn \l__Split_seq 1 }		}
+			{	\BTa{\seq_item:Nn \l__Split_seq 1 }[#2]	}
 	{2}
-			{	\BTx{\seq_item:Nn \l__Split_seq 1 }[\seq_item:Nn \l__Split_seq 2 ]		}
+			{	\BTb{\seq_item:Nn \l__Split_seq 1 }{\seq_item:Nn \l__Split_seq 2 }[#2]		}
 	{3}
-			{	\BTx{\seq_item:Nn \l__Split_seq 1 }[\seq_item:Nn \l__Split_seq 2 ][\seq_item:Nn \l__Split_seq 3]	}					
+			{	\BTc{\seq_item:Nn \l__Split_seq 1 }{\seq_item:Nn \l__Split_seq 2 }{\seq_item:Nn \l__Split_seq 3 }[#2]	}					
 	
 	}
 	{}% nothing else if found
@@ -306,7 +309,7 @@
 	    % Trace
 		\iow_term:n {NotesBox}
 		\tl_show:N \l__TheNotes_tl
-		\seq_show:N \l__Split_seq
+		\tl_show:N \l__Scale_tl
 		\tl_show:N \l__NBLines_tl 
 		
 }
@@ -330,6 +333,11 @@
     \CellWidth=10ex
     \newdimen\smallCellWidth
     \smallCellWidth=0.25pt
+
+% for test with all cell
+%    \begin{NiceTabular}{|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|N} 
+%
+    
     \begin{NiceTabular}{|*{4}{P{\CellWidth}}|*{4}{P{\CellWidth}}|*{4}{P{\CellWidth}}|*{4}{P{\CellWidth}}|N}        
     \hline
     1&2&3&4&5&6&7&8&9&10&11&12&13&14&15&16\\
@@ -393,32 +401,44 @@
 \NewDocumentCommand\BOne{m}{
 \Block{1-1}{#1}&
 }
-% Usage BTx - Text Block 1,2 or 3 lignes {Content}[Content][Content]
-\NewDocumentCommand\BTx{moo O{1.0}}{\scalebox{#4}{\tikz[baseline=0.ex]{
-    \begin{scope}[node distance=0.4ex,inner sep=0pt,node font=\large]
-        \IfNoValueTF{#2} % 1 ligne
-            {
-            \node[anchor=base] (M) at (0,0) {\Notes{#1}};
-            \node [above=of M,anchor=south] (T) {};
-            \node [below=of M,anchor=north] (B) {};
-            }
-            {\IfNoValueTF{#3}
-                {% 2 ligne
-                \node[anchor=base] (M) at (0,0) {};
-                \node [above=of M,anchor=south] (T) {\Notes{#1}};
-                \node [below=of M,anchor=north] (B) {\Notes{#2}};
-                
-                }
-                {% 3 ligne
-                \node[anchor=base] (M) at (0,0) {\Notes{#2}};
-                \node [above=of M,anchor=south] (T) {\Notes{#1}};
-                \node [below=of M,anchor=north] (B) {\Notes{#3}};
-                }
-            }     
+% Usage BTa/b/c - Text Block 1,2 or 3 lignes {Content}[Content][Content]
+\NewDocumentCommand\BTa{m O{1.0}}{\scalebox{#2}{\tikz[baseline=0.ex]{
+    \begin{scope}[node distance=0.4ex,inner sep=0pt,node font=\large]     
+        % 1 ligne
+        \node[anchor=base] (M) at (0,0) {\Notes{#1}[#2]};
+        \node [above=of M,anchor=south] (T) {};
+        \node [below=of M,anchor=north] (B) {};
+          
         \node [above=of T,anchor=south] (H) {};% extra space at TOP
         \node [below=of B,anchor=north] (L) {};% extra space at BOTTOM
     \end{scope}
     }}}
+
+
+\NewDocumentCommand\BTb{mm O{1.0}}{\scalebox{#3}{\tikz[baseline=0.ex]{
+			\begin{scope}[node distance=0.4ex,inner sep=0pt,node font=\large]				
+				% 2 ligne
+				\node[anchor=base] (M) at (0,0) {};
+				\node [above=of M,anchor=south] (T) {\Notes{#1}[#3]};
+				\node [below=of M,anchor=north] (B) {\Notes{#2}[#3]};
+  
+				\node [above=of T,anchor=south] (H) {};% extra space at TOP
+				\node [below=of B,anchor=north] (L) {};% extra space at BOTTOM
+			\end{scope}
+}}}
+
+
+\NewDocumentCommand\BTc{mmm O{1.0}}{\scalebox{#4}{\tikz[baseline=0.ex]{
+			\begin{scope}[node distance=0.4ex,inner sep=0pt,node font=\large]				
+				% 3 ligne
+				\node[anchor=base] (M) at (0,0) {\Notes{#2}[#4]};
+				\node [above=of M,anchor=south] (T) {\Notes{#1}[#4]};
+				\node [below=of M,anchor=north] (B) {\Notes{#3}[#4]};
+
+				\node [above=of T,anchor=south] (H) {};% extra space at TOP
+				\node [below=of B,anchor=north] (L) {};% extra space at BOTTOM
+			\end{scope}
+}}}
 
 
 % Usage EOL - insert \\

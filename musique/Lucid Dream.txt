@@ -37,12 +37,12 @@
 
 
 ||T(3xLA)() (/SOL)
-|O 3xLAh- DOu REh >
-|O MIh- REh- FAu >
+|O 3xLAu- DOu >
+|O REh MIh- REh- FAu >
 |O LAb REm FAu MIm >
 |O MIm REm
 
-|O DOb REm /FAu SOLu MIm>
+|O DOb REm /SOLu=FAu MIm>
 |O FAu >
 |O LAb REm FAu MIm >
 |O DOb REm
@@ -52,7 +52,7 @@
 
 ||T(Longue)
 |O DOb REm FAu >
-|O LAb REm  FAu MIm >
+|O LAb REm FAu MIm >
 |O REh DOu LAu FAu >
 |O REh DOu LAu FAu >
 
@@ -74,33 +74,32 @@
 |O MIm- FAu MIm REm- DOb REm
 
 ||T(2ieme montée la)() (2xfa)
-|O DOb REm FAu LAu- >
-|O FAu >
+|O DOb REm FAu LAu- FAu>
 |O MIm FAu >
-|O MIh REh DOu LAu >
+|O LAb REm FAu MIh >
+|O REh- DOu- LAu >
 
-|O LAu DOu FAh MIh >
-|O REh MIh FAh >
+|O LAu DOu >
+|O FAh MIh REh- MIh FAh >
 |O LAb REm FAu MIh>
-|O 2xLAu
+|O 2xFAh
 
 ||T(Tout haut)
 |O DOu 2xREh >
 |O DOu LAu FAu FAh >
-|O LAh- REh- FAh- MIh >
+|O LAu REh FAh MIh >
 |O DOu REh
 
 
 ||T(Encore la-haut)
-|O DOu REh >
-|O MIh- FAh >
-|O MIh REh >
-|O MIh FAh >
-
-|O LAu REh >
-|O FAh MIh >
+|O DOu REh MIh >
+|O FAh MIh REh- MIh FAh>
+|O LAu REh FAh MIh >
 |O SOLh- FAh- MIh REh >
+
 |O DOu- LAu- FAu
+|1
+|2
 
 
 |||D(Lucid Dream)
@@ -122,14 +121,14 @@
 |O LAb REm FAu MIm >
 |O DOb REm
 
-|O DOb REm /FAu SOLu MIm>
+|O DOb REm /SOLu=FAu MIm>
 |O FAu >
 |O LAb REm FAu MIh >
 |O REh- DOu- LAu
 
-||T(/LA DO)() ()
-|N LAu-/LAu DOu LAu
-|N /LAu DOu LAu-FAu
+||T(2x LA /DO)() ()
+|O LAu /DOu=LAu (2x)
+|O LAu FAu
 |O LAb REm FAu MIm >
 |O MIm REm
 
