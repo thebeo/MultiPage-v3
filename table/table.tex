@@ -390,16 +390,20 @@
 
 % Usage RowTitle - Print the title of a row {Text}
 \NewDocumentCommand\RowTitle{m}{
+% 	to prepare color
+%    \Block[fill=red!10,l]{1-4}{\textbf{#1}}&&&&
     \Block[l]{1-4}{\textbf{#1}}&&&&
 }
 
 % Usage BTwo - Block of 2 Columns {Content}
 \NewDocumentCommand\BTwo{m}{
+%    \Block[fill=red!10]{1-2}{#1}&&
     \Block{1-2}{#1}&&
 }
 % Usage BOne - Block of 1 Columns {Content}
 \NewDocumentCommand\BOne{m}{
-\Block{1-1}{#1}&
+% \Block[fill=red!10]{1-1}{#1}&
+ \Block{1-1}{#1}&
 }
 % Usage BTa/b/c - Text Block 1,2 or 3 lignes {Content}[Content][Content]
 \NewDocumentCommand\BTa{m O{1.0}}{\scalebox{#2}{\tikz[baseline=0.ex]{

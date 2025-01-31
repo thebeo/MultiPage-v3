@@ -1,6 +1,6 @@
 % comment
-|||D(test with space)()
-||T
+|||D (test with space)
+||T[do]()()
 |O DOb     MIm   >
 
 |||H(demi with space)()
