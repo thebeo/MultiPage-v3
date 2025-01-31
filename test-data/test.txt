@@ -1,8 +1,4 @@
 % comment
-|||D (test with space)
-||T[do]()()
-|O DOb     MIm   >
-
-|||H(demi with space)()
+|||D (test with inversion)
 ||T
-|N DOb MIm
+|C DOb=MIm=SOLu[F] DOb=MIm=SOLu[T] DOb=MIm=SOLu[Q]

@@ -126,10 +126,30 @@
 |O LAb REm FAu MIh >
 |O REh- DOu- LAu
 
-||T(2x LA /DO)() ()
+||T(2x LA /DO)() (2xMI FADO)
 |O LAu /DOu=LAu (2x)
 |O LAu FAu
 |O LAb REm FAu MIm >
 |O MIm REm
 
+|O 2xMIm REm FAu SOLu >
+|O FAu SOLu FAu >
+|O LAb REm FAu MIm >
+|O DOb REm
 
+||T(Tout double)() (DO)
+|C LAb=DOb=XMIm[F] REm=XFAu=LAb[Q] DOb=MIm=XSOLu[F]
+|O FAu!REm FAu!REd
+|O LAb REm FAu >
+|C DOb=MIm=XSOLu[F] REm=FAu=XLAu[F] DOb=MIm=XSOLu[F] REm=XFAu=LAb[Q]
+
+|O DOb REm FAu >
+|O LAb REm FAu MIm >
+|O DOb LAb >
+|O FAu!REm MIm DOb REm
+
+||T(fin)() ()
+|O /DOb MIm
+|O /LAb DOb
+|O /LAb REm
+|2

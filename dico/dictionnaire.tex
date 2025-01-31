@@ -162,7 +162,6 @@
 	\tl_set:Nn \l__PAR_tl  {#1}
 	\iow_term:n {dcDOb}
 	\tl_show:N \l__PAR_tl
-	\tl_show:N \l__Size_tl
 	
 	{#1{\DO[-1]}}
 }
@@ -334,13 +333,32 @@
 
 
 \ExplSyntaxOn
+%Usage:  \CH{note F}{note T}{note Q}{inversion}[scale] - draw the right Stack depending of inversion F/T/Q
 \NewDocumentCommand\CH{mmmm O{1.0}}
 {
+	  \tl_set:Ne \l__Inversion_tl {#4} % fill by Cadence
+       
+       % Trace
+		\iow_term:n {CH}
+		\tl_show:N \l__Inversion_tl
+
 	\str_case:NnTF #4 % what Inversion
 	{
-		{F}{\ST{\FU{#1}[#5]}{#2}{#3}}
-		{T}{\ST{#2}{#3}{\FU{#1}[#5]}}
-		{Q}{\ST{#3}{\FU{#1}[#5]}{#2}}
+		{F}
+			{
+				\iow_term:n {CH-F}
+				\ST{\FU{#1}[#5]}{#2}{#3}
+			}
+		{T}
+			{
+				\iow_term:n {CH-T}
+				\ST{#2}{#3}{\FU{#1}[#5]}
+			}
+		{Q}
+			{
+				\iow_term:n {CH-Q}
+				\ST{#3}{\FU{#1}[#5]}{#2}
+			}
 	}
 	{% additional things if found
 	}
@@ -398,6 +416,8 @@
         \str_set:Ne \l__MuteF_bool_str {\seq_item:Nn \l__MuteF_bool_seq {##1}}
         \str_set:Ne \l__MuteT_bool_str {\seq_item:Nn \l__MuteT_bool_seq {##1}}
         \str_set:Ne \l__MuteQ_bool_str {\seq_item:Nn \l__MuteQ_bool_seq {##1}}
+        
+        \tl_set:Ne \l__Inversion_tl {\seq_item:Nn \l__Inversion_seq {##1}}
     
         \tl_set:Ne \l__Arpege_tl {\seq_item:Nn \l__Arpege_seq {##1}}
         \tl_set:Ne \l__Arpege_bool_str {\seq_item:Nn \l__Arpege_bool_seq {##1}}
