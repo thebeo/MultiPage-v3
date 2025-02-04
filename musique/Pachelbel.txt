@@ -1,0 +1,172 @@
+|||D (Pachelbel)
+
+
+||T[falight] (A+T)
+|O LAu!FAu- LAu (F)
+|O SOLu!MIm SOLu (C)
+|O FAu!REm- FAu (Dm)
+|O MIm!DOb MIm (Am)
+
+|O REm!SIb- REm (Bb)
+|O DOb!LAb- DOb (F)
+|O REm!SIb- REm (Bb)
+|O MIm!DOb MIm (C)
+
+||T[dolight] (CP A+B)
+|O FAu!LAu FAu (F)
+|O DOb!SOLu DOb (C)
+|O REm!FAu REm (Dm)
+|O LAb!MIm LAb (Am)
+
+|O SIb!REm- SIb (Bb)
+|O LAb!DOb LAb (F)
+|O SIb!REm- SIb (Bb)
+|O DOb!MIm DOb (C)
+
+||T[relight] (Pach.)
+|O FAu!DOb FAu (F)
+|O MIm!DOb MIm (C)
+|O REm!LAb REm (Dm)
+|O DOb!LAb DOb (Am)
+
+|O REm!SIb- REm (Bb)
+|O DOb!LAb DOb (F)
+|O REm!SIb- REm (Bb)
+|O MIm!DOb MIm (C)
+
+||T[dovlight] (4x)
+|O DOu!LAu- DOu (F)
+|O DOu!SOLu DOu (C)
+|O LAu!FAu- LAu (Dm)
+|O LAu!MIm LAu (Am)
+
+|O FAu!REm- FAu (Bb)
+|O FAu!DOb FAu (F)
+|O REm!SIb- REm (Bb)
+|O SOLu!MIm SOLu (C)
+
+
+|||D (Pachelbel)
+
+||T (A+T+1)
+|O LAu!FAu- DOu (F)
+|O SOLu!MIm DOu (C)
+|O FAu!REm- LAu (Dm)
+|O MIm!DOb- LAu (Am)
+
+|O REm!SIb- FAu (Bb)
+|O DOb!LAb- FAu (F)
+|O REm!SIb- FAu (Bb)
+|O MIm!DOb SOLu (C)
+
+||T (F d'A)
+|O LAu=FAu LAu SOLu FAu (F)
+|O SOLu!DOb MIm (C)
+|O FAu!REm FAu- SOLu- LAu (Dm)
+|O MIm!LAb DOb (Am)
+
+|O REm!SIb REm- MIm- FAu (Bb)
+|O FAu!DOb SIb FAu (F)
+|O FAu=REm DOb REm FAu (Bb)
+|O SOLu!DOb MIm (C)
+
+
+||T (Itsumo-Bass)
+|O FAl FAu LAu (F)
+|O MIl MIm SOLu (C)
+|O REd REm FAu (Dm)
+|O LAb LAu DOu (Am)
+
+|O SIb- FAu- REh (Bb)
+|O FAl- LAu- FAh (F)
+|O SIb REh FAh (Bb)
+|O DOb- MIh- SOLh (C)
+
+||T (Ring of Steel)
+|O LAb DOb LAu DOu
+|O 2xSOLu- FAu- MIm FAu- SOLu
+|O LAb REm- MIm- FAu
+|O 2xMIm REm- DOb REm MIm
+
+|O 2xLAu SOLu FAu- SOLu LAu
+|O FAu- DOu- LAu- FAu
+|O SIb- REm- FAu- REh
+|O DOb REm- MIm- FAu
+
+||T (Memories)
+|O FAu=DOb LAb SIb DOb (2x)
+|O MIm!SOLl
+|O LAu- FAu- SOLu (3x)
+|O LAu SOLu FAu
+
+|O REm!SIb REm DOb >
+|O REm 2xDOb
+|O DOb 3xREm
+|O FAu 2xMIm FAu
+
+
+|||D (Pachelbel)
+
+||T[dovlight] (↑R+T)
+|C FAu=XLAu=DOb[Q] FAu=LAu=DOb[Q]U
+|C DOb=MIm=XSOLu[F] DOb=MIm=SOLu[F]U
+|C REm=XFAu=LAb[Q] REm=FAu=LAb[Q]U
+|C LAb=DOb=XMIm[F] LAb=DOb=MIm[F]U
+
+|C SIb=XREm=FAl[Q] SIb=REm=FAl[Q]U
+|C XFAu=LAb=DOb[T] FAu=LAb=DOb[T]U
+|C SIb=XREm=FAl[Q] SIb=REm=FAl[Q]U
+|C DOb=MIm=XSOLu DOb=MIm=SOLu[F]U
+
+||T[dolight] (A+↑arp)
+|C XFAu=LAu=XDOu[Q] FAu=LAu=DOb[Q]U
+|C XDOu=XMIm=SOLu[F] DOb=MIm=SOLu[F]
+|C XREm=FAu=XLAu[Q] REm=FAu=LAb[Q]
+|C XLAu=XDOu=MIm[F] LAb=DOb=MIm[F]
+
+|C XSIb=REm=XFAu[Q] SIb=REm=FAl[Q]
+|C XFAu=XLAu=DOb[F] FAl=LAb=DOb[F]
+|C XSIb=REm=XFAu[Q] SIb=REm=FAl[Q]
+|C XDOu=MIm=XSOLu[Q] DOb=MIm=SOLl[Q]
+
+||T[dolight] (GR2)
+|N FAu MIm
+|N REm DOb
+|N FAu
+|N ↓LAu MIm
+
+|N REm
+|N ↓FAu DOb
+|N SIb REm FAu MIm
+|N DOb
+
+||T[dovlight] (GR1)
+|c FAu=XLAu=DOb[Q] |n 2xLAu
+|N MIm
+|c REm=XFAu=LAb[Q] |n 2xFAu
+|N DOb
+
+|c SIb=XREm=FAu[F] |n 2xREm
+|n LAb
+|1
+|n SIb REm
+|n FAu MIm
+|N DOb
+
+||T[dolight] (GR3)
+|n LAu
+|n 2xDOu
+|n SOLu
+|1
+|n FAu
+|n 2xLAu
+|n MIm
+|1
+
+|n REm
+|n 2xFAu
+|n DOb
+|1
+|n SIb REm
+|n FAu
+|C XDOu=MIm=SOLu
