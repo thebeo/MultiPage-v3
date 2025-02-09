@@ -166,7 +166,40 @@
     % Result variables at the Page level
     \tl_clear_new:N \l__Class_tl % Content Class
     \tl_clear_new:N \l__CleanContent_tl % The content itself
+    \tl_clear_new:N \l__ContentColor_tl % The color itself
 
+     % Extract Color just after the class or jyst at the begining
+     \regex_extract_once:nVN {^.\[([^)]*)\]|^\[([^)]*)\]} \l__Content_tl \l__Regex_seq
+     
+	     % Trace
+	     \iow_term:n {ParseContent-extract color}
+	     \tl_show:N \l__Content_tl
+	     \seq_show:N \l__Regex_seq         
+     
+     \seq_if_empty:NTF \l__Regex_seq
+     {}% no color 
+     {% yes color found
+     	
+     	%merge Find 1 in seq2 and Find 2 in seq 3
+     	\seq_remove_all:Nn \l__Regex_seq {} 
+     
+     	\tl_set:Ne \l__ContentColor_tl {\seq_item:Nn \l__Regex_seq 2}
+     	
+     	% delete color from l__LineTitle_tl
+     	\tl_replace_once:NVn \l__Content_tl \l__ContentColor_tl {}
+     	
+     	% clean color []
+     	\tl_replace_all:Nnn \l__Content_tl {[} {}
+     	\tl_replace_all:Nnn \l__Content_tl {]} {}                    
+     }
+     
+	     % Trace~
+	     \iow_term:n {ParseContent-after extract color}
+	     \tl_show:N \l__Content_tl
+	     \tl_show:N \l__ContentColor_tl
+	     \seq_show:N \l__Regex_seq  
+     
+     
      % Extract Class Before the first space (if len=1)
     \regex_extract_once:nVN {^(.*?)\s|^(.)$} \l__Content_tl \l__Regex_seq
     \seq_remove_all:Nn \l__Regex_seq {} % try to merge find 1 and Find 2

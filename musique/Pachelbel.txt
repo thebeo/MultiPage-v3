@@ -118,16 +118,17 @@
 |C SIb=XREm=FAl[Q] SIb=REm=FAl[Q]U
 |C DOb=MIm=XSOLu DOb=MIm=SOLu[F]U
 
-||T[dolight] (A+↑arp)
-|C XFAu=LAu=XDOu[Q] FAu=LAu=DOb[Q]U
-|C XDOu=XMIm=SOLu[F] DOb=MIm=SOLu[F]
-|C XREm=FAu=XLAu[Q] REm=FAu=LAb[Q]
-|C XLAu=XDOu=MIm[F] LAb=DOb=MIm[F]
 
-|C XSIb=REm=XFAu[Q] SIb=REm=FAl[Q]
-|C XFAu=XLAu=DOb[F] FAl=LAb=DOb[F]
-|C XSIb=REm=XFAu[Q] SIb=REm=FAl[Q]
-|C XDOu=MIm=XSOLu[Q] DOb=MIm=SOLl[Q]
+||T[dolight] (A+↑arp)
+|O LAu DOb FAu LAu 
+|O SOLu- DOb- MIm- SOLu
+|O FAu LAb REm FAu
+|O MIm- LAb- DOb- MIm
+
+|O REm- FAl- SIb- REm
+|O DOb- FAl- LAb- DOb
+|O REm-  FAl- SIb- REm
+|O MIm- SOLl- DOb- MIm
 
 ||T[dolight] (GR2)
 |N FAu MIm

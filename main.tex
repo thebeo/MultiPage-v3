@@ -45,29 +45,33 @@
 % + suite de contenus
 %
 % CONTENU= |
-% |O = Phrase scale =1 - 2 col
-% |o = Phrase scale=.5 - 1 col
-% |C = suite de Chords - 2 col
-% |c = suite de Chords - 1 col
-% |M = Master- 2 col
-% |m = Master - 1 col
-% |N = suite de Notes séparateur de block - 2 col
-% |n = suite de Notes séparateur de block - 1 col
-% |S = suite de symboles (commandes latex) - 2 col
-% |s = suite de symboles (commandes latex) - 1 col
+% |O[color] = Phrase scale =1 - 2 col
+% |o[color] = Phrase scale=.5 - 1 col
+% |C[color] = suite de Chords - 2 col
+% |c[color] = suite de Chords - 1 col
+% |M[color] = Master- 2 col
+% |m[color] = Master - 1 col
+% |N[color] = suite de Notes séparateur de block - 2 col
+% |n[color] = suite de Notes séparateur de block - 1 col
+% |S[color] = suite de symboles (commandes latex) - 2 col
+% |s[color] = suite de symboles (commandes latex) - 1 col
 % | = identique au précedant defaut N
-% |1 ou 2 = une ou deux colonnes vide
+% |1 ou 2[color] = une ou deux colonnes vide
 %
 % 
 %
 %
 % Table
-% 	TODO Couleur par demi-tableau [color-color] or |O[color]
+% 		Couleur par content  |O[color]
+%			What if no color (linecolor or previous contentcolor )
+%			same Color on the ligne with title
 %
 % Dico
 %   Ajouter nom à Shape
-%	split Note & Chord 
+%	Split Note & Chord 
 %   Chord clean 2xSpace
+%   Align Note order between Chord and Double
+%   Align sizes between N & n
 %
 %   Add text in Notes
 %  
@@ -102,7 +106,7 @@
 	
 		
     %\Pages{musique/itsumo.txt}
-   % \Pages{musique/Lucid Dream.txt}
+    %\Pages{musique/Lucid Dream.txt}
     \Pages{musique/Pachelbel.txt}
 	
 	

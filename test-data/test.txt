@@ -1,4 +1,7 @@
-% comment
-|||D (test with inversion)
-||T
-|C DOb=MIm=SOLu[F] DOb=MIm=SOLu[T] DOb=MIm=SOLu[Q]
+|||D(Lucid Dream) 
+
+||T(FA)()(RE)
+|O[falight] FAu- REm >
+|O[falight] FAu MIm DOb REm 
+|2
+|2

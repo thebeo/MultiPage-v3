@@ -36,6 +36,7 @@
     
     \seq_clear_new:N \l__allClass_seq
     \seq_clear_new:N \l__allCleanContent_seq
+    \seq_clear_new:N \l__allContentColor_seq
 
     % at the Page level
     \tl_clear_new:N \l__PageContent_tl
@@ -51,6 +52,7 @@
     \tl_clear_new:N \l__CurrentClass_tl
     \tl_clear_new:N \l__ContentClass_tl
     \tl_clear_new:N \l__Content_tl
+    \tl_clear_new:N \l__ContentColor_tl
     
     
     % PARSE
@@ -101,6 +103,8 @@
                                 % store at the Content level
                                 \seq_put_right:NV \l__allClass_seq \l__Class_tl
                                 \seq_put_right:NV \l__allCleanContent_seq \l__CleanContent_tl
+                                \seq_put_right:NV \l__allContentColor_seq \l__ContentColor_tl
+                                
                             }
                         }
                     }
@@ -119,6 +123,7 @@
     
         \seq_show:N \l__allClass_seq
         \seq_show:N \l__allCleanContent_seq
+        \seq_show:N \l__allContentColor_seq
 
     % DRAW
 
@@ -167,12 +172,14 @@
                 \int_set:Nn \l__contentNB_int {\l__contentNB_tl}
                 \int_while_do:nn {\l__contentNB_int > 0}
                     {
-                    % read and consume the Class & Content
+                    % read and consume the Class, Content & Color
                     \seq_pop_left:NN \l__allClass_seq \l__ContentClass_tl
                     \seq_pop_left:NN \l__allCleanContent_seq \l__Content_tl
+                    \seq_pop_left:NN \l__allContentColor_seq \l__ContentColor_tl
+                    
 
                     % Draw Content with Class
-					\DrawContent{\l__ContentClass_tl}{\l__Content_tl}
+					\DrawContent{\l__ContentClass_tl}{\l__Content_tl}{\l__ContentColor_tl}
 					\tl_put_right:Ne \l__PageContent_tl { \l__DrawableContent_tl}
 
                      % mandatory
@@ -197,14 +204,17 @@
 \ExplSyntaxOff
 
 \ExplSyntaxOn
-% DrawContent with the right class {Class}{Content}
-\NewDocumentCommand\DrawContent{mm}
+% DrawContent with the right class {Class}{Content}{ContentColor}
+\NewDocumentCommand\DrawContent{mmm}
 {
 	 % Temp variables
 	\tl_clear_new:N \l__TheClass_tl
 	\tl_set:Ne \l__TheClass_tl {#1}
 	\tl_clear_new:N \l__TheContent_tl
 	\tl_set:Ne \l__TheContent_tl {#2}
+	\tl_clear_new:N \l__TheColor_tl
+	\tl_set:Ne \l__TheColor_tl {#3}
+	
 
 
 	% Result variables at the Content level
@@ -235,29 +245,29 @@
 	\str_case:NnTF \l__TheClass_tl % what Class
 	{
 	{O}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Phrase{\l__TheContent_tl}[1.0]}}				}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Phrase{\l__TheContent_tl}[1.0]}{\l__TheColor_tl}}				}
 	{o}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Phrase{\l__TheContent_tl}[0.5]}}	}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Phrase{\l__TheContent_tl}[0.5]}{\l__TheColor_tl}}				}
 	{C}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Cadence{\l__TheContent_tl}[1.0]}}	}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Cadence{\l__TheContent_tl}[1.0]}{\l__TheColor_tl}}			}
 	{c}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Cadence{\l__TheContent_tl}[0.5]}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Cadence{\l__TheContent_tl}[0.5]}{\l__TheColor_tl}}			}
 	{M}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Master{\l__TheContent_tl}[1.0]}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Master{\l__TheContent_tl}[1.0]}{\l__TheColor_tl}}			}
 	{m}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Master{\l__TheContent_tl}[0.5]}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Master{\l__TheContent_tl}[0.5]}{\l__TheColor_tl}}			}
 	{N}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\NotesBox{\l__TheContent_tl}[1.0]}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\NotesBox{\l__TheContent_tl}[1.0]}{\l__TheColor_tl}}			}
 	{n}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\NotesBox{\l__TheContent_tl}[0.5]}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\NotesBox{\l__TheContent_tl}[0.5]}{\l__TheColor_tl}}			}
 	{S}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Shapes{\l__TheContent_tl}[1.0]}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Shapes{\l__TheContent_tl}[1.0]}{\l__TheColor_tl}}		}
 	{s}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Shapes{\l__TheContent_tl}[0.5]}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Shapes{\l__TheContent_tl}[0.5]}{\l__TheColor_tl}}		}
 	{2}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{}{\l__TheColor_tl}}		}
 	{1}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{}{\l__TheColor_tl}}		}
 	
 	}
 	{% additional things if found
@@ -270,8 +280,9 @@
         % Trace
 		\iow_term:n {\DrawContent}
 		\tl_show:N \l__TheClass_tl
-		\tl_show:N \l__TheContent_tl 
-		\tl_show:N \l__DrawableContent_tl
+		\tl_show:N \l__TheContent_tl
+		\tl_show:N \l__TheContent_tl  
+		\tl_show:N \l__TheColor_tl
 }
 \ExplSyntaxOff
 
@@ -395,16 +406,35 @@
     \Block[l]{1-4}{\textbf{#1}}&&&&
 }
 
-% Usage BTwo - Block of 2 Columns {Content}
-\NewDocumentCommand\BTwo{m}{
-%    \Block[fill=red!10]{1-2}{#1}&&
-    \Block{1-2}{#1}&&
+% Usage BTwo - Block of 2 Columns {Content}{Color}
+\ExplSyntaxOn
+\NewDocumentCommand\BTwo{mm}{
+
+\tl_if_empty:nTF {#2} 
+	{% empty no specific Color
+		 \Block{1-2}{#1}&&
+	}
+	{% yes specific color
+		\Block[fill=#2]{1-2}{#1}&&
+	}
+	 
 }
-% Usage BOne - Block of 1 Columns {Content}
-\NewDocumentCommand\BOne{m}{
-% \Block[fill=red!10]{1-1}{#1}&
- \Block{1-1}{#1}&
+\ExplSyntaxOff
+
+% Usage BOne - Block of 1 Columns {Content}{Color}
+\ExplSyntaxOn
+\NewDocumentCommand\BOne{mm}{
+
+\tl_if_empty:nTF {#2} 
+	{% empty no specific Color
+		 \Block{1-1}{#1}&
+	}
+	{% yes specific color
+	 	\Block[fill=#2]{1-1}{#1}&
+	}
 }
+\ExplSyntaxOff
+
 % Usage BTa/b/c - Text Block 1,2 or 3 lignes {Content}[Content][Content]
 \NewDocumentCommand\BTa{m O{1.0}}{\scalebox{#2}{\tikz[baseline=0.ex]{
     \begin{scope}[node distance=0.4ex,inner sep=0pt,node font=\large]     
