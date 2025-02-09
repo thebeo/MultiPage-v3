@@ -1,7 +1,17 @@
-|||D (Pachelbel)
+|||D (Pachelbel page 1)
 
+||T (Theme B contrepoint)()(theme A cantus firmus)
+|o[falight] FAu (F) |o[dolight] DOb (C)
+|o[relight] REm (Dm) |o[lalight] LAb (Am)
+|o[silight] SIb (Bd) |o[falight] LAb (F)
+|o[silight] SIb (Bd) |o[dolight] DOb (C)
 
-||T[falight] (A+T)
+|o[falight] LAu (F)  |o[dolight] SOLu (C)
+|o[relight] FAu (Dm) |o[lalight] MIm (Am)
+|o[silight] REm (Bd) |o[falight] DOb (F)
+|o[silight] REm (Bd) |o[dolight] MIm (C)
+
+||T[falight] (Theme A + Tierce)
 |O LAu!FAu- LAu (F)
 |O SOLu!MIm SOLu (C)
 |O FAu!REm- FAu (Dm)
@@ -12,7 +22,7 @@
 |O REm!SIb- REm (Bb)
 |O MIm!DOb MIm (C)
 
-||T[dolight] (CP A+B)
+||T[dolight] (Contrepoint A + B)
 |O FAu!LAu FAu (F)
 |O DOb!SOLu DOb (C)
 |O REm!FAu REm (Dm)
@@ -23,11 +33,11 @@
 |O SIb!REm- SIb (Bb)
 |O DOb!MIm DOb (C)
 
-||T[relight] (Pach.)
+||T[relight] (Theme Pachelbel)
 |O FAu!DOb FAu (F)
 |O MIm!DOb MIm (C)
 |O REm!LAb REm (Dm)
-|O DOb!LAb DOb (Am)
+|O DOb!LAb- DOb (Am)
 
 |O REm!SIb- REm (Bb)
 |O DOb!LAb DOb (F)
@@ -46,9 +56,9 @@
 |O SOLu!MIm SOLu (C)
 
 
-|||D (Pachelbel)
+|||D (Pachelbel page 2)
 
-||T (A+T+1)
+||T (Theme A + Tierce + Quinte)
 |O LAu!FAu- DOu (F)
 |O SOLu!MIm DOu (C)
 |O FAu!REm- LAu (Dm)
@@ -59,7 +69,7 @@
 |O REm!SIb- FAu (Bb)
 |O MIm!DOb SOLu (C)
 
-||T (F d'A)
+||T (Feuille d'Automne)
 |O LAu=FAu LAu SOLu FAu (F)
 |O SOLu!DOb MIm (C)
 |O FAu!REm FAu- SOLu- LAu (Dm)
@@ -105,7 +115,7 @@
 |O FAu 2xMIm FAu
 
 
-|||D (Pachelbel)
+|||D (Pachelbel page 3)
 
 ||T[dovlight] (↑R+T)
 |C FAu=XLAu=DOb[Q] FAu=LAu=DOb[Q]U

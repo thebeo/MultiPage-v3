@@ -1,0 +1,206 @@
+\def\dicover{V496}
+
+\usepackage{tikz} % dessin
+\usetikzlibrary{arrows.meta,bending,shapes.geometric,shapes.misc,positioning}
+\usepackage{xparse} % for NewDocumentCommand
+
+%%%%
+\input{chord/chparse.tex}
+%%%%
+
+
+%%%%%%
+% Chord
+%%%%%%
+
+% Usage \ST{B}{M}{H}[scale] - draw a stac 3 notes
+\NewDocumentCommand\ST{mmm O{1.0}}{\scalebox{#4}{\tikz[baseline=0.ex]{
+    \begin{scope}[node distance=0.4ex,inner sep=0pt,node font=\Large]
+        \node[anchor=base] (M) at (0,0) {#2};
+        \node [above=of M,anchor=south] (T) {#3};
+        \node [below=of M,anchor=north] (B) {#1};
+        
+        \node [above=of T,anchor=south] (H) {};% extra space at TOP
+        \node [below=of B,anchor=north] (L) {};% extra space at BOTTOM
+
+    \end{scope}
+    }}}
+
+% usage: \LS{note F}[scale] - Lateral symbol of the Fundamental decoration
+\newdimen\LSsize
+\LSsize=1ex
+\NewDocumentCommand\LS{O{1.0}}{\scalebox{#1}{\tikz[baseline=(B.base)]{
+    \node (T) at (0,\LSsize) {};
+    \node (B) at (0,-\LSsize) {};
+    \path[draw=black,line width=.25pt](T)--(B);
+    }}}
+
+% usage: \FU{note F}[scale] - Fundamental decoration 
+\NewDocumentCommand\FU{m O{1.0}}{\LS[#2]#1\LS[#2]}
+
+
+\ExplSyntaxOn
+%Usage:  \CH{note F}{note T}{note Q}{inversion}[scale] - draw the right Stack depending of inversion F/T/Q
+\NewDocumentCommand\CH{mmmm O{1.0}}
+{
+	  \tl_set:Ne \l__Inversion_tl {#4} % fill by Cadence
+       
+       % Trace
+		\iow_term:n {CH}
+		\tl_show:N \l__Inversion_tl
+
+	\str_case:NnTF #4 % what Inversion
+	{
+		{F}
+			{
+				\iow_term:n {CH-F}
+				\ST{\FU{#1}[#5]}{#2}{#3}
+			}
+		{T}
+			{
+				\iow_term:n {CH-T}
+				\ST{#2}{#3}{\FU{#1}[#5]}
+			}
+		{Q}
+			{
+				\iow_term:n {CH-Q}
+				\ST{#3}{\FU{#1}[#5]}{#2}
+			}
+	}
+	{% additional things if found
+	}
+	{% additional things if other
+	}
+		
+}
+\ExplSyntaxOff
+
+% usage: \CE{color}[scale] - Empty in chord
+%\NewDocumentCommand\CE{m}{\color{#1}{X}}
+\newdimen\CEsize
+\CEsize=7pt
+\newdimen\CEwidth
+\CEwidth=0.2pt
+\NewDocumentCommand\CE{m O{1.0}}{\scalebox{#2}{\tikz[baseline=-\CEsize]{
+    \path[draw=#1,line width=\CEwidth,-] (0,-\CEsize)--(\CEsize,\CEsize);
+    \path[draw=#1,line width=\CEwidth,-] (0,\CEsize)--(\CEsize,-\CEsize);
+    }}}
+
+\newdimen\ARPArrowSize
+\ARPArrowSize=3ex
+\newdimen\ARPArrowBAseLine
+\ARPArrowBAseLine=-1ex
+% usage: \UAC[color][scale] - Up Arrow for arpege
+\NewDocumentCommand\UAC{O{black} O{1.0}}{\scalebox{#2}{\tikz[baseline=-\ARPArrowSize/2,,>={Stealth}]{
+    \path[draw=#1,line width=1.5pt,->](0ex,-\ARPArrowSize+\ARPArrowBAseLine)--(0ex,\ARPArrowSize+\ARPArrowBAseLine);
+    }}}
+% usage: \DAC[color][scale] - Down Arrow for arpege
+\NewDocumentCommand\DAC{O{black} O{1.0}}{\scalebox{#2}{\tikz[baseline=-\ARPArrowSize/2,>={Stealth}]{\path[draw=#1,line width=1.5pt,->](0ex,\ARPArrowSize+\ARPArrowBAseLine)--(0ex,-\ARPArrowSize+\ARPArrowBAseLine);}}}
+
+% usage: \UCA{note F}{note T}{note Q}{F or T or Q}[scale]  - Arpege UP 
+\NewDocumentCommand\UCA{mmmm O{1.0}}{\UAC\CH{#1}{#2}{#3}{#4}[#5]}
+% usage: \DCA{note F}{note T}{note Q}[F or T or Q][scale]  - Arpege down 
+\NewDocumentCommand\DCA{mmmm O{1.0}}{\DAC\CH{#1}{#2}{#3}{#4}[#5]}
+
+%%%%%%
+% Cadence
+%%%%%%
+
+% usage: \Cadence{Chord ... Chord}[scale]  - Several Chords in a string 
+\ExplSyntaxOn
+\NewDocumentCommand\Cadence{m O{1.0}}
+{
+    \ParseCadence{#1}
+    
+    
+    % Parse each Chord
+    \seq_map_indexed_inline:Nn \l__Cadence_seq   
+    {
+        \tl_set:Ne \l__CleanF_tl {\seq_item:Nn \l__CleanF_seq {##1}}
+        \tl_set:Ne \l__CleanT_tl {\seq_item:Nn \l__CleanT_seq {##1}}
+        \tl_set:Ne \l__CleanQ_tl {\seq_item:Nn \l__CleanQ_seq {##1}}
+        
+        \str_set:Ne \l__MuteF_bool_str {\seq_item:Nn \l__MuteF_bool_seq {##1}}
+        \str_set:Ne \l__MuteT_bool_str {\seq_item:Nn \l__MuteT_bool_seq {##1}}
+        \str_set:Ne \l__MuteQ_bool_str {\seq_item:Nn \l__MuteQ_bool_seq {##1}}
+        
+        \tl_set:Ne \l__Inversion_tl {\seq_item:Nn \l__Inversion_seq {##1}}
+    
+        \tl_set:Ne \l__Arpege_tl {\seq_item:Nn \l__Arpege_seq {##1}}
+        \tl_set:Ne \l__Arpege_bool_str {\seq_item:Nn \l__Arpege_bool_seq {##1}}
+        
+        % constante in fact to test bool
+        \str_set:Nn \l__true_str {true}
+    
+        % create the 3 Notes (Muted or not Muted)
+        \str_if_eq:NNTF \l__MuteF_bool_str \l__true_str
+            {% Generate the XClean Note
+            \tl_set_eq:NN \l__F_tl \l__CleanF_tl
+            \tl_put_left:Nn \l__F_tl {dcX}
+                % If not exist replace by the unknown note
+                \cs_if_exist:cTF {\l__F_tl}
+                {}%ok
+                {\tl_set:Nn \l__F_tl {dcXUKw}}                
+            }
+            {% Generate the Clean note
+            \tl_set_eq:NN \l__F_tl \l__CleanF_tl
+            \tl_put_left:Nn \l__F_tl {dc} 
+                % If not exist replace by the unknown note
+                \cs_if_exist:cTF {\l__F_tl}
+                {}%ok
+                {\tl_set:Nn \l__F_tl {dcUKw}}                
+            }
+        \str_if_eq:NNTF \l__MuteT_bool_str \l__true_str
+            {% Generate the XClean Note
+            \tl_set_eq:NN \l__T_tl \l__CleanT_tl
+            \tl_put_left:Nn \l__T_tl {dcX} 
+                % If not exist replace by the unknown note
+                \cs_if_exist:cTF {\l__T_tl}
+                {}%ok
+                {\tl_set:Nn \l__T_tl {dcXUKw}}                
+            }
+            {% Generate the Clean note
+            \tl_set_eq:NN \l__T_tl \l__CleanT_tl
+            \tl_put_left:Nn \l__T_tl {dc} 
+                % If not exist replace by the unknown note
+                \cs_if_exist:cTF {\l__T_tl}
+                {}%ok
+                {\tl_set:Nn \l__T_tl {dcUKw}}                
+            }
+        \str_if_eq:NNTF \l__MuteQ_bool_str \l__true_str
+            {% Generate the XClean Note
+            \tl_set_eq:NN \l__Q_tl \l__CleanQ_tl
+            \tl_put_left:Nn \l__Q_tl {dcX} 
+                % If not exist replace by the unknown note
+                \cs_if_exist:cTF {\l__Q_tl}
+                {}%ok
+                {\tl_set:Nn \l__Q_tl {dcXUKw}}
+            }
+            {% Generate the Clean note
+            \tl_set_eq:NN \l__Q_tl \l__CleanQ_tl
+            \tl_put_left:Nn \l__Q_tl {dc} 
+                % If not exist replace by the unknown note
+                \cs_if_exist:cTF {\l__Q_tl}
+                {}%ok
+                {\tl_set:Nn \l__Q_tl {dcUKw}}
+            }
+        
+        % Draw \CE, \DCA or \UCA
+        \str_if_eq:NNTF \l__Arpege_bool_str \l__true_str
+        {% Yes Arpege
+            \str_set:Nn \D {D} 
+            \str_if_eq:NNTF \l__Arpege_tl \D
+            { % Down
+                \DCA{\use:c {\l__F_tl}}{\use:c {\l__T_tl}}{\use:c {\l__Q_tl}}{\l__Inversion_tl}[#2] \quad             
+            }
+            { % UP
+                \UCA{\use:c {\l__F_tl}}{\use:c {\l__T_tl}}{\use:c {\l__Q_tl}}{\l__Inversion_tl}[#2] \quad
+            }
+        }
+        {% NO Arpege
+            \CH{\use:c {\l__F_tl}}{\use:c {\l__T_tl}}{\use:c {\l__Q_tl}}{\l__Inversion_tl}[#2] \quad
+        }    
+    }
+}
+\ExplSyntaxOff
+
