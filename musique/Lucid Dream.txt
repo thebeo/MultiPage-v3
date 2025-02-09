@@ -42,7 +42,7 @@
 |O[lalight] LAb REm FAu MIm >
 |O[lalight] MIm REm
 
-|O[sollight] DOb REm /SOLu=FAu MIm>
+|O[sollight] DOb REm /FAu=SOLu MIm>
 |O[sollight] FAu >
 |O[sollight] LAb REm FAu MIm >
 |O[sollight] DOb REm
@@ -63,13 +63,13 @@
 |1
 
 ||T(Double simple)()(Double complexe)
-|O[relight] DOb REm 2xFAu=REm >
-|O[relight] FAu!REd >
+|O[relight] DOb REm 2xREm=FAu >
+|O[relight] REd!FAu >
 |O[relight] LAb REm FAu MIm >
 |O[relight] DOb REm
 
-|O[falight] DOb REm 2xFAu=REm >
-|O[falight] FAu!REd >
+|O[falight] DOb REm 2xREm=FAu >
+|O[falight] REd!FAu >
 |O[falight] LAb REm FAu MIm >
 |O[falight] MIm- FAu MIm REm- DOb REm
 
@@ -106,28 +106,28 @@
 
 ||T(4xRE)() (3xRE 4xDbl)
 |O[relight] DOb 4xREm
-|O[relight] FAu!REd >
-|O[relight] LAb REm- FAu MIm=DOb >
+|O[relight] REd!FAu >
+|O[relight] LAb REm- FAu DOb=MIm >
 |O[relight] DOb REm
 
 |O[falight] DOb 2xREm
-|O[falight] REm=LAb- MIm=DOb- 2xFAu=REm FAu!REd >
+|O[falight] REm=LAb- MIm=DOb- 2xREm=FAu REd!FAu >
 |O[falight] LAb REm- FAu MIm >
 |O[falight] 2xLAu- FAu- REm
 
 ||T(Saut RE)() (/montée LA)
 |O[relight] DOb REm
-|O[relight] REh DOu LAu=REm FAu >
+|O[relight] REh DOu REm=LAu FAu >
 |O[relight] LAb REm FAu MIm >
 |O[relight] DOb REm
 
-|O[lalight] DOb REm /SOLu=FAu MIm>
+|O[lalight] DOb REm /FAu=SOLu MIm>
 |O[lalight] FAu >
 |O[lalight] LAb REm FAu MIh >
 |O[lalight] REh- DOu- LAu
 
 ||T(2x LA /DO)() (2xMI FADO)
-|O LAu /DOu=LAu (2x)
+|O LAu /LAu=DOu (2x)
 |O LAu FAu
 |O LAb REm FAu MIm >
 |O MIm REm
@@ -139,14 +139,14 @@
 
 ||T(Tout double)() (DO)
 |C LAb=DOb=XMIm[F] REm=XFAu=LAb[Q] DOb=MIm=XSOLu[F]
-|O FAu!REm FAu!REd
+|O REm!FAu REd!FAu
 |O LAb REm FAu >
 |C DOb=MIm=XSOLu[F] REm=FAu=XLAu[F] DOb=MIm=XSOLu[F] REm=XFAu=LAb[Q]
 
 |O DOb REm FAu >
 |O LAb REm FAu MIm >
 |O DOb LAb >
-|O FAu!REm MIm DOb REm
+|O REm!FAu MIm DOb REm
 
 ||T(fin)() ()
 |O /DOb MIm

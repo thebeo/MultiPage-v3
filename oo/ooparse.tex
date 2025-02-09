@@ -159,7 +159,7 @@
             \seq_set_split:Nnx \l__Alternate_seq {~} { \l__Alternate_tl }
                            
              % clean (double space create empty)
-            \seq_remove_all:Nn \l__Shape_seq {}
+            \seq_remove_all:Nn \l__Alternate_seq {}
             
             % Trace
             \iow_term:n {Alternate}
@@ -379,7 +379,7 @@
  
 
     % TEST and collect Double sep = = then !
-    \parse_SplitandSearch:NnnNN \l__Chain_tl {=} {A} \l__Double_bool \l__DoubleNote_tl
+    \parse_SplitandSearch:NnnNN \l__Chain_tl {=} {B} \l__Double_bool \l__DoubleNote_tl
     % somme additional tasks if found
     \bool_if:NTF \l__Double_bool 
         {% yes found
@@ -387,7 +387,7 @@
         }
         {% no
             % TEST and collect Double sep = ! 
-            \parse_SplitandSearch:NnnNN \l__Chain_tl {!} {A} \l__Double_bool \l__DoubleNote_tl
+            \parse_SplitandSearch:NnnNN \l__Chain_tl {!} {B} \l__Double_bool \l__DoubleNote_tl
             % somme additional tasks if found
             \bool_if:NTF \l__Double_bool 
                 {% yes found

@@ -1,6 +1,6 @@
 |||D (Pachelbel page 1)
 
-||T (Theme B contrepoint)()(theme A cantus firmus)
+||T (Theme B contrepoint)()(Theme A cantus firmus)
 |o[falight] FAu (F) |o[dolight] DOb (C)
 |o[relight] REm (Dm) |o[lalight] LAb (Am)
 |o[silight] SIb (Bd) |o[falight] LAb (F)
@@ -11,74 +11,74 @@
 |o[silight] REm (Bd) |o[falight] DOb (F)
 |o[silight] REm (Bd) |o[dolight] MIm (C)
 
-||T[falight] (Theme A + Tierce)
-|O LAu!FAu- LAu (F)
-|O SOLu!MIm SOLu (C)
-|O FAu!REm- FAu (Dm)
-|O MIm!DOb MIm (Am)
+||T[favlight] (Theme A + Tierce)
+|O[falight] FAu!LAu- LAu (F)
+|O[dolight] MIm!SOLu SOLu (C)
+|O[relight] REm!FAu- FAu (Dm)
+|O[lalight] DOb!MIm MIm (Am)
 
-|O REm!SIb- REm (Bb)
-|O DOb!LAb- DOb (F)
-|O REm!SIb- REm (Bb)
-|O MIm!DOb MIm (C)
+|O[silight] SIb!REm- REm (Bb)
+|O[falight] LAb!DOb- DOb (F)
+|O[silight] SIb!REm- REm (Bb)
+|O[dolight] DOb!MIm MIm (C)
 
-||T[dolight] (Contrepoint A + B)
-|O FAu!LAu FAu (F)
-|O DOb!SOLu DOb (C)
-|O REm!FAu REm (Dm)
-|O LAb!MIm LAb (Am)
+||T[dovlight] (Contrepoint A + B)
+|O[falight] FAu!LAu FAu (F)
+|O[dolight] DOb!SOLu DOb (C)
+|O[relight] REm!FAu REm (Dm)
+|O[lalight] LAb!MIm LAb (Am)
 
-|O SIb!REm- SIb (Bb)
-|O LAb!DOb LAb (F)
-|O SIb!REm- SIb (Bb)
-|O DOb!MIm DOb (C)
+|O[silight] SIb!REm- SIb (Bb)
+|O[falight] LAb!DOb LAb (F)
+|O[silight] SIb!REm- SIb (Bb)
+|O[dolight] DOb!MIm DOb (C)
 
-||T[relight] (Theme Pachelbel)
-|O FAu!DOb FAu (F)
-|O MIm!DOb MIm (C)
-|O REm!LAb REm (Dm)
-|O DOb!LAb- DOb (Am)
+||T[revlight] (Theme Pachelbel)
+|O[falight] DOb!FAu FAu (F)
+|O[dolight] DOb!MIm MIm (C)
+|O[relight] LAb!REm REm (Dm)
+|O[lalight] LAb!DOb- DOb (Am)
 
-|O REm!SIb- REm (Bb)
-|O DOb!LAb DOb (F)
-|O REm!SIb- REm (Bb)
-|O MIm!DOb MIm (C)
+|O[silight] SIb!REm- REm (Bb)
+|O[falight] LAb!DOb- DOb (F)
+|O[silight] SIb!REm- REm (Bb)
+|O[dolight] DOb!MIm MIm (C)
 
 ||T[dovlight] (4x)
-|O DOu!LAu- DOu (F)
-|O DOu!SOLu DOu (C)
-|O LAu!FAu- LAu (Dm)
-|O LAu!MIm LAu (Am)
+|O[falight] LAu!DOu- DOu (F)
+|O[dolight] SOLu!DOu DOu (C)
+|O[relight] FAu!LAu- LAu (Dm)
+|O[lalight] MIm!LAu LAu (Am)
 
-|O FAu!REm- FAu (Bb)
-|O FAu!DOb FAu (F)
-|O REm!SIb- REm (Bb)
-|O SOLu!MIm SOLu (C)
+|O[silight] REm!FAu- FAu (Bb)
+|O[falight] DOb!FAu FAu (F)
+|O[silight] SIb!REm- REm (Bb)
+|O[dolight] MIm!SOLu SOLu (C)
 
 
 |||D (Pachelbel page 2)
 
 ||T (Theme A + Tierce + Quinte)
-|O LAu!FAu- DOu (F)
-|O SOLu!MIm DOu (C)
-|O FAu!REm- LAu (Dm)
-|O MIm!DOb- LAu (Am)
+|O FAu!LAu- DOu (F)
+|O MIm!SOLu DOu (C)
+|O REm!FAu- LAu (Dm)
+|O DOb!MIm- LAu (Am)
 
-|O REm!SIb- FAu (Bb)
-|O DOb!LAb- FAu (F)
-|O REm!SIb- FAu (Bb)
-|O MIm!DOb SOLu (C)
+|O SIb!REm- FAu (Bb)
+|O LAb!DOb- FAu (F)
+|O SIb!REm- FAu (Bb)
+|O DOb!MIm SOLu (C)
 
 ||T (Feuille d'Automne)
-|O LAu=FAu LAu SOLu FAu (F)
-|O SOLu!DOb MIm (C)
-|O FAu!REm FAu- SOLu- LAu (Dm)
-|O MIm!LAb DOb (Am)
+|O FAu=LAu LAu SOLu FAu (F)
+|O DOb!SOLu MIm (C)
+|O REm!FAu FAu- SOLu- LAu (Dm)
+|O LAb!MIm DOb (Am)
 
-|O REm!SIb REm- MIm- FAu (Bb)
-|O FAu!DOb SIb FAu (F)
-|O FAu=REm DOb REm FAu (Bb)
-|O SOLu!DOb MIm (C)
+|O SIb!REm REm- MIm- FAu (Bb)
+|O DOb!FAu SIb FAu (F)
+|O REm=FAu DOb REm FAu (Bb)
+|O DOb!SOLu MIm (C)
 
 
 ||T (Itsumo-Bass)
@@ -104,12 +104,12 @@
 |O DOb REm- MIm- FAu
 
 ||T (Memories)
-|O FAu=DOb LAb SIb DOb (2x)
-|O MIm!SOLl
+|O DOb=FAu LAb SIb DOb (2x)
+|O SOLl!MIm
 |O LAu- FAu- SOLu (3x)
 |O LAu SOLu FAu
 
-|O REm!SIb REm DOb >
+|O SIb!REm REm DOb >
 |O REm 2xDOb
 |O DOb 3xREm
 |O FAu 2xMIm FAu
@@ -117,7 +117,7 @@
 
 |||D (Pachelbel page 3)
 
-||T[dovlight] (↑R+T)
+||T[dovlight] (Rain and Tears)
 |C FAu=XLAu=DOb[Q] FAu=LAu=DOb[Q]U
 |C DOb=MIm=XSOLu[F] DOb=MIm=SOLu[F]U
 |C REm=XFAu=LAb[Q] REm=FAu=LAb[Q]U
@@ -129,7 +129,7 @@
 |C DOb=MIm=XSOLu DOb=MIm=SOLu[F]U
 
 
-||T[dolight] (A+↑arp)
+||T[dolight] (Theme A + arpege)
 |O LAu DOb FAu LAu 
 |O SOLu- DOb- MIm- SOLu
 |O FAu LAb REm FAu
@@ -140,7 +140,7 @@
 |O REm-  FAl- SIb- REm
 |O MIm- SOLl- DOb- MIm
 
-||T[dolight] (GR2)
+||T[dolight] (Graduation 2)
 |N FAu MIm
 |N REm DOb
 |N FAu
@@ -151,7 +151,7 @@
 |N SIb REm FAu MIm
 |N DOb
 
-||T[dovlight] (GR1)
+||T[dovlight] (Graduation 1)
 |c FAu=XLAu=DOb[Q] |n 2xLAu
 |N MIm
 |c REm=XFAu=LAb[Q] |n 2xFAu
@@ -164,7 +164,7 @@
 |n FAu MIm
 |N DOb
 
-||T[dolight] (GR3)
+||T[dolight] (Graduation 3)
 |n LAu
 |n 2xDOu
 |n SOLu
