@@ -33,10 +33,10 @@
 			\tl_set:Ne \l__ShapeMandatoryPar_tl {\seq_item:Nn\l__ShapeMandatoryPar_seq ##1 }
 			\tl_set:Ne \l__ShapeOptionPar_tl {\seq_item:Nn\l__ShapeOptionPar_seq ##1 }
 			
-			%if CMD do not exist use Unknown shape
+			% if CMD do not exist use Unknown shape or Note
 			\cs_if_exist:cTF{\l__ShapeCmd_tl}
 				{} % exist do nothing
-				{% CMD not exist replace with UK
+				{% CMD not exist replace with UK or Note
 					% try with a Note
 					\tl_put_left:Nn \l__ShapeCmd_tl {dc}					
 					\cs_if_exist:cTF{\l__ShapeCmd_tl}
@@ -49,7 +49,29 @@
 								}
 								{} % reuse parameter
 					 	}					
-				}         
+				}
+				
+			% Sometime (typiquelly FL) the optional parameter is a Note (without dc)
+				\tl_set_eq:NN \l_tmpa_tl \l__ShapeOptionPar_tl
+				% remove \ to support CS with or without \
+				\tl_remove_all:NV  \l_tmpa_tl \c_backslash_str
+				\cs_if_exist:cTF{\l_tmpa_tl} % exist if no \
+				{% exist just rescan and add \
+					% TODO bug if a latex cs not defined by us i.e in
+					\tl_put_left:NV \l_tmpa_tl \c_backslash_str
+					\tl_set_rescan:Nne \l__ShapeOptionPar_tl {} {\l_tmpa_tl}	
+				} 
+				{
+					% try with a Note
+					\tl_put_left:Nn \l_tmpa_tl {dc}			
+					\cs_if_exist:cTF{\l_tmpa_tl}
+					{% exist put the notes
+						\tl_put_left:NV \l_tmpa_tl \c_backslash_str
+						\tl_set_rescan:Nne \l__ShapeOptionPar_tl {} {\l_tmpa_tl}	
+					}
+					{% not a note or a cs do nothing
+					}					
+				}                 
 		     	   	   
 		   % allowed signature : no parameter or if parameter [someting][scale] at the end
 		   % execute with the right parameters

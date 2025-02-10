@@ -1,5 +1,4 @@
 |||D (Test page 1)
 
-||T (oo)
-|S RO{mi} |S RO{fa}[thetext]
-|S RO{re}[\MI]  
+||T (FL)
+|s RO{la}[inside] 

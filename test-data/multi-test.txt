@@ -7,7 +7,7 @@
 |n DOb REm MIm |n DOb REm MIm - FAu SOLu LAu |2
 |N DOb REm MIm - FAu SOLu LAu - SIb DOb
 ||T(s-S test)
-|s RO{mi} | RO{la}[in] |S TD{fa}[in] 
+|s RO{mi} | RO{la}[inside] |S TD{fa}[inside] 
 |S UA{black} DA{black} UDA{black} | XX{si}
 ||T(M test)(m test)
 |M REd GOq GOs GOq GOs GOq GOs REd |2 |m [L] REd FAl SIb MIm SOLu LAh GOq GOs

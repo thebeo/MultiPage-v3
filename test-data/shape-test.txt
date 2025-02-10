@@ -1,13 +1,13 @@
 |||D(Shape-test)
 ||T(rond)(Triangle droit)(Triangle up)
-|S \RO{mi}[rond] |s \RO{mi} |1
+|S \RO{mi}[rond] |s \RO{mi} | \RO{mi}[\MI]
 |S \TD{la}[droit] |s \TD{mi} |1
 |S \TU{sol}[up] |s \TU{mi} |1
-|2
+|S RO{fa}[avec space] TD{sol}
 ||T(Arrows)(deco)
 |S \UA{fa} \DA{la} \UDA{black}
 |2
-|S \FL{do}[\MIm] \SP \ML{3}[re] \MIm \SP \FL{re} \SP \CR{fa}[text]
+|S \FL{do}[\MIm] \SP \ML{3}[re] \MIm \SP \FL{re} \SP \CR{fa}[\MIm]
 ||T(Unknown)
 |s XX{blue}
 
