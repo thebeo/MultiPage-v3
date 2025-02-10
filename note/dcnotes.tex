@@ -153,7 +153,7 @@
 
 \ExplSyntaxOn
 % usage: \do [gamme]
-\NewDocumentCommand\DO{O{-1}}{\text{\note{do}{do}{#1}}}
+\NewDocumentCommand\DO{O{9}}{\text{\note{do}{do}{#1}}}
 % [size] \text to do nothing
 
 \NewDocumentCommand\dcDOb{O{\text}}
@@ -169,7 +169,7 @@
 \NewDocumentCommand\dcXDOb{O{\text}}{\CE{do}}
 \NewDocumentCommand\dcXDOu{O{\text}}{\CE{do}}
 % usage: \re 
-\NewDocumentCommand\RE{O{0}}{\text{\note{re}{ré}{#1}}}
+\NewDocumentCommand\RE{O{9}}{\text{\note{re}{ré}{#1}}}
 
 \NewDocumentCommand\dcREd{O{\text}}{{#1{\RE[-2]}}}
 \NewDocumentCommand\dcREm{O{\text}}{{#1{\RE[0]}}}
@@ -178,7 +178,7 @@
 \NewDocumentCommand\dcXREm{O{\text}}{\CE{re}}
 \NewDocumentCommand\dcXREh{O{\text}}{\CE{re}}
 % usage: \mi 
-\NewDocumentCommand\MI{O{0}}{\text{\note{mi}{mi}{#1}}}
+\NewDocumentCommand\MI{O{9}}{\text{\note{mi}{mi}{#1}}}
 
 \NewDocumentCommand\dcMIl{O{\text}}{{#1{\MI[-2]}}}
 \NewDocumentCommand\dcMIm{O{\text}}{{#1{\MI[0]}}}
@@ -187,7 +187,7 @@
 \NewDocumentCommand\dcXMIm{O{\text}}{\CE{mi}}
 \NewDocumentCommand\dcXMIh{O{\text}}{\CE{mi}}
 % usage: \fa 
-\NewDocumentCommand\FA{O{+1}}{\text{\note{fa}{fa}{#1}}}
+\NewDocumentCommand\FA{O{9}}{\text{\note{fa}{fa}{#1}}}
 
 \NewDocumentCommand\dcFAl{O{\text}}{{#1{\FA[-2]}}}
 \NewDocumentCommand\dcFAu{O{\text}}{{#1{\FA[+1]}}}
@@ -205,7 +205,7 @@
 \NewDocumentCommand\dcXSOLu{O{\text}}{\CE{sol}}
 \NewDocumentCommand\dcXSOLh{O{\text}}{\CE{sol}}
 % usage: \la 
-\NewDocumentCommand\LA{O{+1}}{\text{\note{la}{la}{#1}}}
+\NewDocumentCommand\LA{O{9}}{\text{\note{la}{la}{#1}}}
 
 \NewDocumentCommand\dcLAb{O{\text}}{{#1{\LA[-1]}}}
 \NewDocumentCommand\dcLAu{O{\text}}{{#1{\LA[+1]}}}
@@ -214,13 +214,13 @@
 \NewDocumentCommand\dcXLAu{O{\text}}{\CE{la}}
 \NewDocumentCommand\dcXLAh{O{\text}}{\CE{la}}
 % usage: \si 
-\NewDocumentCommand\SI{O{-1}}{\text{\note{si}{si}{#1}}}
+\NewDocumentCommand\SI{O{9}}{\text{\note{si}{si}{#1}}}
 
 \NewDocumentCommand\dcSIb{O{\text}}{{#1{\SI[-1]}}}
 \NewDocumentCommand\dcXSIb{O{\text}}{\CE{si}}
 
 % usage: \uk unknown note 
-\NewDocumentCommand\UK{O{0}}{\text{\note{uk}{uk}{#1}}}
+\NewDocumentCommand\UK{O{9}}{\text{\note{uk}{uk}{#1}}}
 
 \NewDocumentCommand\dcUKw{O{\text}}{{#1{\UK[0]}}}
 \NewDocumentCommand\dcXUKw{O{\text}}{\CE{uk}}

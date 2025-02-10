@@ -75,7 +75,7 @@
 			
 				% Trace
 				\iow_term:n {shDrawShapes-end}
-				\tl_show:N \l__Shape_seq
+				\seq_show:N \l__Shape_seq
 				\tl_show:N \l__ShapeCmd_tl 
 				\tl_show:N \l__ShapeMandatoryPar_tl
 				\tl_show:N \l__ShapeOptionPar_tl
@@ -88,18 +88,33 @@
 \newdimen\fgsize
 \fgsize=10ex
 
+%usage \Inside {text}n- formet text inside shape
+
+\ExplSyntaxOn
+\NewDocumentCommand\Inside{m}
+{
+% rescan the #1 to convert from string to tl (ewample \MI is going to be a single token rather than 3 tokens of one letter)		
+\tl_set_rescan:Nne \l__Inside_tl {} {#1}
+
+\l__Inside_tl 
+				
+		% Trace
+		\iow_term:n {Inside}
+		\tl_show:N \l__Inside_tl 
+}
+\ExplSyntaxOff
+
 % usage: \RO {color}[inside][scale] - Rond
 \def\rdsize{\fgsize}
 \newlength{\txtinsidelg}
 \newlength{\txtinsideht}
 
-\NewDocumentCommand\RO{mo O{1.0}}{\IfNoValueTF{#2}{\scalebox{#3}{
-    \tikz[baseline=-0.5ex]
+\NewDocumentCommand\RO{mo O{1.0}}{\IfNoValueTF{#2}{\scalebox{#3}{\tikz[baseline=-0.5ex]
     {
         \path[draw=#1,line width=1pt]  circle(\rdsize/2);
     }}}{\scalebox{#3}{\settowidth{\txtinsidelg}{#2}\settoheight{\txtinsideht}{#2}\tikz[baseline=-0.5ex]{
         \node [draw=#1,line width=1pt, minimum width=\rdsize/2,text width=\txtinsidelg, text height=\txtinsideht,rounded rectangle,inner sep=\rdsize/2-\txtinsideht/2] {};
-        \node at (0,0){{\small{#2}}};
+        \node at (0,0){\Inside{#2}};
     }}}}
 
 % usage: \TD{color}[inside][scale] - triangle right
@@ -109,7 +124,7 @@
 \NewDocumentCommand\TD{mo O{1.0}}{\IfNoValueTF{#2}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
     \path[draw=#1,line width=1pt] (-\tdsize/2,-\tdsize/2)--(-\tdsize/2,\tdsize/2)--(1.2*\tdsize/2,0)--cycle;
     }}}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
-    \path[draw=#1,line width=1pt] (-\tdsize/2,-\tdsize/2)--(-\tdsize/2,\tdsize/2)--(1.2*\tdsize/2,1/4*\tdsize/2)--(1.2*\tdsize/2,-1/4*\tdsize/2)--cycle; \node at (0,0){\small{#2}};
+    \path[draw=#1,line width=1pt] (-\tdsize/2,-\tdsize/2)--(-\tdsize/2,\tdsize/2)--(1.2*\tdsize/2,1/4*\tdsize/2)--(1.2*\tdsize/2,-1/4*\tdsize/2)--cycle; \node at (0,0){\Inside{#2}};
    }}}}
 
 
@@ -121,7 +136,7 @@
     \path[draw=#1,line width=1pt] (-\tusize/2,-\tusize/2)--(\tusize/2,-\tusize/2)--(0,\tusize/2)--cycle;
     }}}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
     \path[draw=#1,line width=1pt] (-\tusize/2,-\tusize/2)--(\tusize/2,-\tusize/2)--(0,\tusize/2)--cycle;
-    \node at (0,-0.5ex){\small{#2}};
+    \node at (0,-0.5ex){\Inside{#2}};
     }}}
 }
 
@@ -135,7 +150,7 @@
 	}}}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
 				\path[draw=#1,line width=2pt] (-\uksize/2,-\uksize/2)--(\uksize/2,\uksize/2);
 				\path[draw=#1,line width=2pt] (-\uksize/2,\uksize/2)--(\uksize/2,-\uksize/2);
-				\node at (0,-0.5ex){\small{#2}};
+				\node at (0,-0.5ex){\Inside{#2}};
 	}}}
 }
 

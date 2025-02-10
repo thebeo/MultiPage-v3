@@ -1,6 +1,5 @@
 |||D (Test page 1)
 
 ||T (oo)
-|O DOb=MIm SOLu (F) 
-||T (chord)
-|C DOb=MIm=SOLu[F]
+|S RO{mi} |S RO{fa}[thetext]
+|S RO{re}[\MI]  
