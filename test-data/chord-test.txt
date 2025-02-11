@@ -1,0 +1,11 @@
+|||D(chord-test)
+||T(Cadence)(simple)
+|C XDOb=MIm=SOLu[T] REm=FAu=XLAu[Q]
+|C XDOb=MIm=SOLu[F] REm=FAu=XLAu[Q]
+|c XDOb=MIm=SOLu[Q] | REm=FAu=XLAu[Q]
+|2
+||T(Arpege)
+|C DOb=MIm=SOLu[F]U DOb=MIm=SOLu[F]D 
+||T(Unknown)
+|C DoB=MIm=SOLu[F] DOb=MIM=SOLu[F]
+

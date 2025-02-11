@@ -1,10 +1,12 @@
 |||D (Full table)
 ||T(T 1)(T 2)(T3)(T4)
 |O FAu 2xDOb (O test) | REd SIb 2xDOb SIb 3xREm SIb DOu SIb (previous test) |o DOu SIb (o test)>
-||T[dolight] (color C-c-void test )(void) (n-void test)(N test) 
+||T[dolight] (color C-c-void test )(void) (p-n test)(P-N test) 
 |C XDOb=MIm=SOLu[T] |c REm=FAu=XLAu[Q] |1 
 |2 |
-|n DOb REm MIm |n DOb REm MIm - FAu SOLu LAu |2
+|p DOb REm MIm |p DOb REm MIm - FAu SOLu LAu
+|n DOb |n MIm - FAu
+|P DOb REm MIm - FAu SOLu LAu - SIb DOb
 |N DOb REm MIm - FAu SOLu LAu - SIb DOb
 ||T(s-S test)
 |s RO{mi} | RO{la}[inside] |S TD{fa}[inside] 

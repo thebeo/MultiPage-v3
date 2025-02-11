@@ -236,6 +236,8 @@
 % |m = Master - 1 col
 % |N = suite de Notes séparateur de block - 2 col
 % |n = suite de Notes séparateur de block - 1 col
+% |P[color] = suite de Notes séparateur de block scale=petit - 2 col
+% |p[color] = suite de Notes séparateur de block scale=petit  - 1 col
 % |S = suite de symboles (commandes latex) - 2 col
 % |s = suite de symboles (commandes latex) - 1 col
 % | = identique au précedant defaut s
@@ -259,6 +261,10 @@
 	{N}
 			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\NotesBox{\l__TheContent_tl}[1.0]}{\l__TheColor_tl}}			}
 	{n}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\NotesBox{\l__TheContent_tl}[1.0]}{\l__TheColor_tl}}			}
+	{P}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\NotesBox{\l__TheContent_tl}[0.5]}{\l__TheColor_tl}}			}
+	{p}
 			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\NotesBox{\l__TheContent_tl}[0.5]}{\l__TheColor_tl}}			}
 	{S}
 			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Shapes{\l__TheContent_tl}[1.0]}{\l__TheColor_tl}}		}
