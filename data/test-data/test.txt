@@ -1,4 +1,4 @@
 |||D (Test page 1)
 
-||T (FL)
-|s RO{la}[inside] 
+||T[content] (FL)
+|o[falight] LAu (F)  |o[dolight] SOLu (C)

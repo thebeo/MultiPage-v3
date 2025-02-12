@@ -163,12 +163,12 @@
     \seq_clear_new:N \l__Regex_seq
     
     
-    % Result variables at the Page level
+    % Result variables at the Content level
     \tl_clear_new:N \l__Class_tl % Content Class
     \tl_clear_new:N \l__CleanContent_tl % The content itself
     \tl_clear_new:N \l__ContentColor_tl % The color itself
 
-     % Extract Color just after the class or jyst at the begining
+     % Extract Color just after the class or just at the begining
      \regex_extract_once:nVN {^.\[([^)]*)\]|^\[([^)]*)\]} \l__Content_tl \l__Regex_seq
      
 	     % Trace
@@ -200,7 +200,7 @@
 	     \seq_show:N \l__Regex_seq  
      
      
-     % Extract Class Before the first space (if len=1)
+    % Extract Class Before the first space (if len=1)
     \regex_extract_once:nVN {^(.*?)\s|^(.)$} \l__Content_tl \l__Regex_seq
     \seq_remove_all:Nn \l__Regex_seq {} % try to merge find 1 and Find 2
     \tl_set:Ne \l__Left_tl {\seq_item:Nn \l__Regex_seq 2}
@@ -213,6 +213,8 @@
         {% Len <> 1 Content
         \tl_set_eq:NN \l__CleanContent_tl \l__Content_tl
         }
+        
+        
 
         % Trace
         \iow_term:n {ParseContent-parse}
@@ -287,7 +289,7 @@
 
     % Extract Class 
     \regex_extract_once:nVN {^(.)\s|^(.)$|^(.)\(|^(.)\[} \l__LineTitle_tl \l__Regex_seq
-    \seq_remove_all:Nn \l__Regex_seq {} % try to merge find 1 and Find 2 and Find 3          
+    \seq_remove_all:Nn \l__Regex_seq {} % put the  find 1 or Find 2 or Find 3  in Find 1  (seq 2)      
     \tl_set:Ne \l__Left_tl {\seq_item:Nn \l__Regex_seq 2}
 
             % Trace
@@ -300,6 +302,7 @@
         {
         {T} % Title with name
             {
+            % extract contents between ()
             \regex_extract_all:nVN {\([^)]*\)} \l__LineTitle_tl \l__Regex_seq
             
                 % Trace

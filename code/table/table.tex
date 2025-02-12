@@ -46,7 +46,11 @@
     \tl_clear_new:N \l__LineColor_tl
     \tl_clear_new:N \l__FullLineTitle_tl
     \int_zero_new:N \l__contentNB_int
+    \int_zero_new:N \l__Toadd_int
     \tl_clear_new:N \l__contentNB_tl
+    \tl_clear_new:N \l__DrawableLine_tl
+    \seq_clear_new:N \l__ColumnColor_seq
+    \seq_clear_new:N \l__TitleColor_seq
 
     % at the content level
     \tl_clear_new:N \l__CurrentClass_tl
@@ -113,7 +117,7 @@
         }
 
         % Trace
-        \iow_term:n {Pages}
+        \iow_term:n {Pages-startdraw}
         \seq_show:N \l__allPageTitle_seq
         \seq_show:N \l__allNbLignebyPage_seq
     
@@ -132,8 +136,7 @@
     {% for each Page
 
         % Parse and Draw Title
-        \ParsePageTitle
-       {##2}
+        \ParsePageTitle{##2}
         \fancyhead[C]{\textbf{\l__CleanPageTitle_tl}}
         
         % Prepare the content to draw clean the content
@@ -145,52 +148,112 @@
         % for each line
         \int_while_do:nn {\l__LineNB_int > 0}
             {
-            % Draw the title line of the line
+            
+            %
+			% Prepare the content row of the line - Nota start to work at the content row to extract the content colors to potentially color the title row
+			%
+			
+			% same color than title row (old spec no longer required with color in title and content)
+			% \tl_put_right:Ne \l__PageContent_tl {\RowColor{\l__LineColor_tl}}
+			
+			\tl_clear_new:N \l__DrawableLine_tl % prepare the content to push later
+			\seq_clear_new:N \l__ColumnColor_seq
+			
+			% consume the number of content
+			% default Class = s
+			\tl_set:Nn \l__CurrentClass_tl {s}
+			\seq_pop_left:NN \l__allNbContentbyLine_seq \l__contentNB_tl
+			\int_set:Nn \l__contentNB_int {\l__contentNB_tl}
+			\int_while_do:nn {\l__contentNB_int > 0}
+			{
+				% read and consume the Class, Content & Color
+				\seq_pop_left:NN \l__allClass_seq \l__ContentClass_tl
+				\seq_pop_left:NN \l__allCleanContent_seq \l__Content_tl
+				\seq_pop_left:NN \l__allContentColor_seq \l__ContentColor_tl
+				
+				% Push Content with Class
+				\DrawContent{\l__ContentClass_tl}{\l__Content_tl}{\l__ContentColor_tl}
+				\tl_put_right:Ne \l__DrawableLine_tl { \l__DrawableContent_tl}
+				
+				% mandatory - next content
+				\int_decr:N \l__contentNB_int
+			}			
+                       % Trace
+						\iow_term:n {Pages-prepareContent}
+						\tl_show:N \l__DrawableLine_tl
+						\seq_show:N \l__ColumnColor_seq
+
+            %
+            % Push the title row of the line
+            %
+            
                 % read and consume the Color
                 \seq_pop_left:NN \l__allLineColor_seq \l__LineColor_tl
-                \tl_put_right:Ne \l__PageContent_tl {\RowColor{\l__LineColor_tl}}
+                
+                % color put at the title level
+                %\tl_put_right:Ne \l__PageContent_tl {\RowColor{\l__LineColor_tl}}
                 
                 % read and consume the title
                 \seq_pop_left:NN \l__allLineTitle_seq \l__FullLineTitle_tl
-                %cparse
+                % parse the LineTitle to extract the titles
                 \ParseLineTitle{\l__FullLineTitle_tl}
-                %cdraw
+                
+                % comprehend the title to 4 if Double Table and to 2 if Half Table
+                % the purpose if to have a full line color w/o rowcolor
+                \bool_if:NTF \l__Half_bool
+	                { \int_set:Nn \l__Toadd_int {2 - \seq_count:N \l__LineTitles_seq}}
+	                { \int_set:Nn \l__Toadd_int {4 - \seq_count:N \l__LineTitles_seq}}
+                                                            
+                \int_while_do:nn {\l__Toadd_int > 0}
+                {
+                	\seq_put_right:Nn \l__LineTitles_seq {}            	
+                	% mandatory next title
+                	\int_decr:N \l__Toadd_int
+                }
+  
+		                
+				% Compute the Title color : either \l__LineColor_tl exept if \l__LineColor_tl="content" in that case color came from content (column 1/5/9/13)
+				\seq_clear_new:N \l__TitleColor_seq
+				
+				\seq_map_indexed_inline:Nn \l__LineTitles_seq
+					{
+							\str_if_eq:VnTF \l__LineColor_tl {content}
+							{%YES
+								\seq_put_right:Ne \l__TitleColor_seq {\seq_item:Ne \l__ColumnColor_seq {1+4*(####1-1)}}  
+							}
+							{%NO
+								\seq_put_right:Ne \l__TitleColor_seq {\l__LineColor_tl}    
+							}
+							
+					}
+	                      % Trace
+						\iow_term:n {Pages-linetitle}
+						\seq_show:N \l__LineTitles_seq
+						\seq_show:N \l__TitleColor_seq				
+                         
+                % push the titles
                 \seq_map_indexed_inline:Nn \l__LineTitles_seq
                     {
-                    \tl_put_right:Ne \l__PageContent_tl {\RowTitle{####2}}
+                   		\tl_put_right:Ne \l__PageContent_tl {\RowTitle{####2}{\seq_item:Nn \l__TitleColor_seq ####1}}
                     }
+                % push EOL
                 \tl_put_right:Ne \l__PageContent_tl {\EOL}
             
-            % Draw the content line of the line
-                 % same color
-                 \tl_put_right:Ne \l__PageContent_tl {\RowColor{\l__LineColor_tl}}
-
-                % consume the number of content
-                % default Class = s
-                \tl_set:Nn \l__CurrentClass_tl {s}
-                \seq_pop_left:NN \l__allNbContentbyLine_seq \l__contentNB_tl
-                \int_set:Nn \l__contentNB_int {\l__contentNB_tl}
-                \int_while_do:nn {\l__contentNB_int > 0}
-                    {
-                    % read and consume the Class, Content & Color
-                    \seq_pop_left:NN \l__allClass_seq \l__ContentClass_tl
-                    \seq_pop_left:NN \l__allCleanContent_seq \l__Content_tl
-                    \seq_pop_left:NN \l__allContentColor_seq \l__ContentColor_tl
+                     
+                %
+                % Push the content row of the line
+                %    
                     
-
-                    % Draw Content with Class
-					\DrawContent{\l__ContentClass_tl}{\l__Content_tl}{\l__ContentColor_tl}
-					\tl_put_right:Ne \l__PageContent_tl { \l__DrawableContent_tl}
-
-                     % mandatory
-                    \int_decr:N \l__contentNB_int
-                    }
-                    \tl_put_right:Ne \l__PageContent_tl {\EOLHline}
+                % Push the content
+            	\tl_put_right:Ne \l__PageContent_tl { \l__DrawableLine_tl}
+                % Push EOL + Horiz. line
+                \tl_put_right:Ne \l__PageContent_tl {\EOLHline}
                 
-                % mandatory
+                % mandatory - next line
                 \int_decr:N \l__LineNB_int
             }
                  
+        % Draw the page
         \bool_if:NTF \l__Half_bool
             {\PageH{\l__PageContent_tl}}
             {\PageD{\l__PageContent_tl}}
@@ -247,33 +310,68 @@
 	\str_case:NnTF \l__TheClass_tl % what Class
 	{
 	{O}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Phrase{\l__TheContent_tl}[1.0]}{\l__TheColor_tl}}				}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Phrase{\l__TheContent_tl}[1.0]}{\l__TheColor_tl}}				
+			     \seq_put_right:NV \l__ColumnColor_seq \l__TheColor_tl
+			     \seq_put_right:NV \l__ColumnColor_seq \l__TheColor_tl
+			}
 	{o}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Phrase{\l__TheContent_tl}[0.5]}{\l__TheColor_tl}}				}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Phrase{\l__TheContent_tl}[0.5]}{\l__TheColor_tl}}
+				 \seq_put_right:NV \l__ColumnColor_seq \l__TheColor_tl
+			}
 	{C}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Cadence{\l__TheContent_tl}[1.0]}{\l__TheColor_tl}}			}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Cadence{\l__TheContent_tl}[1.0]}{\l__TheColor_tl}}			
+			     \seq_put_right:NV \l__ColumnColor_seq \l__TheColor_tl
+				 \seq_put_right:NV \l__ColumnColor_seq \l__TheColor_tl
+			}
 	{c}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Cadence{\l__TheContent_tl}[0.5]}{\l__TheColor_tl}}			}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Cadence{\l__TheContent_tl}[0.5]}{\l__TheColor_tl}}			
+				 \seq_put_right:NV \l__ColumnColor_seq \l__TheColor_tl
+			}
 	{M}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Master{\l__TheContent_tl}[1.0]}{\l__TheColor_tl}}			}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Master{\l__TheContent_tl}[1.0]}{\l__TheColor_tl}}			
+			 	\seq_put_right:NV \l__ColumnColor_seq \l__TheColor_tl
+				\seq_put_right:NV \l__ColumnColor_seq \l__TheColor_tl
+			}
 	{m}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Master{\l__TheContent_tl}[0.5]}{\l__TheColor_tl}}			}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Master{\l__TheContent_tl}[0.5]}{\l__TheColor_tl}}			
+				 \seq_put_right:NV \l__ColumnColor_seq \l__TheColor_tl			
+			}
 	{N}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\NotesBox{\l__TheContent_tl}[1.0]}{\l__TheColor_tl}}			}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\NotesBox{\l__TheContent_tl}[1.0]}{\l__TheColor_tl}}			
+				 \seq_put_right:NV \l__ColumnColor_seq \l__TheColor_tl			
+				 \seq_put_right:NV \l__ColumnColor_seq \l__TheColor_tl			
+			}
 	{n}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\NotesBox{\l__TheContent_tl}[1.0]}{\l__TheColor_tl}}			}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\NotesBox{\l__TheContent_tl}[1.0]}{\l__TheColor_tl}}			
+				 \seq_put_right:NV \l__ColumnColor_seq \l__TheColor_tl			
+			}
 	{P}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\NotesBox{\l__TheContent_tl}[0.5]}{\l__TheColor_tl}}			}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\NotesBox{\l__TheContent_tl}[0.5]}{\l__TheColor_tl}}			
+				 \seq_put_right:NV \l__ColumnColor_seq \l__TheColor_tl
+				 \seq_put_right:NV \l__ColumnColor_seq \l__TheColor_tl			
+			}
 	{p}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\NotesBox{\l__TheContent_tl}[0.5]}{\l__TheColor_tl}}			}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\NotesBox{\l__TheContent_tl}[0.5]}{\l__TheColor_tl}}			
+				 \seq_put_right:NV \l__ColumnColor_seq \l__TheColor_tl			
+			}
 	{S}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Shapes{\l__TheContent_tl}[1.0]}{\l__TheColor_tl}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{\Shapes{\l__TheContent_tl}[1.0]}{\l__TheColor_tl}}		
+				 \seq_put_right:NV \l__ColumnColor_seq \l__TheColor_tl			
+				 \seq_put_right:NV \l__ColumnColor_seq \l__TheColor_tl			
+			}
 	{s}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Shapes{\l__TheContent_tl}[0.5]}{\l__TheColor_tl}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{\Shapes{\l__TheContent_tl}[0.5]}{\l__TheColor_tl}}		
+				 \seq_put_right:NV \l__ColumnColor_seq \l__TheColor_tl			
+			}
 	{2}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{}{\l__TheColor_tl}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BTwo{}{\l__TheColor_tl}}		
+				 \seq_put_right:NV \l__ColumnColor_seq \l__TheColor_tl			
+				 \seq_put_right:NV \l__ColumnColor_seq \l__TheColor_tl			
+			}
 	{1}
-			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{}{\l__TheColor_tl}}		}
+			{	\tl_set:Nn  \l__DrawableContent_tl  {\BOne{}{\l__TheColor_tl}}		
+				 \seq_put_right:NV \l__ColumnColor_seq \l__TheColor_tl			
+			}
 	
 	}
 	{% additional things if found
@@ -405,12 +503,35 @@
 % Usage RowColor - set the line to a bckground color {color}
 \NewDocumentCommand\RowColor{m}{\rowcolor{#1}}
 
-% Usage RowTitle - Print the title of a row {Text}
-\NewDocumentCommand\RowTitle{m}{
-% 	to prepare color
-%    \Block[fill=red!10,l]{1-4}{\textbf{#1}}&&&&
-    \Block[l]{1-4}{\textbf{#1}}&&&&
+% Usage RowTitle - Print the title of a row {Text}{Color}
+\ExplSyntaxOn
+\NewDocumentCommand\RowTitle{mm}{
+
+\tl_if_empty:nTF {#2} 
+	{% empty no specific Color
+		\Block[l]{1-4}{\textbf{#1}}&&&&
+	}
+	{% yes specific color
+		\Block[l,fill=#2]{1-4}{\textbf{#1}}&&&&
+	}
+
 }
+\ExplSyntaxOff
+
+% Usage BFour - Block of 4 Columns {Content}{Color}
+\ExplSyntaxOn
+\NewDocumentCommand\BFour{mm}{
+
+\tl_if_empty:nTF {#2} 
+	{% empty no specific Color
+		\Block{1-4}{#1}&&&&
+	}
+	{% yes specific color
+		\Block[fill=#2]{1-4}{#1}&&&&
+	}
+
+}
+\ExplSyntaxOff
 
 % Usage BTwo - Block of 2 Columns {Content}{Color}
 \ExplSyntaxOn

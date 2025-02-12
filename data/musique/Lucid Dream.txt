@@ -1,6 +1,6 @@
 |||D(Lucid Dream page 1) 
 
-||T(Debut FA)()(Debut RE)
+||T[content] (Debut FA)()(Debut RE)
 |O[falight] FAu- REm >
 |O[falight] FAu MIm DOb REm 
 |2
@@ -12,7 +12,7 @@
 |O[relight] FAu MIm DOb REm 
 
 
-||T(Debut DO)() (Passage par SOL)
+||T[content] (Debut DO)() (Passage par SOL)
 |O[dolight] DOb REm FAu LAu- >
 |O[dolight] FAu MIm FAu >
 |O[dolight] LAb REm FAu MIm >
