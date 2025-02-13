@@ -1,8 +1,8 @@
 |||D(Lucid Dream page 1) 
 
 ||T[content] (Debut FA)()(Debut RE)
-|O[falight] FAu- REm >
-|O[falight] FAu MIm DOb REm 
+|O[falight] FAu REm FAu  >
+|O[falight] 0xFAu MIm DOb REm 
 |2
 |2
 
@@ -25,7 +25,7 @@
 
 
 ||T[content] (Triplet)() (Montée LA)
-|O DOb REm LAu DOu- LAu >
+|O DOb REm LAu DOu LAu >
 |O FAu >
 |O LAb REm FAu MIm >
 |O MIm REm

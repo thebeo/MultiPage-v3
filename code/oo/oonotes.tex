@@ -278,6 +278,10 @@
 
 \newdimen\LW
 \LW=1.5pt
+\def\Angle{60} % bend angle
+\def\LN{1} % loosness
+\newdimen\MD % min distance
+\MD=0.25cm
 
 % Usage ARDraw: Right Arrow Draw {NoteName}{NoteName}{color}{beat}
 \NewDocumentCommand\ARDraw{mmmm}{
@@ -299,10 +303,10 @@
         
         \IfStrEq{#4}{} % if beat
         {% No beat
-            \path[draw=#3,line width=\LW,->] (S) to[bend right] (E);
+            \path[draw=#3,line width=\LW,->] (S) to[bend right=\Angle,relative,min distance=\MD,looseness=\LN] (E);
         }
         {% beat
-            \path[draw=#3,line width=\LW,->] (S) to[bend right] node[fill=white,inner sep=0pt,sloped,midway]{#4} (E);
+            \path[draw=#3,line width=\LW,->] (S) to[bend right=\Angle,relative,min distance=\MD,looseness=\LN] node[fill=white,inner sep=0pt,sloped,midway]{#4} (E);
         } 
     }
 }
@@ -326,10 +330,10 @@
         
         \IfStrEq{#4}{} % if beat
         {% No beat
-            \path[draw=#3,line width=\LW,->] (S) to[bend left] (E);
+            \path[draw=#3,line width=\LW,->] (S) to[bend left=\Angle,relative,min distance=\MD,looseness=\LN] (E);
         }
         {% beat
-            \path[draw=#3,line width=\LW,->] (S) to[bend left] node[fill=white,inner sep=0pt,sloped,midway]{#4} (E);
+            \path[draw=#3,line width=\LW,->] (S) to[bend left=\Angle,relative,min distance=\MD,looseness=\LN] node[fill=white,inner sep=0pt,sloped,midway]{#4} (E);
         } 
 
     }
