@@ -1,7 +1,7 @@
 |||D (Test page 1)
 
-||T[content] () (Debut FA) (Debut RE)
+||T[content] () (Debut FA[la]) (Debut RE)
 |2
 |2
-|O[falight] FAu REm (\RO{fa}) >
+|O[falight] FAu!REm (\RO{fa}) >
 |O[falight] FAu MIm DOb REm 

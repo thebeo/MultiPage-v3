@@ -352,10 +352,20 @@
     \node[shape=isosceles triangle,isosceles triangle stretches,minimum width=4*\extnotesize,anchor=lower side,fill=black,inner sep=\extnotesize/2,rotate=0] (D) at (0:\oofgsize-0.1ex) {};
 }
 
+\ExplSyntaxOn
 \NewDocumentCommand\DrawName{m}{
-    \node[rectangle,anchor=south east] at (\ooextfgsize,-\ooextfgsize) {#1};
-
+	
+	% Temp variables (rescan to execute name if latex)
+	\tl_set_rescan:Nne \l__Name_tl {} {#1}
+	
+	
+		%Trace
+		\iow_term:n {DrawName}
+		\tl_analysis_show:N	\l__Name_tl
+	
+    \node[rectangle,anchor=south~east] at (\ooextfgsize,-\ooextfgsize) {\l__Name_tl };
 }
+\ExplSyntaxOff
 
 % #1 N= Normal A=Alternate
 \ExplSyntaxOn
@@ -408,6 +418,7 @@
             }        
     }
     
+    
     % for Normal, have the first note on top and visible so draw last
     % redraw the first (on the top to be visible)
     \bool_if:NTF \l__Normal_bool
@@ -427,11 +438,13 @@
             \SDraw{\seq_item:Nn \l__CleanNote_seq {1}}{N} \l__DrawFirstType_tl {1}
         }
         {}% No for alternate
+        
 
    % Draw Double    
     \seq_map_indexed_inline:Nn \l__Double_bool_seq
-    {
-        \tl_if_eq:NnTF ##2 {true}
+    { 
+		\str_set:Ne \l__Partwo_str{##2}			
+		\str_if_eq:VnTF \l__Partwo_str {true}
         {
             \DoubleDraw{\seq_item:Nn \l__CleanNote_seq {##1}}{\seq_item:Nn \l__DoubleNote_seq {##1}}{\seq_item:Nn \l__Double_seq {##1}}
         }
@@ -441,13 +454,13 @@
     % Draw Pre
     \seq_map_indexed_inline:Nn \l__Pre_bool_seq
     {
-        \tl_if_eq:NnTF ##2 {true}
+		\str_set:Ne \l__Partwo_str{##2}
+		\str_if_eq:VnTF \l__Partwo_str {true}
         {
             \PreDraw{\seq_item:Nn \l__CleanNote_seq {##1}}{\seq_item:Nn \l__Pre_seq {##1}}
         }
         {} % no Pre
     }
-
     %     
     % Paths
     %
@@ -469,6 +482,7 @@
             \tl_set:Ne \l__PostOrigine_tl {\seq_item:Nn \l__Post_seq {##1}}
             \tl_set:Ne \l__BeatOrigine_tl {\seq_item:Nn \l__Beat_seq {##1}}
 
+
         }
         {% the first store the Origine
             \tl_set:Nn \l__PathOrigine_tl {##2} % store the origine for next path
@@ -477,7 +491,7 @@
         }
     }
 }
-\ExplSyntaxOn
+\ExplSyntaxOff
 
 % Usage Phrase: {Notes in a string separated by space}
 \ExplSyntaxOn

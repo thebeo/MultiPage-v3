@@ -122,7 +122,7 @@
             \seq_pop_left:NN \l__Line_seq \l__LineTitle_tl
             
             % Extract Color
-            \regex_extract_once:nVN {\[[^)]*\]} \l__LineTitle_tl \l__Regex_seq
+            \regex_extract_once:nVN {\[[^]]*\]} \l__LineTitle_tl \l__Regex_seq
             
                 % Trace
                 \iow_term:n {ParseLine-extract color}
@@ -169,7 +169,7 @@
     \tl_clear_new:N \l__ContentColor_tl % The color itself
 
      % Extract Color just after the class or just at the begining
-     \regex_extract_once:nVN {^.\[([^)]*)\]|^\[([^)]*)\]} \l__Content_tl \l__Regex_seq
+     \regex_extract_once:nVN {^.\[([^]]*)\]|^\[([^]]*)\]} \l__Content_tl \l__Regex_seq
      
 	     % Trace
 	     \iow_term:n {ParseContent-extract color}
@@ -189,8 +189,7 @@
      	\tl_replace_once:NVn \l__Content_tl \l__ContentColor_tl {}
      	
      	% clean color []
-     	\tl_replace_all:Nnn \l__Content_tl {[} {}
-     	\tl_replace_all:Nnn \l__Content_tl {]} {}                    
+     	\tl_replace_all:Nnn \l__Content_tl {[]} {}     
      }
      
 	     % Trace~

@@ -126,12 +126,14 @@
 }
 \ExplSyntaxOff
 
+\def\Scale{0.5}
+
 % usage: \RO {color}[inside][scale] - Rond
 \def\rdsize{\fgsize}
 \newlength{\txtinsidelg}
 \newlength{\txtinsideht}
 
-\NewDocumentCommand\RO{mo O{1.0}}{\IfNoValueTF{#2}{\scalebox{#3}{\tikz[baseline=-0.5ex]
+\NewDocumentCommand\RO{mo O{\Scale}}{\IfNoValueTF{#2}{\scalebox{#3}{\tikz[baseline=-0.5ex]
     {
         \path[draw=#1,line width=1pt]  circle(\rdsize/2);
     }}}{\scalebox{#3}{\settowidth{\txtinsidelg}{#2}\settoheight{\txtinsideht}{#2}\tikz[baseline=-0.5ex]{
@@ -143,7 +145,7 @@
 \newdimen\tdsize
 \tdsize=\fgsize
 
-\NewDocumentCommand\TD{mo O{1.0}}{\IfNoValueTF{#2}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
+\NewDocumentCommand\TD{mo O{\Scale}}{\IfNoValueTF{#2}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
     \path[draw=#1,line width=1pt] (-\tdsize/2,-\tdsize/2)--(-\tdsize/2,\tdsize/2)--(1.2*\tdsize/2,0)--cycle;
     }}}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
     \path[draw=#1,line width=1pt] (-\tdsize/2,-\tdsize/2)--(-\tdsize/2,\tdsize/2)--(1.2*\tdsize/2,1/4*\tdsize/2)--(1.2*\tdsize/2,-1/4*\tdsize/2)--cycle; \node at (0,0){\Inside{#2}};
@@ -154,7 +156,7 @@
 \newdimen\tusize
 \tusize=\fgsize %-0.1ex
 
-\NewDocumentCommand\TU{mo O{1.0}}{\IfNoValueTF{#2}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
+\NewDocumentCommand\TU{mo O{\Scale}}{\IfNoValueTF{#2}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
     \path[draw=#1,line width=1pt] (-\tusize/2,-\tusize/2)--(\tusize/2,-\tusize/2)--(0,\tusize/2)--cycle;
     }}}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
     \path[draw=#1,line width=1pt] (-\tusize/2,-\tusize/2)--(\tusize/2,-\tusize/2)--(0,\tusize/2)--cycle;
@@ -166,7 +168,7 @@
 \newdimen\uksize
 \uksize=5ex % \fgsize/2
 
-\NewDocumentCommand\shUK{mo O{1.0}}{\IfNoValueTF{#2}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
+\NewDocumentCommand\shUK{mo O{\Scale}}{\IfNoValueTF{#2}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
 				\path[draw=#1,line width=2pt] (-\uksize/2,-\uksize/2)--(\uksize/2,\uksize/2);
 				\path[draw=#1,line width=2pt] (-\uksize/2,\uksize/2)--(\uksize/2,-\uksize/2);
 	}}}{\scalebox{#3}{\tikz[baseline=-0.5ex]{

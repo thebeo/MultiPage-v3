@@ -1,4 +1,4 @@
-|||D (Full table)
+|||D (Multi-test page 1)
 ||T[content] (content color)
 |O[falight] FAu- REm >
 |O[falight] FAu MIm DOb REm 

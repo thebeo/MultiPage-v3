@@ -1,4 +1,4 @@
-|||D(Shape-test)
+|||D(Shape-test page 1)
 ||T(rond)(Triangle droit)(Triangle up)
 |S \RO{mi}[rond] |s \RO{mi} | \RO{mi}[\MI]
 |S \TD{la}[droit] |s \TD{mi} |1
