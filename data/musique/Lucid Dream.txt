@@ -4,49 +4,49 @@
 |2
 |2
 |O[falight] FAu REm >
-|O[falight] FAu MIm DOb REm 
+|O[falight] FAu MIm DOb REm (\RO{fa})
 
 
-|O[relight] REm FAu MIm REm >
+|O[relight] REm FAu MIm REm (\TD{re})>
 |2[relight]
 |O[relight] FAu REm >
-|O[relight] FAu MIm DOb REm 
+|O[relight] FAu MIm DOb REm (\RO{fa})
 
 
 ||T[content] (Debut DO)() (Passage par SOL)
 |O[dolight] DOb REm FAu LAu- >
 |O[dolight] FAu MIm >
-|O[dolight] FAu LAb REm >
-|O[dolight] FAu MIm DOb REm
+|O[dolight] FAu LAb REm > (\TD{la})
+|O[dolight] FAu MIm DOb REm (\RO{fa})
 
-|O[sollight] DOb REm- MIm FAu >
+|O[sollight] DOb REm- MIm FAu (\UA{black}\DO-\FA)>
 |O[sollight] SOLu- FAu- MIm >
-|O[sollight] FAu LAb REm >
-|O[sollight] FAu MIm DOb REm
+|O[sollight] FAu LAb REm > (\TD{la})
+|O[sollight] FAu MIm DOb REm (\RO{fa})
 
 
 ||T[content] (Triplet)() (Montée LA)
 |O DOb REm LAu DOu LAu >
 |2
-|O FAu LAb REm >
-|O FAu 2xMIm REm
+|O FAu LAb REm > (\TD{la})
+|O FAu 2xMIm REm (\RO{mi})
 
-|O[lalight] DOb REm- MIm FAu >
+|O[lalight] DOb REm- MIm FAu (\UA{black}\DO-\FA)>
 |O[lalight] MIm REm >
-|O[lalight] FAu LAb REm >
+|O[lalight] FAu LAb REm > (\TD{la})
 |O[lalight] MIh- REh- DOu- LAu
 
 
 ||T[content] (3xLA)() ( Flame SOL)
 |O[lalight] 3xLAu- DOu >
 |O[lalight] REh MIh- REh >
-|O[lalight] FAu LAb REm  >
-|O[lalight] FAu 2xMIm REm
+|O[lalight] FAu LAb REm  > (\TD{la})
+|O[lalight] FAu 2xMIm REm (\RO{mi})
 
 |O[sollight] DOb REm /FAu=SOLu MIm>
 |2[sollight] 
-|O[sollight] FAu LAb REm >
-|O[sollight] FAu MIm DOb REm
+|O[sollight] FAu LAb REm > (\TD{la})
+|O[sollight] FAu MIm DOb REm (\RO{fa})
 
 
 |||D(Lucid Dream page 2)
@@ -59,15 +59,15 @@
 
 
 |O REh DOu LAu- SOLu >
-|O FAu LAb REm >
-|O FAu MIm DOb REm
+|O FAu LAb REm > (\TD{la})
+|O FAu MIm DOb REm (\RO{fa})
 |1
 
 ||T[content] (Double simple)()(Double complexe)
 |O[relight] DOb REm 2xREm=FAu >
 |O[relight] REd!FAu >
-|O[relight] 0xFAu LAb REm >
-|O[relight] FAu MIm DOb REm
+|O[relight] 0xFAu LAb REm > (\TD{la})
+|O[relight] FAu MIm DOb REm (\RO{fa})
 
 |O[falight] DOb REm 2xREm=FAu >
 |O[falight] REd!FAu >
@@ -120,8 +120,8 @@
 ||T[content] (Saut RE)() (/montée LA)
 |O[relight] DOb REm
 |O[relight] REh DOu REm=LAu >
-|O[relight] FAu LAb REm >
-|O[relight] FAu MIm DOb REm
+|O[relight] FAu LAb REm > (\TD{la})
+|O[relight] FAu MIm DOb REm (\RO{fa})
 
 |O[lalight] DOb REm /FAu=SOLu MIm>
 |O[lalight] FAu >
@@ -131,13 +131,13 @@
 ||T[content] (2x LA /DO)() (2xMI FADO)
 |O LAu /LAu=DOu (2x)
 |O LAu 
-|O FAu LAb REm >
-|O FAu  2xMIm REm
+|O FAu LAb REm > (\TD{la})
+|O FAu 2xMIm REm  (\RO{mi})
 
 |O[milight] 2xMIm REm FAu SOLu >
 |O[milight] FAu SOLu >
-|O[milight] FAu LAb REm >
-|O[milight] FAu MIm DOb REm
+|O[milight] FAu LAb REm > (\TD{la})
+|O[milight] FAu MIm DOb REm (\RO{fa})
 
 ||T[content] (Tout double)() (DO)
 |C LAb=DOb=XMIm[F] REm=XFAu=LAb[Q] DOb=MIm=XSOLu[F]
@@ -148,7 +148,7 @@
 |O[dolight] DOb REm FAu >
 |O[dolight] LAb REm FAu MIm >
 |O[dolight] DOb LAb >
-|O[dolight] REm!FAu MIm DOb REm
+|O[dolight] REm!FAu MIm DOb REm (\RO{fa}[dbl])
 
 ||T[content] (fin)() ()
 |O /DOb MIm

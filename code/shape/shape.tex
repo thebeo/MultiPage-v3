@@ -127,6 +127,8 @@
 \ExplSyntaxOff
 
 \def\Scale{0.5}
+\newdimen\LineWidth
+\LineWidth=2pt
 
 % usage: \RO {color}[inside][scale] - Rond
 \def\rdsize{\fgsize}
@@ -135,9 +137,9 @@
 
 \NewDocumentCommand\RO{mo O{\Scale}}{\IfNoValueTF{#2}{\scalebox{#3}{\tikz[baseline=-0.5ex]
     {
-        \path[draw=#1,line width=1pt]  circle(\rdsize/2);
+        \path[draw=#1,line width=\LineWidth]  circle(\rdsize/2);
     }}}{\scalebox{#3}{\settowidth{\txtinsidelg}{#2}\settoheight{\txtinsideht}{#2}\tikz[baseline=-0.5ex]{
-        \node [draw=#1,line width=1pt, minimum width=\rdsize/2,text width=\txtinsidelg, text height=\txtinsideht,rounded rectangle,inner sep=\rdsize/2-\txtinsideht/2] {};
+        \node [draw=#1,line width=\LineWidth, minimum width=\rdsize/2,text width=\txtinsidelg, text height=\txtinsideht,rounded rectangle,inner sep=\rdsize/2-\txtinsideht/2] {};
         \node at (0,0){\Inside{#2}};
     }}}}
 
@@ -146,9 +148,9 @@
 \tdsize=\fgsize
 
 \NewDocumentCommand\TD{mo O{\Scale}}{\IfNoValueTF{#2}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
-    \path[draw=#1,line width=1pt] (-\tdsize/2,-\tdsize/2)--(-\tdsize/2,\tdsize/2)--(1.2*\tdsize/2,0)--cycle;
+    \path[draw=#1,line width=\LineWidth] (-\tdsize/2,-\tdsize/2)--(-\tdsize/2,\tdsize/2)--(1.2*\tdsize/2,0)--cycle;
     }}}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
-    \path[draw=#1,line width=1pt] (-\tdsize/2,-\tdsize/2)--(-\tdsize/2,\tdsize/2)--(1.2*\tdsize/2,1/4*\tdsize/2)--(1.2*\tdsize/2,-1/4*\tdsize/2)--cycle; \node at (0,0){\Inside{#2}};
+    \path[draw=#1,line width=\LineWidth] (-\tdsize/2,-\tdsize/2)--(-\tdsize/2,\tdsize/2)--(1.2*\tdsize/2,1/4*\tdsize/2)--(1.2*\tdsize/2,-1/4*\tdsize/2)--cycle; \node at (0,0){\Inside{#2}};
    }}}}
 
 
@@ -157,9 +159,9 @@
 \tusize=\fgsize %-0.1ex
 
 \NewDocumentCommand\TU{mo O{\Scale}}{\IfNoValueTF{#2}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
-    \path[draw=#1,line width=1pt] (-\tusize/2,-\tusize/2)--(\tusize/2,-\tusize/2)--(0,\tusize/2)--cycle;
+    \path[draw=#1,line width=\LineWidth] (-\tusize/2,-\tusize/2)--(\tusize/2,-\tusize/2)--(0,\tusize/2)--cycle;
     }}}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
-    \path[draw=#1,line width=1pt] (-\tusize/2,-\tusize/2)--(\tusize/2,-\tusize/2)--(0,\tusize/2)--cycle;
+    \path[draw=#1,line width=\LineWidth] (-\tusize/2,-\tusize/2)--(\tusize/2,-\tusize/2)--(0,\tusize/2)--cycle;
     \node at (0,-0.5ex){\Inside{#2}};
     }}}
 }

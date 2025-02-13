@@ -358,12 +358,11 @@
 	% Temp variables (rescan to execute name if latex)
 	\tl_set_rescan:Nne \l__Name_tl {} {#1}
 	
-	
 		%Trace
 		\iow_term:n {DrawName}
 		\tl_analysis_show:N	\l__Name_tl
 	
-    \node[rectangle,anchor=south~east] at (\ooextfgsize,-\ooextfgsize) {\l__Name_tl };
+    \node[rectangle,anchor=south~east] at (\ooextfgsize,-\ooextfgsize) {\l__Name_tl};
 }
 \ExplSyntaxOff
 
