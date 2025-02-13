@@ -24,7 +24,7 @@
 |O[sollight] DOb REm
 
 
-||T(Triplet)() (Montée LA)
+||T[content] (Triplet)() (Montée LA)
 |O DOb REm LAu DOu- LAu >
 |O FAu >
 |O LAb REm FAu MIm >
@@ -36,7 +36,7 @@
 |O[lalight] MIh- REh- DOu- LAu
 
 
-||T(3xLA)() ( Flame SOL)
+||T[content] (3xLA)() ( Flame SOL)
 |O[lalight] 3xLAu- DOu >
 |O[lalight] REh MIh- REh- FAu >
 |O[lalight] LAb REm FAu MIm >
@@ -50,7 +50,7 @@
 
 |||D(Lucid Dream page 2)
 
-||T(Longue)
+||T[content] (Longue)
 |O DOb REm FAu >
 |O LAb REm FAu MIm >
 |O REh DOu LAu FAu >
@@ -62,7 +62,7 @@
 |O DOb REm
 |1
 
-||T(Double simple)()(Double complexe)
+||T[content] (Double simple)()(Double complexe)
 |O[relight] DOb REm 2xREm=FAu >
 |O[relight] REd!FAu >
 |O[relight] LAb REm FAu MIm >
@@ -73,7 +73,7 @@
 |O[falight] LAb REm FAu MIm >
 |O[falight] MIm- FAu MIm REm- DOb REm
 
-||T(2ieme montée LA)() (FA)
+||T[content] (2ieme montée LA)() (FA)
 |O[lalight] DOb REm FAu LAu- FAu>
 |O[lalight] MIm FAu >
 |O[lalight] LAb REm FAu MIh >
@@ -84,14 +84,14 @@
 |O[falight] LAb REm FAu MIh>
 |O[falight] 2xFAh
 
-||T(Tout haut)
+||T[content] (Tout haut)
 |O DOu 2xREh >
 |O DOu LAu FAu FAh >
 |O LAu REh FAh MIh >
 |O DOu REh
 
 
-||T(Encore la-haut)
+||T[content] (Encore la-haut)
 |O DOu REh MIh >
 |O FAh MIh REh- MIh FAh>
 |O LAu REh FAh MIh >
@@ -104,7 +104,7 @@
 
 |||D(Lucid Dream page 3)
 
-||T(4xRE)() (3xRE 4xDbl)
+||T[content] (4xRE)() (3xRE 4xDbl)
 |O[relight] DOb 4xREm
 |O[relight] REd!FAu >
 |O[relight] LAb REm- FAu DOb=MIm >
@@ -115,7 +115,7 @@
 |O[falight] LAb REm- FAu MIm >
 |O[falight] 2xLAu- FAu- REm
 
-||T(Saut RE)() (/montée LA)
+||T[content] (Saut RE)() (/montée LA)
 |O[relight] DOb REm
 |O[relight] REh DOu REm=LAu FAu >
 |O[relight] LAb REm FAu MIm >
@@ -126,7 +126,7 @@
 |O[lalight] LAb REm FAu MIh >
 |O[lalight] REh- DOu- LAu
 
-||T(2x LA /DO)() (2xMI FADO)
+||T[content] (2x LA /DO)() (2xMI FADO)
 |O LAu /LAu=DOu (2x)
 |O LAu FAu
 |O LAb REm FAu MIm >
@@ -137,7 +137,7 @@
 |O LAb REm FAu MIm >
 |O DOb REm
 
-||T(Tout double)() (DO)
+||T[content] (Tout double)() (DO)
 |C LAb=DOb=XMIm[F] REm=XFAu=LAb[Q] DOb=MIm=XSOLu[F]
 |O REm!FAu REd!FAu
 |O LAb REm FAu >
@@ -148,7 +148,7 @@
 |O DOb LAb >
 |O REm!FAu MIm DOb REm
 
-||T(fin)() ()
+||T[content] (fin)() ()
 |O /DOb MIm
 |O /LAb DOb
 |O /LAb REm
