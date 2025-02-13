@@ -3,14 +3,5 @@
 main.aux
 main.log
 main.pdf
-main.synctex.gz
-main 2.synctex.gz
-main 2.synctex(busy)
-main 3.synctex(busy)
-main 3.synctex(busy)
-main 3.synctex(busy)
-main 3.synctex(busy)
-main 4.synctex(busy)
-main 5.synctex(busy)
-main 6.synctex(busy)
-main 7.synctex(busy)
+*.log
+*.aux
