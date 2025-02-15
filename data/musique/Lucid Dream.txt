@@ -25,8 +25,8 @@
 
 
 ||T[content] (Triplet)() (Montée LA)
-|O DOb REm LAu DOu LAu >
 |2
+|O DOb REm LAu DOu LAu >
 |O FAu LAb REm > (\TD{la})
 |O FAu 2xMIm REm (\RO{mi})
 
@@ -36,14 +36,14 @@
 |O[lalight] FAu- MIh- REh DOu LAu (\UA{la}\LA)
 
 
-||T[content] (3xLA)() ( Flame SOL)
+||T[content] (3xLA)() (Flame SOL)
 |O[lalight] 3xLAu- DOu >
 |O[lalight] REh MIh- REh >
 |O[lalight] FAu LAb REm (\TD{la})>
 |O[lalight] FAu 2xMIm REm (\RO{mi})
 
-|O[sollight] DOb REm /FAu=SOLu MIm>
-|2[sollight] 
+|O[sollight] DOb REm >
+|O[sollight] /FAu SOLu MIm (\FL{fa}\SOL)>
 |O[sollight] FAu LAb REm > (\TD{la})
 |O[sollight] FAu MIm DOb REm (\RO{fa})
 
@@ -110,7 +110,7 @@
 ||T[content] (4xRE)() (3xRE 4xDbl)
 |O[relight] DOb 4xREm
 |O[relight] REd!FAu >
-|O[relight] LAb REm- FAu DOb=MIm >
+|O[relight] LAb REm- FAu DOb!MIm >
 |O[relight] DOb REm
 
 |O[falight] DOb 2xREm
@@ -119,16 +119,16 @@
 |O[falight] 2xLAu- FAu- REm
 
 
-||T[content] (Saut RE)() (/montée LA)
+||T[content] (Saut RE)() (Flame SOL montée LA)
 |O[relight] DOb REm
 |O[relight] REh DOu REm!LAu >
-|O[relight] FAu LAb REm > (\TD{la})
+|O[relight] FAu LAb REm (\TD{la})> 
 |O[relight] FAu MIm DOb REm (\RO{fa})
 
-|O[lalight] DOb REm /FAu=SOLu MIm>
-|O[lalight] FAu >
-|O[lalight] LAb REm FAu MIh >
-|O[lalight] REh- DOu- LAu
+|O[lalight] DOb REm >
+|O[lalight] /FAu SOLu MIm (\FL{fa}\SOL)>
+|O[lalight] FAu LAb REm (\TD{la})> 
+|O[lalight] FAu- MIh- REh DOu LAu (\UA{la}\LA)
 
 
 ||T[content] (2x LA /DO)() (2xMI FADO)
@@ -156,9 +156,9 @@
 
 
 ||T[content] (fin)() ()
-|O /DOb MIm
-|O /LAb DOb
-|O /LAb REm
-|2
+|O[milight] /DOb MIm
+|O[milight] /LAb DOb
+|O[milight] /LAb REm
+|2[milight]
 
 
