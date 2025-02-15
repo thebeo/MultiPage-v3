@@ -11,10 +11,11 @@
 |O REd DOb!LAb- DOb 3xREm- DOu!FAu (new)>
 |O DOb SOLu SOLu FAu (2x court)
 
-||T(Explicite double)
+||T(Explicite double - name)
 |O FAu!DOb (name)
-|O REd!SIb 2xDOb!SIb 3xREm!SIb DOu!SIb (name)
-|O DOu!SIb (name)>
+|O REd!SIb 2xDOb!SIb 3xREm!SIb DOu!SIb (\TD{si})
+|O DOu!SIb (\TU{mi}[inside])>
+|O DOu=SIb (\TU{mi}[\MI])>
 
 ||T(Alternate)(no stroke)
 |O MIm FAu SOLu [MIm DOb FAu]

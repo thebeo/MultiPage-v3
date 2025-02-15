@@ -139,8 +139,8 @@
     {
         \path[draw=#1,line width=\LineWidth]  circle(\rdsize/2);
     }}}{\scalebox{#3}{\settowidth{\txtinsidelg}{#2}\settoheight{\txtinsideht}{#2}\tikz[baseline=-0.5ex]{
-        \node [draw=#1,line width=\LineWidth, minimum width=\rdsize/2,text width=\txtinsidelg, text height=\txtinsideht,rounded rectangle,inner sep=\rdsize/2-\txtinsideht/2] {};
-        \node at (0,0){\Inside{#2}};
+        \node [draw=#1,line width=\LineWidth, minimum width=\rdsize/2,text width=\txtinsidelg, text height=\txtinsideht,rounded rectangle,inner sep=\rdsize/2-\txtinsideht/2,anchor=center] at (0,0) {};
+        \node[anchor=center] at (0,0){\Inside{#2}};
     }}}}
 
 % usage: \TD{color}[inside][scale] - triangle right
@@ -150,7 +150,8 @@
 \NewDocumentCommand\TD{mo O{\Scale}}{\IfNoValueTF{#2}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
     \path[draw=#1,line width=\LineWidth] (-\tdsize/2,-\tdsize/2)--(-\tdsize/2,\tdsize/2)--(1.2*\tdsize/2,0)--cycle;
     }}}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
-    \path[draw=#1,line width=\LineWidth] (-\tdsize/2,-\tdsize/2)--(-\tdsize/2,\tdsize/2)--(1.2*\tdsize/2,1/4*\tdsize/2)--(1.2*\tdsize/2,-1/4*\tdsize/2)--cycle; \node at (0,0){\Inside{#2}};
+    \path[draw=#1,line width=\LineWidth,anchor=center] (-\tdsize/2,-\tdsize/2)--(-\tdsize/2,\tdsize/2)--(1.2*\tdsize/2,1/4*\tdsize/2)--(1.2*\tdsize/2,-1/4*\tdsize/2)--cycle; 
+    \node[anchor=center] at (0,0){\Inside{#2}};
    }}}}
 
 
@@ -161,8 +162,8 @@
 \NewDocumentCommand\TU{mo O{\Scale}}{\IfNoValueTF{#2}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
     \path[draw=#1,line width=\LineWidth] (-\tusize/2,-\tusize/2)--(\tusize/2,-\tusize/2)--(0,\tusize/2)--cycle;
     }}}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
-    \path[draw=#1,line width=\LineWidth] (-\tusize/2,-\tusize/2)--(\tusize/2,-\tusize/2)--(0,\tusize/2)--cycle;
-    \node at (0,-0.5ex){\Inside{#2}};
+    \path[draw=#1,line width=\LineWidth,anchor=center] (-\tusize/2,-\tusize/2)--(\tusize/2,-\tusize/2)--(0,\tusize/2)--cycle;
+    \node[anchor=center]  at (0,-\tusize/4){\Inside{#2}};
     }}}
 }
 
