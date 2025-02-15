@@ -1,10 +1,10 @@
 |||D(Lucid Dream page 1) 
 
-||T[content] () (Debut FA) (Debut RE)
-|2
-|2
+||T[content] (Debut FA) () (Debut RE)
 |O[falight] FAu REm >
 |O[falight] FAu MIm DOb REm (\RO{fa})
+|2
+|2
 
 |2[relight]
 |O[relight] REm FAu MIm REm (\TD{re})>
@@ -38,7 +38,7 @@
 
 ||T[content] (3xLA)() (Flame SOL)
 |O[lalight] 3xLAu- DOu >
-|O[lalight] REh MIh- REh >
+|O[lalight] REh MIh REh >
 |O[lalight] FAu LAb REm (\TD{la})>
 |O[lalight] FAu 2xMIm REm (\RO{mi})
 
@@ -47,8 +47,6 @@
 |O[sollight] FAu LAb REm > (\TD{la})
 |O[sollight] FAu MIm DOb REm (\RO{fa})
 
-
-|||D(Lucid Dream page 2)
 
 ||T[content] (Longue)
 |O DOb REm  >
@@ -62,16 +60,19 @@
 |O FAu MIm DOb REm (\RO{fa})
 
 
+|||D(Lucid Dream page 2)
+
+
 ||T[content] (Double simple)()(Double complexe)
+|2[relight]
 |O[relight] DOb REm 2xREm=FAu >
 |O[relight] REd!FAu LAb REm (\TD{la}[dbl])>
 |O[relight] FAu MIm DOb REm (\RO{fa})
-|2[relight]
 
 |O[falight] DOb REm 2xREm=FAu >
 |O[falight] REd!FAu LAb REm (\TD{la}[dbl])>
 |O[falight] FAu 2xMIm FAu>
-|O[falight] MIm- REm- DOb REm
+|O[falight] MIm- REm DOb REm
 
 
 ||T[content] (2ieme montée LA)() (montée FA)
@@ -83,7 +84,7 @@
 |O[falight] LAu DOu >
 |O[falight] FAh MIh REh- MIh >
 |O[falight] FAh LAb REm (\TD{la}[\DA{black}])>
-|O[falight] FAu- MIh- 2xFAh
+|O[falight] FAu- MIh- 2xFAh (\UA{fa}\FA)
 
 
 ||T[content] (Tout haut)
@@ -95,7 +96,7 @@
 
 ||T[content] (Encore la-haut)
 |O[sollight] DOu REh- MIh- FAh (\UA{black}\DO-\FA~UP)>
-|O[sollight] MIh REh- MIh >
+|O[sollight] MIh REh MIh >
 |O[sollight] FAh LAu REh (\TD{la}[UP])>
 |O[sollight] FAh MIh >
 
@@ -104,19 +105,33 @@
 |2
 |2
 
+||T[content] (4xRE)
+|2[relight]
+|O[relight] DOb 4xREm
+|O[relight] REd!FAu LAb REm (\TD{la}[dbl])>
+|O[relight] FAu DOb=MIm DOb REm (\RO{fa}[dbl])
+
+|2
+|2
+|2
+|2
+
 
 |||D(Lucid Dream page 3)
 
-||T[content] (4xRE)() (3xRE 4xDbl)
-|O[relight] DOb 4xREm
-|O[relight] REd!FAu >
-|O[relight] LAb REm- FAu DOb!MIm >
-|O[relight] DOb REm
 
-|O[falight] DOb 2xREm
-|O[falight] REm=LAb- MIm=DOb- 2xREm=FAu REd!FAu >
-|O[falight] LAb REm- FAu MIm >
+||T[content] (3xRE 4xDbl)
+|O[falight] DOb 2xREm >
+|O[falight] LAb!REm DOb!MIm >
+|O[falight] 2xREm!FAu >
+|O[falight] REd!FAu LAb REm (\TD{la}[dbl])>
+
+
+|O[falight] FAu MIm >
 |O[falight] 2xLAu- FAu- REm
+|2
+|2
+
 
 
 ||T[content] (Saut RE)() (Flame SOL montée LA)
