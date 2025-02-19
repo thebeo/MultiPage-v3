@@ -5,7 +5,7 @@
 |P REh MIh FAh SOLh LAh
 ||T(pre)(scale)
 |N ↑DOb /REm 2xMIm 
-|2
+|N ↓DOb ⭥LAh SOLh
 |n REh |p REh |N REh |P REh 
 ||T(Unknown)
 |N DoB REm

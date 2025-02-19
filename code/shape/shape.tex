@@ -187,18 +187,18 @@
 
 % usage: \UA{color}[inside][scale] - Up Arrow
 \NewDocumentCommand\UA{mo O{1.0}}{\scalebox{#3}{\tikz[baseline=-0.5ex,>={Stealth}]{
-			\path[draw=#1,line width=1pt,->](0ex,-1ex)--(0ex,1ex);
+			\path[draw=#1,line width=1pt,->](0ex,-0.5ex)--(0ex,1.5ex);
 	}}\space}
 
 
 % usage: \DA{color}[inside][scale] - Down Arrow
 \NewDocumentCommand\DA{mo O{1.0}}{\scalebox{#3}{\tikz[baseline=-0.5ex,>={Stealth}]{
-			\path[draw=#1,line width=1pt,->](0ex,1ex)--(0ex,-1ex);
+			\path[draw=#1,line width=1pt,->](0ex,1.5ex)--(0ex,-0.5ex);
 	}}\space}
 
 % usage: \UDA{color}[inside][scale] - -Up-Down Arrow
 \NewDocumentCommand\UDA{mo O{1.0}}{\scalebox{#3}{\tikz[baseline=-0.5ex,,>={Stealth[round]}]{
-			\path[draw=#1,line width=1pt,<->](0ex,1ex)--(0ex,-1ex);
+			\path[draw=#1,line width=1pt,<->](0ex,1.5ex)--(0ex,-0.5ex);
 	}}\space}
 
 
@@ -211,7 +211,7 @@
 			\path[draw=#1,line width=1.5pt,-] (0ex,-0.5ex)--(1ex,1ex);
 }}}
 % usage: \FL{color}[note][scale] - Flamme
-\NewDocumentCommand\FL{mo O{1.0}}{\IfNoValueTF{#2}{\LO{#1}[#3]}{\LO{#1}[#3] #2}}
+\NewDocumentCommand\FL{mo O{1.0}}{\IfNoValueTF{#2}{\LO{#1}[#3]}{\LO{#1}[#3]#2}}
 
 
 % usage: \CR{color}[text][scale] - [ text ]
