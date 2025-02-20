@@ -14,12 +14,13 @@
 
 %usage \Notes{note Note ...Note}[scale]
 
+\ExplSyntaxOn
 \NewDocumentCommand\Notes{m O{1.0}}
 {
     \ParseNotes{#1}       
     \dcDrawNotes[#2]   
 }
-
+\ExplSyntaxOff
 
 \ExplSyntaxOn
 %usage \dcDrawNotes[scale]
