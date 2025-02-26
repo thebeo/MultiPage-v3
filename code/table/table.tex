@@ -4,12 +4,15 @@
 
 \usepackage{fancyhdr}
 
-\pagestyle{fancy}
-\setlength{\headheight}{15pt}
-\fancyhead[L,R]{}
-\fancyhead[C]{\textbf{Titre}}
-\fancyfoot[C,R]{}
-\fancyfoot[L]{\tiny{versions dico:\oover-\dicover \thinspace code:\codever}\newline}
+
+\fancypagestyle{plain}{%
+	\fancyhf{}% clear all header and footer fields
+    \fancyhead[C]{\textbf{Titre}}
+	\renewcommand{\headrulewidth}{0pt}%
+	\renewcommand{\footrulewidth}{0pt}%
+}
+
+\pagestyle{plain}
 
 %%%%
 \input{table/tbparse}
@@ -446,18 +449,11 @@
 \centering
     \newdimen\CellWidth
     \CellWidth=10ex
-
-% for test with all cell
-%    \begin{NiceTabular}{|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|{P{\CellWidth}}|N} 
-%
-    
-    \begin{NiceTabular}{|*{4}{P{\CellWidth}}|*{4}{P{\CellWidth}}|*{4}{P{\CellWidth}}|*{4}{P{\CellWidth}}|N}        
-    \hline
-    1&2&3&4&5&6&7&8&9&10&11&12&13&14&15&16\\
-    \hline
-     
-    \l__PageD_tl 
-        
+     \begin{NiceTabular}{|*{4}{P{\CellWidth}}|*{4}{P{\CellWidth}}!{\vrule width 2pt}*{4}{P{\CellWidth}}|*{4}{P{\CellWidth}}|N}        
+   %\hline
+   % 1&2&3&4&5&6&7&8&9&10&11&12&13&14&15&16\\
+    \hline     
+    \l__PageD_tl         
     \end{NiceTabular}
 \end{table} 
 

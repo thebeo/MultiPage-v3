@@ -55,7 +55,7 @@
 |O REh DOu LAu FAu (\UA{re} 1)>
 
 |O REh DOu LAu FAu (\UA{re} 2)>
-|O REh DOu LAu- SOLu (\UA{re} 3)>
+|O REh DOu LAu- SOLu 0xFAu (\UA{re} 3)>
 |O FAu LAb REm > (\TD{la})
 |O FAu MIm DOb REm (\RO{fa})
 
@@ -147,10 +147,10 @@
 
 
 ||T[content] (2x LA /DO)() (2xMI FADO)
-|O LAu /LAu=DOu (2x)
-|O LAu 
-|O FAu LAb REm > (\TD{la})
-|O FAu 2xMIm REm  (\RO{mi})
+|O[lalight] LAu /LAu=DOu (2x)
+|O[lalight] LAu 
+|O[lalight] FAu LAb REm > (\TD{la})
+|O[lalight] FAu 2xMIm REm  (\RO{mi})
 
 |O[milight] 2xMIm REm FAu SOLu >
 |O[milight] FAu SOLu >
@@ -158,19 +158,25 @@
 |O[milight] FAu MIm DOb REm (\RO{fa})
 
 
-||T[content] (Tout double)() (DO)
-|C LAb=DOb=XMIm[F] REm=XFAu=LAb[Q] DOb=MIm=XSOLu[F]
+||T[content] (Tout double)
+|O LAb!DOb- LAb!REm >
+|O DOb!MIm >
+% |C LAb=DOb=XMIm[F] REm=XFAu=LAb[Q] DOb=MIm=XSOLu[F]
 |O REm!FAu REd!FAu
 |O LAb REm FAu >
-|C DOb=MIm=XSOLu[F] REm=FAu=XLAu[F] DOb=MIm=XSOLu[F] REm=XFAu=LAb[Q]
 
+|O DOb!MIm- REm!FAu >
+|O DOb!MIm- LAb!REm
+|2
+% |C DOb=MIm=XSOLu[F] REm=FAu=XLAu[F] DOb=MIm=XSOLu[F] REm=XFAu=LAb[Q]
+
+
+||T[content](DO) () (fin)
 |O[dolight] DOb REm FAu >
 |O[dolight] LAb REm FAu MIm >
 |O[dolight] DOb LAb >
 |O[dolight] REm!FAu MIm DOb REm (\RO{fa}[dbl])
 
-
-||T[content] (fin)() ()
 |O[milight] /DOb MIm
 |O[milight] /LAb DOb
 |O[milight] /LAb REm

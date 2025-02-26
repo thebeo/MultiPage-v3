@@ -1,62 +1,121 @@
-|||D(Itsumo) 
-||T[grayvlight](BASS) 
-|O FAl FAu LAu (F) | MIl MIm SOLu (C) 
-| REd REm FAu (Dm) | LAb LAu DOu (Am) 
-| SIb- FAu- REh (Bb) | FAl- LAu- FAh (F) 
-| SIb REh FAh (Bb) | DOb- MIh- SOLh (C) 
+|||D(Itsumo page 1) 
+||T[content](BASS) 
+|O[revlight] FAl FAu LAu (F)      |O[revlight] MIl MIm SOLu (C) 
+|O[revlight] REd REm FAu (Dm)     |O[revlight] LAb LAu DOu (Am) 
+|O[revlight] SIb- FAu- REh (Bb)   |O[revlight] FAl- LAu- FAh (F) 
+|O[revlight] SIb REh FAh (Bb)     |O[revlight] DOb- MIh- SOLh (C) 
 
-||T[relight](THEME 1/1)
-|O FAu- SOLu LAu FAu DOu (BR-1) | LAu SOLu DOb (Des-1) 
-| SOLu FAu- REm- LAu (BR-2) | FAu MIm (Des-2) 
-| FAu MIm REm (Lié)> | MIm FAu SOLu- DOb 
-| FAu- SOLu- 3xLAu (le-3x)> | SOLu FAu SOLu (AR) 
+||T[content](THEME 1/1)
+|O[sollight] FAu- SOLu LAu FAu DOu (BR-1)   |O[sollight] LAu SOLu DOb (Des-1) 
+|O[sollight] SOLu FAu- REm- LAu (BR-2)      |O[sollight] FAu MIm (Des-2) 
+|O[sollight] FAu MIm REm (Lié)>             |O[sollight] MIm FAu SOLu- DOb 
+|O[sollight] FAu- SOLu- 3xLAu (le-3x)>      |O[sollight] SOLu FAu SOLu (AR) 
 
-||T[milight](THEME 1/2)
-|O FAu- SOLu LAu FAu DOu (BR-1) | LAu SOLu DOb (Des-1) 
-| SOLu FAu- REm (Sans-LA) | MIm- FAu- DOb (mi) 
-| DOb REm MIm (do)> | FAu SOLu DOb (fa) 
-| FAu- SOLu LAu /REm- LAu (Flame) | SOLu FAu (Aller) 
+||T[content](THEME 1/2)
+|O[falight] FAu- SOLu LAu FAu DOu (BR-1)        |O[falight] LAu SOLu DOb (Des-1) 
+|O[falight] SOLu FAu- REm (Sans-LA)             |O[falight] MIm- FAu- DOb (mi) 
+|O[falight] DOb REm MIm (do)>                   |O[falight] FAu SOLu DOb (fa) 
+|O[falight] FAu- SOLu LAu /REm- LAu (Flame)     |O[falight] SOLu FAu (Aller) 
 
-||T[falight](THEME 2/1)
-|O LAb SIb DOb (Bas-1) | LAu- SOLu 2xLAu DOu (Haut-1) 
-| DOb- REm DOb- SIb- LAb (Bas-2) | FAu- MIm FAu- SOLu- LAu (Haut-2) 
-| LAb SIb LAb SOLl FAl (Bas-3) | FAu MIm REm (Saut-F)> 
-| 2xMIm FAu 2xSOLu (les-2x)> | LAu SOLu LAu SOLu- (2-fois) 
+||T[content](BASS) 
+|O[mivlight] FAl FAu LAu (F)      |O[mivlight] FAl FAu LAu (F)
+|2                                |2
+|2                                |2
+|2                                |2
 
-||T[lalight](THEME 2/2)
-|O LAb SIb DOb (Bas-1) | LAu- SOLu 2xLAu DOu (Haut-1) 
-| DOb- REm DOb- SIb- LAb (Bas-2) | FAu- MIm FAu- SOLu- LAu (Haut-2)> 
-| SIb LAb SOLl FAl MIl REd (Descente) | REm- MIm FAu SOLu- DOb (Saut-D) 
-| FAu- SOLu- LAu (Simple) | 2xSOLu 2xFAu (2x2x) 
+||T[content](THEME 2/1)
+|O[sollight] LAb SIb DOb (Bas-1)                |O[sollight] LAu- SOLu 2xLAu DOu (Haut-1) 
+|O[sollight] DOb- REm DOb- SIb- LAb (Bas-2)     |O[sollight] FAu- MIm FAu- SOLu- LAu (Haut-2) 
+|O[sollight] LAb SIb LAb SOLl FAl (Bas-3)       |O[sollight] FAu MIm REm (Saut-F)> 
+|O[sollight] 2xMIm FAu 2xSOLu (les-2x)>         |O[sollight] LAu SOLu LAu SOLu- (2-fois) 
 
-|||D(Itsumo)
-||T[lalight](THEME 1-v/1-2)
-|O FAu- SOLu LAu FAu DOu (BR-1) | LAu 2xSOLu (VAR) 
-| MIm FAu MIm FAu (2x)> | DOb 2xLAb DOb 
-| 2xREm DOb SIb (Lié)> | FAl DOb- SIb- LAb 
-| SIb LAb SIb DOb- REm > | LAu-fl /LAu- SOLu [LAu- FAu] 
+||T[content](THEME 2/2)
+|O[falight] LAb SIb DOb (Bas-1)                     |O[falight] LAu- SOLu 2xLAu DOu (Haut-1) 
+|O[falight] DOb- REm DOb- SIb- LAb (Bas-2)          |O[falight] FAu- MIm FAu- SOLu- LAu (Haut-2)> 
+|O[falight] SIb LAb SOLl FAl MIl REd (Descente)     |O[falight] REm- MIm FAu SOLu- DOb (Saut-D) 
+|O[falight] FAu- SOLu- LAu (Simple)                 |O[falight] 2xSOLu 2xFAu (2x2x) 
 
-||T[falight](THEME 1-v2/1-2)
-|O FAu- SOLu LAu FAu DOu (BR-1) | LAu SOLu DOb (Des-1) 
-| SOLu- FAu REm REh (VAR) | MIh- FAh- DOu (IA) 
-| DOb REm MIm (TION)> | FAu SOLu DOb (fa) 
-| FAu- SOLu LAu /REm- LAu (Flame) | SOLu SOLu [SOLu FAu] (Aller) 
 
-||T[milight](THEME 3/1-2)
-|O FAu- SOLu- LAu FAu LAu | SOLu MIm LAb 
-| MIm- REm- SIb | DOb REm MIm 
-| 2xREm DOb SIb > | LAb DOb 
-| DOb REm- MIm- FAu SOLu > | 2xLAu-fl /LAu- SOLu [LAu- FAu]  
+|||D(Itsumo page 2)
+||T[content](BASS) 
+|O[lavlight] FAl FAu LAu (F)      |O[lavlight] FAl FAu LAu (F)
+|2                                |2
+|2                                |2
+|2                                |2
 
-||T[relight](THEME crt/1+2)
-|O REm- MIm- FAu- REm- LAu | FAu MIm DOb 
-| REm- MIm- FAu MIm REm | MIm- FAu- DOb 
-| REm- MIm- FAu- REm- LAu | FAu MIm DOb 
-| REm- MIm- FAu MIm REm | MIm DOb-fl /DOb FAu [MIm FAuXfl /FAu SOLu] 
+||T[content](THEME 1/1v1)
+|O[sollight] FAu- SOLu LAu FAu DOu (BR-1)   |O[sollight] LAu 2xSOLu (VAR) 
+|O[sollight] MIm FAu MIm FAu (2x)>          |O[sollight] DOb 2xLAb DOb 
+|O[sollight] 2xREm DOb SIb (Lié)>           |O[sollight] FAl DOb- SIb- LAb 
+|O[sollight] SIb LAb SIb DOb- REm >         |O[sollight] LAu-fl /LAu- SOLu [LAu- FAu] 
+
+||T[falight](THEME 1/2v1)
+|O[falight] FAu- SOLu LAu FAu DOu (BR-1)        |O[falight] LAu SOLu DOb (Des-1) 
+|O[falight] SOLu- FAu REm REh (VAR)             |O[falight] MIh- FAh- DOu (IA) 
+|O[falight] DOb REm MIm (TION)>                 |O[falight] FAu SOLu DOb (fa) 
+|O[falight] FAu- SOLu LAu /REm- LAu (Flame)     |O[falight]  SOLu FAu [SOLu SOLu] (Aller) 
+
+||T[content](BASS) 
+|O[sivlight] FAl FAu LAu (F)      |O[sivlight] MIl MIm SOLu (C) 
+|O[sivlight] REd REm FAu (Dm)     |O[sivlight] LAb LAu DOu (Am) 
+|O[sivlight] SIb- FAu- REh (Bb)   |O[sivlight] FAl- LAu- FAh (F) 
+|O[sivlight] SIb REh FAh (Bb)     |O[sivlight] DOb- MIh- SOLh (C) 
+
+
+||T[content](THEME 3/1)
+|O[sollight] FAu- SOLu- LAu FAu LAu     |O[sollight] SOLu MIm LAb 
+|O[sollight] MIm- REm- SIb              |O[sollight] DOb REm MIm 
+|O[sollight] 2xREm DOb SIb >            |O[sollight] LAb DOb 
+|O[sollight] DOb REm- MIm- FAu SOLu >   |O[sollight] 2xLAu-fl /LAu- SOLu [LAu- FAu]
+
+||T[content](THEME 3/2)
+|O[falight] FAu- SOLu- LAu FAu LAu     |O[falight] SOLu MIm LAb 
+|O[falight] MIm- REm- SIb              |O[falight] DOb REm MIm 
+|O[falight] 2xREm DOb SIb >            |O[falight] LAb DOb 
+|O[falight] DOb REm- MIm- FAu SOLu >   |O[falight] 2xLAu-fl /LAu- FAu [LAu- SOLu]  
+
+
+|||D(Itsumo page 3)
+||T[content](BASS) 
+|O[dovlight] FAl FAu LAu (F)      |O[dovlight] FAl FAu LAu (F)
+|2                                |2
+|2                                |2
+|2                                |2
+
+||T[content](THEME 2/2v1)
+|O[sollight] LAb SIb DOb (Bas-1)                     |O[sollight] LAu- SOLu 2xLAu DOu (Haut-1) 
+|O[sollight] DOb- REm DOb- SIb- LAb (Bas-2)          |O[sollight] FAu- MIm FAu- SOLu- LAu (Haut-2)> 
+|O[sollight] SIb LAb SOLl FAl MIl REd (Descente)     |O[sollight] REm- MIm FAu SOLu- DOb (Saut-D) 
+|O[sollight] FAu- SOLu- LAu (Simple)                 |O[sollight] 2xSOLu FAu SOLu (2x2x) 
+
+||T[content](THEME 2/1v1)
+|O[falight] LAb SIb DOb (Bas-1)                |O[falight] LAu- SOLu 2xLAu DOu (Haut-1) 
+|O[falight] DOb- REm DOb- SIb- LAb (Bas-2)     |O[falight] FAu- MIm FAu- SOLu- LAu (Haut-2) 
+|O[falight] LAb SIb LAb SOLl FAl (Bas-3)       |O[falight] FAu MIm REm (Saut-F)> 
+|O[falight] 2xMIm FAu 2xSOLu (les-2x)>         |O[falight] LAu SOLu LAu- /LAu- FAu (2-fois) 
+
+||T[content](BASS) 
+|O[relight] FAl FAu LAu (F)      |O[relight] FAl FAu LAu (F)
+|2                                |2
+|2                                |2
+|2                                |2
+
+||T[content](THEME 4/1)()(THEME 4/2)
+|O[sollight] REm- MIm- FAu- REm- LAu    |O[sollight] FAu MIm DOb 
+|O[sollight] REm- MIm- FAu MIm REm      |O[sollight] MIm- FAu- DOb 
+|O[sollight] REm- MIm- FAu- REm- LAu    |O[sollight] FAu MIm DOb 
+|O[sollight] REm- MIm- FAu MIm REm      |O[sollight] MIm FAuXfl /FAu SOLu
+
+||T[content](THEME 4/1)()(THEME 4/2v1)
+|O[falight] REm- MIm- FAu- REm- LAu    |O[falight] FAu MIm DOb 
+|O[falight] REm- MIm- FAu MIm REm      |O[falight] MIm- FAu- DOb 
+|O[falight] REm- MIm- FAu- REm- LAu    |O[falight] FAu MIm DOb 
+|O[falight] REm- MIm- FAu MIm REm      |O[falight] MIm- DOb-fl /DOb FAu
    
-||T[grayvlight](BASS)
-|O 0xFAl FAu LAu (F) | 0xMIl MIm SOLu (C) 
-| 0xREd REm FAu (Dm) | 0xLAb LAu DOu (Am) 
-| 0xSIb- FAu- REh (Bb) | 0xFAl- LAu- FAh (F) 
-| 0xSIb REh FAh (Bb) | 0xDOb- MIh- SOLh (C) 
+|||D(Itsumo page 4)
+||T[graylight](BASS)
+|O[graylight] 0xFAl FAu LAu (F)     |O[graylight] 0xMIl MIm SOLu (C) 
+|O[graylight] 0xREd REm FAu (Dm)    |O[graylight] 0xLAb LAu DOu (Am) 
+|O[graylight] 0xSIb- FAu- REh (Bb)  |O[graylight] 0xFAl- LAu- FAh (F) 
+|O[graylight] 0xSIb REh FAh (Bb)    |O[graylight] 0xDOb- MIh- SOLh (C) 
 
