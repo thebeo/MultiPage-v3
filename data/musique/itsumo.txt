@@ -15,7 +15,7 @@
 |O[falight] FAu- SOLu LAu FAu DOu (\TU{do}[\DO])            |O[falight] LAu SOLu DOb (\faChevronCircleDown~\LA-\DO) 
 |O[falight] SOLu FAu- REm (\faLessThan ~sans \LA)           |O[falight] MIm- FAu- DOb (\RO{mi}[\MI]) 
 |O[falight] DOb 0xREm (\DO)>                                |O[falight] REm- MIm FAu SOLu- DOb (\RO{re}[\RE])  
-|O[falight] FAu- SOLu- LAu /REm- LAu (le~\LA-\Lightning\LA) |O[falight] SOLu FAu (\faArrowLeft) 
+|O[falight] FAu- SOLu- LAu /REm- LAu (le~\LA-\faBolt\LA) |O[falight] SOLu FAu (\faArrowLeft) 
 
 ||T[content](BASS) 
 |O[mivlight] FAl FAu LAu (F)      |O[mivlight] FAl FAu LAu (F)
@@ -53,7 +53,7 @@
 |O[falight] FAu- SOLu LAu FAu DOu (\TU{do}[\DO])                            |O[falight] LAu SOLu DOb (\faChevronCircleDown~\LA-\DO)
 |O[falight] SOLu- FAu REm REh (\faLessThan~sans~\LA~\faAngleDoubleUp \RE)   |O[falight] MIh- FAh- DOu (\faAngleDoubleUp\RO{mi}[\MI]) 
 |O[falight] DOb 0xREm (\DO)>                                                |O[falight] REm- MIm FAu SOLu- DOb (\RO{re}[\RE])  
-|O[falight] FAu- SOLu- LAu /REm- LAu (le~\LA-\Lightning\LA)                 |O[falight] SOLu FAu (\faArrowLeft) 
+|O[falight] FAu- SOLu- LAu /REm- LAu (le~\LA-\faBolt\LA)                 |O[falight] SOLu FAu (\faArrowLeft) 
 
 ||T[content](BASS) 
 |O[sivlight] FAl FAu LAu (F)      |O[sivlight] MIl MIm SOLu (C) 
