@@ -5,17 +5,17 @@
 |O[revlight] SIb- FAu- REh (Bb)   |O[revlight] FAl- LAu- FAh (F) 
 |O[revlight] SIb REh FAh (Bb)     |O[revlight] DOb- MIh- SOLh (C) 
 
-||T[content](THEME 1/1)
-|O[sollight] FAu- SOLu LAu FAu DOu (BR-1)   |O[sollight] LAu SOLu DOb (Des-1) 
-|O[sollight] SOLu FAu- REm- LAu (BR-2)      |O[sollight] FAu MIm (Des-2) 
-|O[sollight] FAu MIm REm (Lié)>             |O[sollight] MIm FAu SOLu- DOb 
-|O[sollight] FAu- SOLu- 3xLAu (le-3x)>      |O[sollight] SOLu FAu SOLu (AR) 
+||T[content](Theme sur DO avec LA)
+|O[sollight] FAu- SOLu LAu FAu DOu (\TU{do}[\DO])           |O[sollight] LAu SOLu DOb (\faChevronCircleDown~\LA-\DO) 
+|O[sollight] SOLu FAu- REm- LAu (\faLessThan ~avec \LA)     |O[sollight] FAu MIm (\DA{black} \FA-\MI ~calme) 
+|O[sollight] FAu MIm 0xREm (\RO{fa}[\FA]~\faCaretRight)>    |O[sollight] REm- MIm FAu SOLu- DOb (\RO{re}[\RE])  
+|O[sollight] FAu- SOLu- 3xLAu (le~3x\LA)>                   |O[sollight] SOLu FAu SOLu (\faArrowsAltH) 
 
-||T[content](THEME 1/2)
-|O[falight] FAu- SOLu LAu FAu DOu (BR-1)        |O[falight] LAu SOLu DOb (Des-1) 
-|O[falight] SOLu FAu- REm (Sans-LA)             |O[falight] MIm- FAu- DOb (mi) 
-|O[falight] DOb REm MIm (do)>                   |O[falight] FAu SOLu DOb (fa) 
-|O[falight] FAu- SOLu LAu /REm- LAu (Flame)     |O[falight] SOLu FAu (Aller) 
+||T[content](Theme sur DO sans LA)
+|O[falight] FAu- SOLu LAu FAu DOu (\TU{do}[\DO])            |O[falight] LAu SOLu DOb (\faChevronCircleDown~\LA-\DO) 
+|O[falight] SOLu FAu- REm (\faLessThan ~sans \LA)           |O[falight] MIm- FAu- DOb (\RO{mi}[\MI]) 
+|O[falight] DOb 0xREm (\DO)>                                |O[falight] REm- MIm FAu SOLu- DOb (\RO{re}[\RE])  
+|O[falight] FAu- SOLu- LAu /REm- LAu (le~\LA-\Lightning\LA) |O[falight] SOLu FAu (\faArrowLeft) 
 
 ||T[content](BASS) 
 |O[mivlight] FAl FAu LAu (F)      |O[mivlight] FAl FAu LAu (F)
@@ -23,17 +23,17 @@
 |2                                |2
 |2                                |2
 
-||T[content](THEME 2/1)
-|O[sollight] LAb SIb DOb (Bas-1)                |O[sollight] LAu- SOLu 2xLAu DOu (Haut-1) 
-|O[sollight] DOb- REm DOb- SIb- LAb (Bas-2)     |O[sollight] FAu- MIm FAu- SOLu- LAu (Haut-2) 
-|O[sollight] LAb SIb LAb SOLl FAl (Bas-3)       |O[sollight] FAu MIm REm (Saut-F)> 
-|O[sollight] 2xMIm FAu 2xSOLu (les-2x)>         |O[sollight] LAu SOLu LAu SOLu- (2-fois) 
+||T[content](Theme bas-haut saut FA)
+|O[sollight] LAb SIb DOb (\TB{la}[\LA])                |O[sollight] LAu- SOLu 2xLAu DOu (\TU{la}[\LA])
+|O[sollight] DOb- REm DOb- SIb- LAb (\TB{do}[\DO])     |O[sollight] FAu- MIm FAu- SOLu- LAu (\TU{fa}[\FA])
+|O[sollight] LAb SIb LAb SOLl FAl (\DA{black} \LA-\FA) |O[sollight] FAu MIm REm (\RO{fa}[\FA]~\faCaretRight)> 
+|O[sollight] 2xMIm FAu 2xSOLu (les~2x)>                |O[sollight] LAu SOLu LAu SOLu- ($\Leftrightarrow$) 
 
-||T[content](THEME 2/2)
-|O[falight] LAb SIb DOb (Bas-1)                     |O[falight] LAu- SOLu 2xLAu DOu (Haut-1) 
-|O[falight] DOb- REm DOb- SIb- LAb (Bas-2)          |O[falight] FAu- MIm FAu- SOLu- LAu (Haut-2)> 
-|O[falight] SIb LAb SOLl FAl MIl REd (Descente)     |O[falight] REm- MIm FAu SOLu- DOb (Saut-D) 
-|O[falight] FAu- SOLu- LAu (Simple)                 |O[falight] 2xSOLu 2xFAu (2x2x) 
+||T[content](Theme bas-haut saut RE)
+|O[falight] LAb SIb DOb (\TB{la}[\LA])                      |O[falight] LAu- SOLu 2xLAu DOu (\TU{la}[\LA])
+|O[falight] DOb- REm DOb- SIb- LAb (\TB{do}[\DO])           |O[falight] FAu- MIm FAu- SOLu- LAu (\TU{fa}[\FA])
+|O[falight] SIb LAb SOLl FAl MIl REd (\DA{black} \SI-\RE)   |O[falight] REm- MIm FAu SOLu- DOb (\RO{re}[\RE])  
+|O[falight] FAu- SOLu- LAu (Le~1x\LA)                       |O[falight] 2xSOLu 2xFAu (2x~\faArrowLeft~2x) 
 
 
 |||D(Itsumo page 2)
@@ -43,17 +43,17 @@
 |2                                |2
 |2                                |2
 
-||T[content](THEME 1/1v1)
-|O[sollight] FAu- SOLu LAu FAu DOu (BR-1)   |O[sollight] LAu 2xSOLu (VAR) 
-|O[sollight] MIm FAu MIm FAu (2x)>          |O[sollight] DOb 2xLAb DOb 
-|O[sollight] 2xREm DOb SIb (Lié)>           |O[sollight] FAl DOb- SIb- LAb 
-|O[sollight] SIb LAb SIb DOb- REm >         |O[sollight] LAu-fl /LAu- SOLu [LAu- FAu] 
+||T[content](Theme sur DO variation 2xSOL)
+|O[sollight] FAu- SOLu LAu FAu DOu (\TU{do}[\DO])   |O[sollight] LAu 2xSOLu (\faChevronCircleDown~\LA-2x\SOL) 
+|O[sollight] MIm FAu MIm FAu (2x\faArrowLeft)>      |O[sollight] DOb 2xLAb DOb (\faArrowsAltH)
+|O[sollight] 2xREm DOb SIb (\TD{re}[2x])>           |O[sollight] FAl DOb- SIb- LAb 
+|O[sollight] SIb LAb SIb DOb- REm (\TB{si}[\SI])>   |O[sollight] LAu-fl /LAu- SOLu (fin en \SOL)
 
-||T[falight](THEME 1/2v1)
-|O[falight] FAu- SOLu LAu FAu DOu (BR-1)        |O[falight] LAu SOLu DOb (Des-1) 
-|O[falight] SOLu- FAu REm REh (VAR)             |O[falight] MIh- FAh- DOu (IA) 
-|O[falight] DOb REm MIm (TION)>                 |O[falight] FAu SOLu DOb (fa) 
-|O[falight] FAu- SOLu LAu /REm- LAu (Flame)     |O[falight]  SOLu FAu [SOLu SOLu] (Aller) 
+||T[falight](Theme sur DO sans LA montee RE)
+|O[falight] FAu- SOLu LAu FAu DOu (\TU{do}[\DO])                            |O[falight] LAu SOLu DOb (\faChevronCircleDown~\LA-\DO)
+|O[falight] SOLu- FAu REm REh (\faLessThan~sans~\LA~\faAngleDoubleUp \RE)   |O[falight] MIh- FAh- DOu (\faAngleDoubleUp\RO{mi}[\MI]) 
+|O[falight] DOb 0xREm (\DO)>                                                |O[falight] REm- MIm FAu SOLu- DOb (\RO{re}[\RE])  
+|O[falight] FAu- SOLu- LAu /REm- LAu (le~\LA-\Lightning\LA)                 |O[falight] SOLu FAu (\faArrowLeft) 
 
 ||T[content](BASS) 
 |O[sivlight] FAl FAu LAu (F)      |O[sivlight] MIl MIm SOLu (C) 
@@ -62,17 +62,17 @@
 |O[sivlight] SIb REh FAh (Bb)     |O[sivlight] DOb- MIh- SOLh (C) 
 
 
-||T[content](THEME 3/1)
-|O[sollight] FAu- SOLu- LAu FAu LAu     |O[sollight] SOLu MIm LAb 
-|O[sollight] MIm- REm- SIb              |O[sollight] DOb REm MIm 
-|O[sollight] 2xREm DOb SIb >            |O[sollight] LAb DOb 
-|O[sollight] DOb REm- MIm- FAu SOLu >   |O[sollight] 2xLAu-fl /LAu- SOLu [LAu- FAu]
+||T[content](Theme sur LA - fin en SOL)
+|O[sollight] FAu- SOLu- LAu FAu LAu (\TU{la}[\LA])          |O[sollight] SOLu MIm LAb (\faChevronCircleDown~\SOL-\LA)
+|O[sollight] MIm- REm- SIb (\faLessThan ~sans \FA)           |O[sollight] DOb REm MIm (\RO{do}[\DO])  
+|O[sollight] 2xREm DOb SIb (\TD{re}[2x])>                   |O[sollight] LAb DOb (\LA-\DO)
+|O[sollight] DOb REm- MIm- FAu SOLu (\UA{black} \DO-\SOL)>  |O[sollight] LAu-fl /LAu- SOLu (fin en \SOL)
 
-||T[content](THEME 3/2)
-|O[falight] FAu- SOLu- LAu FAu LAu     |O[falight] SOLu MIm LAb 
-|O[falight] MIm- REm- SIb              |O[falight] DOb REm MIm 
-|O[falight] 2xREm DOb SIb >            |O[falight] LAb DOb 
-|O[falight] DOb REm- MIm- FAu SOLu >   |O[falight] 2xLAu-fl /LAu- FAu [LAu- SOLu]  
+||T[content](Theme sur LA - fin en FA)
+|O[falight] FAu- SOLu- LAu FAu LAu (\TU{la}[\LA])           |O[falight] SOLu MIm LAb (\faChevronCircleDown~\SOL-\LA)
+|O[falight] MIm- REm- SIb (\faLessThan ~sans \FA)           |O[falight] DOb REm MIm  (\RO{do}[\DO]) 
+|O[falight] 2xREm DOb SIb (\TD{re}[2x])>                    |O[falight] LAb DOb (\LA-\DO)
+|O[falight] DOb REm- MIm- FAu SOLu (\UA{black} \DO-\SOL)>   |O[falight] LAu-fl /LAu- FAu (fin en \FA)  
 
 
 |||D(Itsumo page 3)
@@ -82,17 +82,17 @@
 |2                                |2
 |2                                |2
 
-||T[content](THEME 2/2v1)
-|O[sollight] LAb SIb DOb (Bas-1)                     |O[sollight] LAu- SOLu 2xLAu DOu (Haut-1) 
-|O[sollight] DOb- REm DOb- SIb- LAb (Bas-2)          |O[sollight] FAu- MIm FAu- SOLu- LAu (Haut-2)> 
-|O[sollight] SIb LAb SOLl FAl MIl REd (Descente)     |O[sollight] REm- MIm FAu SOLu- DOb (Saut-D) 
-|O[sollight] FAu- SOLu- LAu (Simple)                 |O[sollight] 2xSOLu FAu SOLu (2x2x) 
+||T[content](Theme bas-haut saut RE - fin en SOL)
+|O[sollight] LAb SIb DOb (\TB{la}[\LA])                     |O[sollight] LAu- SOLu 2xLAu DOu (\TU{la}[\LA]) 
+|O[sollight] DOb- REm DOb- SIb- LAb (\TB{do}[\DO])          |O[sollight] FAu- MIm FAu- SOLu- LAu (\TU{fa}[\FA]) 
+|O[sollight] SIb LAb SOLl FAl MIl REd (\DA{black} \SI-\RE)  |O[sollight] REm- MIm FAu SOLu- DOb (\RO{re}[\RE]) 
+|O[sollight] FAu- SOLu- LAu (Le~1x\LA)                      |O[sollight] 2xSOLu FAu SOLu (\faArrowsAltH) 
 
-||T[content](THEME 2/1v1)
-|O[falight] LAb SIb DOb (Bas-1)                |O[falight] LAu- SOLu 2xLAu DOu (Haut-1) 
-|O[falight] DOb- REm DOb- SIb- LAb (Bas-2)     |O[falight] FAu- MIm FAu- SOLu- LAu (Haut-2) 
-|O[falight] LAb SIb LAb SOLl FAl (Bas-3)       |O[falight] FAu MIm REm (Saut-F)> 
-|O[falight] 2xMIm FAu 2xSOLu (les-2x)>         |O[falight] LAu SOLu LAu- /LAu- FAu (2-fois) 
+||T[content](Theme bas-haut saut FA - fin en FA)
+|O[falight] LAb SIb DOb (\TB{la}[\LA])                  |O[falight] LAu- SOLu 2xLAu DOu (\TU{la}[\LA]) 
+|O[falight] DOb- REm DOb- SIb- LAb (\TB{do}[\DO])       |O[falight] FAu- MIm FAu- SOLu- LAu (\TU{fa}[\FA])
+|O[falight] LAb SIb LAb SOLl FAl (\DA{black} \LA-\FA)   |O[falight] FAu MIm REm (\RO{fa}[\FA]~\faCaretRight)> 
+|O[falight] 2xMIm FAu 2xSOLu (les~2x)>                  |O[falight] LAu SOLu LAu- /LAu- FAu (\LA-\SOL~\LA-\FA) 
 
 ||T[content](BASS) 
 |O[relight] FAl FAu LAu (F)      |O[relight] FAl FAu LAu (F)
@@ -100,17 +100,17 @@
 |2                                |2
 |2                                |2
 
-||T[content](THEME 4/1)()(THEME 4/2)
-|O[sollight] REm- MIm- FAu- REm- LAu    |O[sollight] FAu MIm DOb 
-|O[sollight] REm- MIm- FAu MIm REm      |O[sollight] MIm- FAu- DOb 
-|O[sollight] REm- MIm- FAu- REm- LAu    |O[sollight] FAu MIm DOb 
-|O[sollight] REm- MIm- FAu MIm REm      |O[sollight] MIm FAuXfl /FAu SOLu
+||T[content](Theme court - fin en DO)()(Theme court - fin en SOL)
+|O[sollight] REm- MIm- FAu- REm- LAu (\TU{re}[\RE])     |O[sollight] FAu MIm DOb (\faChevronCircleDown~\FA-\DO)
+|O[sollight] REm- MIm- FAu MIm REm (\faArrowsAltH)      |O[sollight] MIm- FAu- DOb (\LeftTorque\DO)
+|O[sollight] REm- MIm- FAu- REm- LAu (\TU{re}[\RE])     |O[sollight] FAu MIm DOb (\faChevronCircleDown~\FA-\DO)
+|O[sollight] REm- MIm- FAu MIm REm (\faArrowsAltH)      |O[sollight] MIm FAuXfl /FAu SOLu (\RightTorque\SOL)
 
-||T[content](THEME 4/1)()(THEME 4/2v1)
-|O[falight] REm- MIm- FAu- REm- LAu    |O[falight] FAu MIm DOb 
-|O[falight] REm- MIm- FAu MIm REm      |O[falight] MIm- FAu- DOb 
-|O[falight] REm- MIm- FAu- REm- LAu    |O[falight] FAu MIm DOb 
-|O[falight] REm- MIm- FAu MIm REm      |O[falight] MIm- DOb-fl /DOb FAu
+||T[content](Theme court - fin en DO)()(Theme court - fin en FA)
+|O[falight] REm- MIm- FAu- REm- LAu (\TU{re}[\RE])      |O[falight] FAu MIm DOb (\faChevronCircleDown~\FA-\DO)
+|O[falight] REm- MIm- FAu MIm REm (\faArrowsAltH)       |O[falight] MIm- FAu- DOb (\LeftTorque\DO)
+|O[falight] REm- MIm- FAu- REm- LAu (\TU{re}[\RE])      |O[falight] FAu MIm DOb (\faChevronCircleDown~\FA-\DO)
+|O[falight] REm- MIm- FAu MIm REm (\faArrowsAltH)       |O[falight] MIm- DOb-fl /DOb FAu (\RightTorque\FA)
    
 |||D(Itsumo page 4)
 ||T[graylight](BASS)

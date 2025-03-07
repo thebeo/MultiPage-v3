@@ -167,6 +167,18 @@
     }}}
 }
 
+% usage: \TB{color}[inside][scale]  - triangle down
+\newdimen\tbsize
+\tbsize=\fgsize %-0.1ex
+
+\NewDocumentCommand\TB{mo O{\Scale}}{\IfNoValueTF{#2}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
+				\path[draw=#1,line width=\LineWidth] (-\tbsize/2,\tbsize/2)--(\tbsize/2,\tbsize/2)--(0,-\tbsize/2)--cycle;
+	}}}{\scalebox{#3}{\tikz[baseline=-0.5ex]{
+				\path[draw=#1,line width=\LineWidth,anchor=center] (-\tbsize/2,\tbsize/2)--(\tbsize/2,\tbsize/2)--(0,-\tbsize/2)--cycle;
+				\node[anchor=center]  at (0,\tbsize/4){\Inside{#2}};
+	}}}
+}
+
 % usage: \shUK{color}[inside][scale]  - Unknown Shape
 \newdimen\uksize
 \uksize=5ex % \fgsize/2

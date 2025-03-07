@@ -119,20 +119,16 @@
 
 |||D(Lucid Dream page 3)
 
-
 ||T[content] (3xRE 4xDbl)
 |O[falight] DOb 2xREm >
 |O[falight] LAb!REm DOb!MIm >
-|O[falight] 2xREm!FAu >
+|O[falight] REm!FAu >
 |O[falight] REd!FAu LAb REm (\TD{la}[dbl])>
-
 
 |O[falight] FAu MIm >
 |O[falight] 2xLAu- FAu- REm
 |2
 |2
-
-
 
 ||T[content] (Saut RE)() (Flame SOL montée LA)
 |O[relight] DOb REm
