@@ -1,0 +1,37 @@
+% l b m u h
+|||D(Chevaliers de Sangreal page 1) 
+||T[content](BASS) 
+|O[revlight] DOu LAu FAu    (Dm)  |O[revlight] 2xLAu FAu   (Dm) 
+|O[revlight] 2xLAu FAu      (Dm)  |O[revlight] 2xLAu FAu   (Dm) 
+|O[favlight] REh LAu FAu    (F)   |O[favlight] 2xLAu FAu   (F) 
+|O[favlight] DOu LAu FAu    (F)   |O[favlight] 2xLAu FAu   (F)
+
+||T[content](BASS)
+|O[dovlight] LAu SOLu FAu   (C)   |O[dovlight] 2xSOLu FAu  (C)
+|O[dovlight] DOu SOLu FAu   (C)   |O[dovlight] 2xSOLu FAu  (C)
+|O[lavlight] SOLu- LAu- MIm (Am)  |O[lavlight] 2xLAu- MIm- (Am)  
+|O[lavlight] DOu- LAu- MIm  (Am)  |O[lavlight] 2xLAu- MIm- (Am) 
+
+||T[content](Montee simple)
+|O[revlight] LAb (Dm)             |O[revlight] LAb!REm  (Dm)        
+|O[favlight] SOLl (F)             |O[favlight] LAb!DOb  (F)
+|O[dovlight] FAl  (F)             |O[dovlight] SOLl!DOb (C)
+|O[lavlight] SOLl (Am)            |O[lavlight] MIl!LAb  (Am)
+
+||T[content](Montee echo)
+|O[revlight] LAb- REm!FAu  (Dm)   |O[revlight] LAb- REm (Dm)
+|O[favlight] MIm- DOb!FAu  (F)    |O[favlight] LAb DOb  (F)
+|O[dovlight] FAu MIm!SOLu  (C)    |O[dovlight] DOb MIm  (C)
+|O[lavlight] SOLu- MIm!LAu (Am)   |O[lavlight] DOb MIm  (Am)
+
+||T[content](Montee ornement)
+|O[revlight] LAu- REh!FAh  (Dm)>   |O[revlight] FAu 2xMIm- 2xREm LAb REm   (Dm)
+|O[favlight] MIh  DOu!FAh  (F)>    |O[favlight] LAu 2xSOLu 2xFAu- LAb- DOb (F)
+|O[dovlight] FAh MIh!SOLh  (C)     |O[dovlight] SOLu- 2xFAu- 2xMIm DOb MIm (C)
+|O[lavlight] SOLh- MIh!LAh (Am)    |O[lavlight] FAu 2xMIm 2xREm- FAl- LAb  (Am)
+
+||T[content](Montee ornement)
+|O[revlight] LAu- REh!FAh  (Dm)>   |O[revlight] FAh 2xMIh 2xREh LAu REh     (Dm)
+|O[favlight] MIh  DOu!FAh  (F)>    |O[favlight] LAh 2xSOLh 2xFAh- LAu- DOu  (F)
+|O[dovlight] FAh MIh!SOLh  (C)     |O[dovlight] SOLh 2xFAh 2xMIh DOu- MIh   (C)
+|O[lavlight] SOLh- MIh!LAh (Am)    |O[lavlight] FAh- 2xMIh- 2xREh- FAu- LAu (Am)
