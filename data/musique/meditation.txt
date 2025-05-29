@@ -1,45 +1,46 @@
-|||D(Melodie Restructuree - Pulsation Cardiaque Preservee)
+|||D(Meditation)
 
 ||T(Introduction - Simplicite maximale)
-|M [L] REd REd GOq GOs REd REd GOq GOs
-|M [L] REd REd GOq GOs REd REd GOq GOs
-|M 
+|M [L] REd REd GOq GOs GOq GOs GOq GOs
+|M [L] REd REd GOq GOs GOq GOs GOq GOs
 
 ||T(Premiere evolution - Ajout d'une note)
-|M [L] REd REd GOq GOs REd MIm GOq GOs
-|M [L] REd REd GOq GOs REd SOLu GOq GOs
-|M 
+|M [L] REd REd GOq GOs GOq MIm GOq GOs
+|M [L] REd REd GOq GOs GOq SOLu GOq GOs
+|M [L] REd REd GOq GOs GOq DOb GOq GOs
+|M [L] REd REd GOq GOs GOq LAb GOq GOs
 
 ||T(Developpement leger - Deux notes)  
 |M [L] REd REd GOq GOs FAu MIm GOq GOs
 |M [L] REd REd GOq GOs LAu SOLu GOq GOs
 |M [L] REd REd GOq GOs REm DOb GOq GOs
-|M 
+|M [L] REd REd GOq GOs SIb LAb GOq GOs 
 
-||T(Complexite croissante - Trois notes)
-|M [L] REd REd FAu MIm REd SOLu GOq GOs
-|M [L] REd REd LAu DOu REd MIm GOq GOs
-|M [L] REd REd REm DOb REd SOLu GOq GOs
-|M 
+||T(Complexite croissante - Quatre notes)
+|M [L] REd REd GOq GOs FAu MIm REm SOLu 
+|M [L] REd REd GOq GOs LAu SOLu FAu MIm 
+|M [L] REd REd GOq GOs FAu MIm REm SOLu 
+|M [L] REd REd GOq GOs REm DOb SIb LAb  
 
-|||D(Melodie Restructuree - Pulsation Cardiaque Preservee)
+|||D(Meditation)
+
 ||T(Montee vers le sommet - Quatre notes)
-|M [L] REd REd LAu SOLu FAu MIm GOq GOs
-|M [L] REd REd FAu DOu REm MIm GOq GOs
-|M [L] REd REd REm DOb SIb SOLu GOq GOs
+|M [L] REd REd GOq GOs LAu SOLu FAu SOLu
+|M [L] REd REd GOq GOs FAu MIm REm MIm
+|M [L] REd REd GOq GOs REm DOb SIb SOLu
 |M 
 
 ||T(Apogee melodique - Complexite maximale)
 |M [L] REd REd LAu SOLu FAu MIm REm DOb
 |M [L] REd REd FAu MIm REm DOb SIb SOLu
-|M [L] SIb REd REm DOb FAu SOLu REd DOu
-|M [L] LAu REd REm DOb SIb SOLu REd DOu
+|M [L] REd REd REm DOb FAu MIm REm LAb
+|M [L] REd REd REm DOb FAu MIm FAu SOLu
 |M 
 
 ||T(Variations complexes - Maintien du niveau)
-|M [L] REd REd FAu DOu SOLu MIm GOq GOs
-|M [L] REd REd REm SOLu DOb MIm GOq GOs
-|M [L] REd REd SIb DOb LAu SOLu GOq GOs
+|M [L] REd REd GOq GOs FAu DOu SOLu MIm
+|M [L] REd REd GOq GOs REm SOLu DOb MIm
+|M [L] REd REd GOq GOs SIb DOb LAu SOLu 
 |M [L] REd REd SOLu DOu MIm DOb REm SOLu
 |M 
 
@@ -50,18 +51,18 @@
 |M [L] REd REd LAu DOu FAu SOLu REm DOb
 |M 
 
-|||D(Melodie Restructuree - Pulsation Cardiaque Preservee)
+|||D(Meditation)
 
 ||T(Debut de la descente - Retour vers quatre notes)
-|M [L] REd REd DOb SOLu SIb DOu GOq GOs
-|M [L] REd REd SOLu DOb LAu MIm GOq GOs
-|M [L] REd REd DOu MIm SIb SOLu GOq GOs
+|M [L] REd REd GOq GOs DOb SOLu SIb DOu
+|M [L] REd REd GOq GOs SOLu DOb LAu MIm
+|M [L] REd REd GOq GOs DOu MIm SIb SOLu
 |M 
 
 ||T(Descente progressive - Trois notes)
-|M [L] REd REd LAu MIm DOb SOLu GOq GOs
-|M [L] REd REd FAu DOu SIb MIm GOq GOs
-|M [L] REd REd SIb DOb FAu SOLu GOq GOs
+|M [L] REd REd GOq GOs LAu MIm DOb SOLu
+|M [L] REd REd GOq GOs FAu DOu SIb MIm
+|M [L] REd REd GOq GOs SIb DOb FAu SOLu
 |M 
 
 ||T(Retour vers la simplicite - Deux notes)
@@ -71,8 +72,8 @@
 |M 
 
 ||T(Resolution finale - Une note puis retour à la base)
-|M [L] REd REd GOq GOs REd MIm GOq GOs
-|M [L] REd REd GOq GOs REd SOLu GOq GOs
-|M [L] REd REd GOq GOs REd REd GOq GOs
+|M [L] REd REd GOq GOs GOq SOLu GOq GOs
+|M [L] REd REd GOq GOs GOq MIm GOq GOs
+|M [L] REd REd GOq GOs GOq GOs GOq GOs
 |M [L] REd REd GOq GOs GOq GOs GOq GOs
 |M
