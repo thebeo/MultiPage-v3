@@ -1,21 +1,3 @@
 |||D (Test page 1)
 
-||T[content] (name)
-|O REd!SIb (\TD{do})
-|O DOu!SIb (\TD{re}[inside])>
-|O DOu=SIb (\TD{mi}[\MI])>
-
-||T[content] (name)
-|O REd!SIb (\TU{do})
-|O DOu!SIb (\TU{re}[inside])>
-|O DOu=SIb (\TU{mi}[\MI])>
-
-||T[content] (name)
-|O REd!SIb (\RO{do})
-|O DOu!SIb (\RO{re}[inside])>
-|O DOu=SIb (\RO{mi}[\MI])>
-
-||T[content] (name)
-|O REd!SIb (\RO{do})
-|O DOu!SIb (\RO{re})>
-|O DOu=SIb (\RO{mi})>
+|M [L] DOb REm MIm LAb DOb GOq GOs GOq

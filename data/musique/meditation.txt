@@ -1,0 +1,78 @@
+|||D(Melodie Restructuree - Pulsation Cardiaque Preservee)
+
+||T(Introduction - Simplicite maximale)
+|M [L] REd REd GOq GOs REd REd GOq GOs
+|M [L] REd REd GOq GOs REd REd GOq GOs
+|M 
+
+||T(Premiere evolution - Ajout d'une note)
+|M [L] REd REd GOq GOs REd MIm GOq GOs
+|M [L] REd REd GOq GOs REd SOLu GOq GOs
+|M 
+
+||T(Developpement leger - Deux notes)  
+|M [L] REd REd GOq GOs FAu MIm GOq GOs
+|M [L] REd REd GOq GOs LAu SOLu GOq GOs
+|M [L] REd REd GOq GOs REm DOb GOq GOs
+|M 
+
+||T(Complexite croissante - Trois notes)
+|M [L] REd REd FAu MIm REd SOLu GOq GOs
+|M [L] REd REd LAu DOu REd MIm GOq GOs
+|M [L] REd REd REm DOb REd SOLu GOq GOs
+|M 
+
+|||D(Melodie Restructuree - Pulsation Cardiaque Preservee)
+||T(Montee vers le sommet - Quatre notes)
+|M [L] REd REd LAu SOLu FAu MIm GOq GOs
+|M [L] REd REd FAu DOu REm MIm GOq GOs
+|M [L] REd REd REm DOb SIb SOLu GOq GOs
+|M 
+
+||T(Apogee melodique - Complexite maximale)
+|M [L] REd REd LAu SOLu FAu MIm REm DOb
+|M [L] REd REd FAu MIm REm DOb SIb SOLu
+|M [L] SIb REd REm DOb FAu SOLu REd DOu
+|M [L] LAu REd REm DOb SIb SOLu REd DOu
+|M 
+
+||T(Variations complexes - Maintien du niveau)
+|M [L] REd REd FAu DOu SOLu MIm GOq GOs
+|M [L] REd REd REm SOLu DOb MIm GOq GOs
+|M [L] REd REd SIb DOb LAu SOLu GOq GOs
+|M [L] REd REd SOLu DOu MIm DOb REm SOLu
+|M 
+
+||T(Exploration harmonique - Peak creatif)
+|M [L] REd REd GOq GOs DOb MIm SOLu DOu
+|M [L] REd REd GOq GOs SIb DOb FAu SOLu
+|M [L] REd REd FAu SOLu LAu DOu FAu MIm
+|M [L] REd REd LAu DOu FAu SOLu REm DOb
+|M 
+
+|||D(Melodie Restructuree - Pulsation Cardiaque Preservee)
+
+||T(Debut de la descente - Retour vers quatre notes)
+|M [L] REd REd DOb SOLu SIb DOu GOq GOs
+|M [L] REd REd SOLu DOb LAu MIm GOq GOs
+|M [L] REd REd DOu MIm SIb SOLu GOq GOs
+|M 
+
+||T(Descente progressive - Trois notes)
+|M [L] REd REd LAu MIm DOb SOLu GOq GOs
+|M [L] REd REd FAu DOu SIb MIm GOq GOs
+|M [L] REd REd SIb DOb FAu SOLu GOq GOs
+|M 
+
+||T(Retour vers la simplicite - Deux notes)
+|M [L] REd REd GOq GOs SIb SOLu GOq GOs
+|M [L] REd REd GOq GOs DOu MIm GOq GOs
+|M [L] REd REd GOq GOs MIm DOb GOq GOs
+|M 
+
+||T(Resolution finale - Une note puis retour à la base)
+|M [L] REd REd GOq GOs REd MIm GOq GOs
+|M [L] REd REd GOq GOs REd SOLu GOq GOs
+|M [L] REd REd GOq GOs REd REd GOq GOs
+|M [L] REd REd GOq GOs GOq GOs GOq GOs
+|M
