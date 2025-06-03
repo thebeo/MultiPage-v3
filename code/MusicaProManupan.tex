@@ -89,20 +89,36 @@
 
 
 %%%%%%%%
-\begin{document}
-	%\Pages{../data/test-data/test.txt}
-	%\Pages{../data/test-data/multi-test.txt}
+% Définition du fichier par défaut
 
-	%\Pages{../data/test-data/note-test.txt}
-	%\Pages{../data/test-data/chord-test.txt}
-	%\Pages{../data/test-data/shape-test.txt}
-	%\Pages{../data/test-data/oo-test.txt}
-	%\Pages{../data/test-data/master-test.txt}
-	
-	%\Pages{../data/musique/Lucid Dream.txt}
-	%\Pages{../data/musique/Pachelbel.txt}
-	%\Pages{../data/musique/itsumo.txt}
-	%\Pages{../data/musique/sangreal.txt}
-	\Pages{../data/musique/meditation.txt}		
+	%\Pages{../data/test-data/test.txt}
+%\Pages{../data/test-data/multi-test.txt}
+
+%\Pages{../data/test-data/note-test.txt}
+%\Pages{../data/test-data/chord-test.txt}
+%\Pages{../data/test-data/shape-test.txt}
+%\Pages{../data/test-data/oo-test.txt}
+%\Pages{../data/test-data/master-test.txt}
+
+%\Pages{../data/musique/Lucid Dream.txt}
+%\Pages{../data/musique/Pachelbel.txt}
+%\Pages{../data/musique/itsumo.txt}
+%\Pages{../data/musique/sangreal.txt}
+%\Pages{../data/musique/meditation.txt}
+
+\def\defaultfile{../data/musique/automator.txt}
+
+% Vérification de l'existence de l'argument \datafile
+\ifdefined\datafile
+\def\inputfile{\datafile}
+\else
+\def\inputfile{\defaultfile}
+\fi
+
+
+
+\begin{document}
+
+	\Pages{\inputfile}		
 		
 \end{document}

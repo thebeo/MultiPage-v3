@@ -1,0 +1,95 @@
+% Conversion MIDI vers Handpan - Format Partition
+% Source: DaViciCode-HP.mid
+% Signature: 6/8
+% Format: |||D = nouvelle page, ||T = nouvelle ligne, |O = mesure
+% Chaque page = 4 lignes de 8 mesures
+% Algorithme: Transposition pondérée par fréquence des notes
+%
+
+|||D (DaViciCode-HP)
+||T 
+|O DOu LAu FAu LAu LAu FAu (mesure 1.0)
+|O LAu LAu FAu LAu LAu FAu (mesure 2.0)
+|O REh LAu FAu LAu LAu FAu DOu (mesure 3.0)
+|O LAu FAu LAu LAu FAu (mesure 4.0)
+|O LAu SOLu FAu SOLu SOLu FAu (mesure 5.0)
+|O DOu SOLu FAu SOLu SOLu FAu (mesure 6.0)
+|O SOLu LAu MIm LAu LAu MIm DOu (mesure 7.0)
+|O LAu MIm LAu LAu MIm (mesure 8.0)
+||T 
+|O LAb LAb!REm (mesure 9.0)
+|O SOLl DOb!LAb (mesure 10.0)
+|O FAl DOb!SOLl (mesure 11.0)
+|O SOLl LAb!MIl (mesure 12.0)
+|O LAb FAu!REm (mesure 13.0)
+|O LAb LAb!REm (mesure 14.0)
+|O MIm DOb!FAu (mesure 15.0)
+|O LAb DOb!LAb (mesure 16.0)
+||T 
+|O FAu MIm!SOLu (mesure 17.0)
+|O DOb DOb!MIm (mesure 18.0)
+|O SOLu LAu!MIm (mesure 19.0)
+|O DOb DOb!MIm (mesure 20.0)
+|O LAu FAh!REh FAu MIm (mesure 21.0)
+|O MIm REm REm LAb REm (mesure 22.0)
+|O MIh DOu!FAh LAu SOLu (mesure 23.0)
+|O SOLu FAu FAu LAb DOb (mesure 24.0)
+||T 
+|O FAh MIh!SOLh SOLu FAu (mesure 25.0)
+|O FAu MIm MIm DOb MIm (mesure 26.0)
+|O SOLh LAh!MIh FAu MIm (mesure 27.0)
+|O MIm REm REm FAl LAb (mesure 28.0)
+|O LAu FAh!REh FAh MIh (mesure 29.0)
+|O MIh REh REh LAu REh (mesure 30.0)
+|O MIh DOu!FAh LAh SOLh (mesure 31.0)
+|O SOLh FAh FAh LAu DOu (mesure 32.0)
+
+|||D (DaViciCode-HP)
+||T 
+|O FAh MIh!SOLh SOLh FAh (mesure 33.0)
+|O FAh MIh MIh DOu MIh (mesure 34.0)
+|O SOLh LAh!MIh FAh MIh (mesure 35.0)
+|O MIh REh REh FAu LAu (mesure 36.0)
+|O MIl!SOLl FAl!LAb LAu SOLu (mesure 37.0)
+|O SOLu FAu FAu REm REm (mesure 38.0)
+|O MIl FAl!UKw DOu UKw (mesure 39.0)
+|O UKw LAu LAu SOLu SOLu FAu (mesure 40.0)
+||T 
+|O FAu DOb MIm REm (mesure 41.0)
+|O FAl MIl!SOLl SOLu FAu (mesure 42.0)
+|O FAu MIm MIm DOb DOb SOLl (mesure 43.0)
+|O SOLl (mesure 44.0)
+|O DOb LAb!REm LAh SOLh (mesure 45.0)
+|O SOLh FAh FAh MIh MIh REh (mesure 46.0)
+|O REh LAu SOLu (mesure 47.0)
+|O MIl DOb!LAb MIh REh (mesure 48.0)
+||T 
+|O REh DOu DOu LAu LAu (mesure 49.0)
+|O UKw DOb!SOLl SOLh FAh (mesure 50.0)
+|O FAh MIh MIh REh REh DOu (mesure 51.0)
+|O DOu SOLu SOLu (mesure 52.0)
+|O FAl MIl!SOLl SOLu FAu (mesure 53.0)
+|O FAu MIm MIm DOb DOb SOLl (mesure 54.0)
+|O SOLl (mesure 55.0)
+|O SOLl LAb!MIl MIm REm (mesure 56.0)
+||T 
+|O REm DOb DOb UKw LAb (mesure 57.0)
+|O LAb SOLl SOLl FAl FAl REd (mesure 58.0)
+|O REm LAb (mesure 59.0)
+|O MIm DOb!FAu DOu UKw UKw (mesure 60.0)
+|O LAu LAu SOLu SOLu FAu FAu (mesure 61.0)
+|O DOb DOb DOb FAu MIm!SOLu (mesure 62.0)
+|O SOLh FAh FAh MIh MIh (mesure 63.0)
+|O DOu MIh REh (mesure 64.0)
+
+|||D (DaViciCode-HP)
+||T 
+|O REm LAb REm REm LAb REm (mesure 65.0)
+|O REm LAb REm REm LAb FAu (mesure 66.0)
+|O REm LAb REm REm LAb REm (mesure 67.0)
+|O REm LAb REm REm LAb FAu (mesure 68.0)
+|O REm LAb REm REm LAb REm (mesure 69.0)
+|O REm LAb REm REm LAb REm (mesure 70.0)
+|O REm LAb REm REm LAb REm (mesure 71.0)
+|O REm (mesure 72.0)
+
