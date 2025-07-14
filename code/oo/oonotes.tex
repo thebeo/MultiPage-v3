@@ -76,7 +76,7 @@
                     {
                     \node[shape=semicircle,inner sep=\extnotesize,fill=\pgfoovalueof{Color},rotate=\pgfoovalueof{Angle}-90] (#1) at (\pgfoovalueof{Angle}:\notescale*\pgfoovalueof{Radius}) {};
                     }
-                {G} % gost Note (never filled)
+                {G} % gost Note (smaller)
                     { 
                     \node[circle,inner sep=\notesize/2,draw=\pgfoovalueof{Color}] (#1) at (\pgfoovalueof{Angle}:\notescale*\pgfoovalueof{Radius}) {};
                     }
@@ -94,7 +94,7 @@
                     {
                     \node[shape=semicircle,inner sep=\extnotesize,draw=\pgfoovalueof{Color},rotate=\pgfoovalueof{Angle}-90] (#1) at (\pgfoovalueof{Angle}:\notescale*\pgfoovalueof{Radius}) {};
                     }
-                {G} % gost Note (never filled)
+                {G} % gost Note (smaller)
                     { 
                     \node[circle,inner sep=\notesize/2,draw=\pgfoovalueof{Color}] (#1) at (\pgfoovalueof{Angle}:\notescale*\pgfoovalueof{Radius}) {};
                     }
@@ -112,7 +112,7 @@
                     {
                     \node[shape=semicircle,inner sep=\extnotesize,rotate=\pgfoovalueof{Angle}-90] (#1) at (\pgfoovalueof{Angle}:\notescale*\pgfoovalueof{Radius}) {};
                     }
-                {G} % gost Note (never filled)
+                {G} % gost Note (smaller)
                     { 
                     \node[circle,inner sep=\notesize/2] (#1) at (\pgfoovalueof{Angle}:\notescale*\pgfoovalueof{Radius}) {};
                     }
@@ -134,7 +134,7 @@
                      % add white circle
                      \node[shape=semicircle,inner sep=\notesize/2,draw=white,ultra thick,rotate=\pgfoovalueof{Angle}-90] (#1) at (\pgfoovalueof{Angle}:\notescale*\pgfoovalueof{Radius}) {};
                     }
-                {G} % gost Note (never filled)
+                {G} % gost Note (smaller)
                     { 
                     \node[circle,inner sep=\notesize/2,draw=\pgfoovalueof{Color}] (#1) at (\pgfoovalueof{Angle}:\notescale*\pgfoovalueof{Radius}) {};
                     % add white circle
@@ -154,7 +154,7 @@
                     {
                     \node[white,shape=semicircle,inner sep=0,rotate=\pgfoovalueof{Angle}-90] (#1) at (\pgfoovalueof{Angle}:\notescale*\pgfoovalueof{Radius}) {#3};
                     }
-                {G} % gost Note (never filled)
+                {G} % gost Note (smaller)
                     { 
                     \node[black,circle,inner sep=0] (#1) at (\pgfoovalueof{Angle}:\notescale*\pgfoovalueof{Radius}) {#3};
                     }
@@ -178,7 +178,7 @@
                   
                     \node[shape=circular sector,inner sep=.41*\notesize,draw=\pgfoovalueof{Color},thick,fill=#3,anchor=sector center,circular sector angle=90,rotate=\pgfoovalueof{Angle}+\PLMN*135] (N) at (\pgfoovalueof{Angle}:\notescale*\pgfoovalueof{Radius}*.925) {};
                     }
-                {G} % gost Note (never filled)
+                {G} % gost Note (smaller)
                     { 
                      % No double with gost
                     }
@@ -209,8 +209,8 @@
 \pgfoonew \ooSOLl=new Note(\ExtNoteRing,225,SOLl,sol,E)
 \pgfoonew \ooFAl=new Note(\ExtNoteRing,180,FAl,fa,E)
 
-\pgfoonew \ooGOq=new Note(\NoteRing/2,202.5,GOq,gg,G)
-\pgfoonew \ooGOs=new Note(\NoteRing/2,-22.5,GOq,gg,G)
+\pgfoonew \ooGOq=new Note(\NoteRing/2,202.5,GOq,left,G)
+\pgfoonew \ooGOs=new Note(\NoteRing/2,-22.5,GOq,right,G)
 
 \pgfoonew \ooUKw=new Note(\NoteRing/2,90,UKw,uk,I)
 

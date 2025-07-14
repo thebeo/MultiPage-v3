@@ -137,12 +137,16 @@
         \tl_show:N \l__Phrase_tl
     
     % Pretraitement for the Post
-    % ADD X before - to ease parsing (if not already an X)      
-%    \regex_replace_all:nnN {[^X](-\s)} {X\1} \l__Phrase_tl
+    % ADD X before - or + to ease parsing (if not already an X)      
     \regex_replace_all:nnN {-\s} {X\0} \l__Phrase_tl % inside
     \regex_replace_all:nnN {-[A-Za-z0-9]+\s} {X\0} \l__Phrase_tl % inside
     \regex_replace_all:nnN {-$} {X\0} \l__Phrase_tl  % at the   
     \regex_replace_all:nnN {-[A-Za-z0-9]$} {X\0} \l__Phrase_tl  % at the end
+    
+     \regex_replace_all:nnN {+\s} {X\0} \l__Phrase_tl % inside
+    \regex_replace_all:nnN {+[A-Za-z0-9]+\s} {X\0} \l__Phrase_tl % inside
+    \regex_replace_all:nnN {+$} {X\0} \l__Phrase_tl  % at the   
+    \regex_replace_all:nnN {+[A-Za-z0-9]$} {X\0} \l__Phrase_tl  % at the end
     
     % Pretraitement for the Pre
     % ADD x before / to ease parsing 
@@ -355,7 +359,7 @@
     % somme additional tasks if found
     \bool_if:NTF \l__Post_bool 
         {% yes found
-            % if  - is in or not noting to do
+            % split - and beat
             \tl_if_in:NnTF \l__Post_tl {-}
                 {% yes - or - beat
                     \tl_if_single:NTF \l__Post_tl
@@ -366,12 +370,26 @@
                         \regex_replace_once:nnN {-} {} \l__Beat_tl
                         
                         \tl_set:Nn \l__Post_tl {-}                                 
-                    }              
+                    }            
                 }
-                {% No just beat
-                    \tl_set_eq:NN \l__Beat_tl \l__Post_tl
-                    \tl_clear_new:N \l__Post_tl                
-                }
+                { % split + and beat
+	                	\tl_if_in:NnTF \l__Post_tl {+}
+	                	{% yes + or + beat
+	                		\tl_if_single:NTF \l__Post_tl
+	                		{% just +
+	                		} 
+	                		{% +Beat
+	                			\tl_set_eq:NN \l__Beat_tl \l__Post_tl
+	                			\regex_replace_once:nnN {+} {} \l__Beat_tl
+	                			
+	                			\tl_set:Nn \l__Post_tl {+}                                 
+	                		}            
+	                	}
+		                {% No just beat		                	
+		                    \tl_set_eq:NN \l__Beat_tl \l__Post_tl
+		                    \tl_clear_new:N \l__Post_tl                
+		                }
+              }
 
         }
         {% no

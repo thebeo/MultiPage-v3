@@ -58,25 +58,101 @@
 % |1 ou 2[color] = une ou deux colonnes vide
 %
 % 
+% Table
+% 	
+
+% Note
+%
+% OO
+%% Documentation de la syntaxe des lignes |o et |O
+
+% ==============================================================================
+% |[oO] [ContenuMusical]
+% - '|' : Caractère obligatoire de début de ligne pour le contenu musical.
+% - 'o' ou 'O' : Indique le type de ligne de contenu musical.
+% -  |O[color] = Phrase scale =1 - 2 col
+% - |o[color] = Phrase scale = .5 - 1 col
+% - '[ContenuMusical]' : Représente la séquence de notes
+% 1. Notes:
+%%        Pré-modificateurs :    
+%%           - / : Représente une "flamme". La note sera dessinée avec un symbole
+%%                 de foudre.  (ex: /REd)
+%%           - 0 : Indique une note "vide" (pas de coup). La note sera affichée
+%%                 mais non remplie.  (ex: 0REd)
+%%           - 1..9 : Indique une note répété. La note sera dessinée avec le nombre au milieur
+%%                 (ex: 3REd)
+%%           - x : Indique un pré-modificateur optionel de séparation
+%%                  (ex: /xREd ou 2xREd)
+%%       Post-modificateurs :
+%%           Indiquent des actions ou des caractéristiques qui suivent la note.
+%%           - - : Représente une flèche vers la droite  (ex: REd-)
+%%           - + : Représente une flèche vers la gauche (ex: REd+)
+%%           - Chiffres (ex: 1, 2) : Représentent un "beat" associé à la note.
+%%                 Ces chiffres seront affichés le long de la flèche de connexion.
+%%					(ex: REd-2, REd+1, REd2)
+%
+% 2. Accords :
+%%           Indiquent une combinaison de deux notes.
+%%           - = : Dessine deux demi-cercles, le second étant rempli avec la
+%%                 couleur de la note.  (ex: REd=DOb)
+%%           - ! : Dessine les 2 notes connectés par une ligne pointillée.  (ex: REd!DOb)
+
+%  3. Chaines alternative
+%%            contenu entre crochets `[]` desiné avec des liens rouges
+
+% 4. Nom (Name) :
+%%           Enfermé entre parenthèses () à la fin de la ligne. Le texte entre parenthèses est traité
+%%           comme un nom pour la phrase et est affiché dans le coin inférieur
+%%           droit du diagramme. Il peut contenir des commandes LaTeX qui seront
+%%           réinterprétées.  (ex: REd (Ma_Phrase))
+
+%5.  Lien (Link) :
+%%           Indiqué par un symbole >. dernier caractère de la ligne Cela dessine une forme de lien triangulaire
+%%           sur le diagramme.  (ex: REd >)
+
+% ==============================================================================
+% Master
+%
+% Format de la ligne d'information : `[R/L] note1scale1 note2scale2 ...`
+% |M[color] = Master- 2 col
+% |m[color] = Master - 1 col
+
+% 1. Indicateur de main (Optionnel) : `[R/L]`
+%    - `[L]` : Main gauche.
+%    - `[R]` : Main droite (ou par défaut si absent).
+
+% 2. Séquence de notes : `noteXscaleX`
+%    - Chaque élément est `note` + `scale` (sans espace).
+%    - `NOTE` : Nom de la note musicale (RE, MI, ...)
+%    - `scale` : Caractère unique indiquant la figure/échelle (dernier caractère de l'élément).
+%      - `d` : Ding (cercle).
+%      - `l` : Low (deux paraboles vers le bas).
+%      - `b` : Bottom (une parabole vers le bas).
+%      - `m` : Middle (ligne horizontale).
+%      - `u` : Upper (une parabole vers le haut).
+%      - `h` : High (deux paraboles vers le haut).
+%      - `q` : Left Ghost.
+%      - `s` : Right Ghost.
+
+%
+%   TODO explore rescan in Note
+%
 % All
 % 	use msg
 %		\tl_analysis_show:N
 %
-% 
-% Table
-% 	
-%
-% Note
-%   TODO explore rescan in Note
 %   Add text in Notes
 %
 % Chord 
 %
 % Master
+
 % 	Regarder le Scale pour entrer en une colonne
+
+
 %
 % Oo
-%	add a post for a  straight arrow path +
+%	add a post for a  straight arrow path + (no use for left)
 %
 % Shape
 %   Ajouter nom à Shape
@@ -91,22 +167,23 @@
 %%%%%%%%
 % Définition du fichier par défaut
 
-	%\Pages{../data/test-data/test.txt}
-%\Pages{../data/test-data/multi-test.txt}
+%\def\defaultfile{../data/test-data/test.txt}
+%\def\defaultfile{../data/test-data/multi-test.txt}
 
-%\Pages{../data/test-data/note-test.txt}
-%\Pages{../data/test-data/chord-test.txt}
-%\Pages{../data/test-data/shape-test.txt}
-%\Pages{../data/test-data/oo-test.txt}
-%\Pages{../data/test-data/master-test.txt}
+%\def\defaultfile{../data/test-data/note-test.txt}
+%\def\defaultfile{../data/test-data/chord-test.txt}
+%\def\defaultfile{../data/test-data/shape-test.txt}
+%\def\defaultfile{../data/test-data/oo-test.txt}
+%\def\defaultfile{../data/test-data/master-test.txt}
 
-%\Pages{../data/musique/Lucid Dream.txt}
-%\Pages{../data/musique/Pachelbel.txt}
-%\Pages{../data/musique/itsumo.txt}
-%\Pages{../data/musique/sangreal.txt}
-%\Pages{../data/musique/meditation.txt}
+%\def\defaultfile{../data/musique/Lucid Dream.txt}
+%\def\defaultfile{../data/musique/Pachelbel.txt}
+%\def\defaultfile{../data/musique/itsumo.txt}
+%\def\defaultfile{../data/musique/sangreal.txt}
+%\def\defaultfile{../data/musique/meditation.txt}
 
-\def\defaultfile{../data/musique/automator.txt}
+%\def\defaultfile{../data/test-data/master-droite.txt}
+\def\defaultfile{../data/test-data/master-gauche.txt}
 
 % Vérification de l'existence de l'argument \datafile
 \ifdefined\datafile
@@ -115,6 +192,12 @@
 \def\inputfile{\defaultfile}
 \fi
 
+
+% usage
+% use filename in code
+% pdflatex -synctex=0 -interaction=nonstopmode "MusicaProManupan".tex
+% use filename in argument
+% pdflatex -synctex=0 -interaction=nonstopmode "\def\datafile{../data/musique/Lucid Dream.txt} \input{MusicaProManupan.tex}"
 
 
 \begin{document}

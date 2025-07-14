@@ -60,8 +60,8 @@
 \pgfoonew \SymSOLl=new Symbol(225,1,sol)
 \pgfoonew \SymFAl=new Symbol(180,1,fa)
 
-\pgfoonew \SymGOq=new Symbol(202.5,1,go)
-\pgfoonew \SymGOs=new Symbol(-22.5,1,go)
+\pgfoonew \SymGOq=new Symbol(202.5,1,left)
+\pgfoonew \SymGOs=new Symbol(-22.5,1,right)
 
 \pgfoonew \SymUKw=new Symbol(0,0,uk)
    
@@ -438,19 +438,19 @@
 \NewDocumentCommand\LGhost{}{
 \tikzset{
       LGhost/.pic={
-        \fill[decoration={snake,amplitude=-1.5,segment length=\Msize*1.5}] [color=left] (-2*\Msize,\Mshift) arc [start angle=180, end angle=0, radius=2*\Msize] (2*\Msize,\Mshift) -- (2*\Msize,-4*\Mshift) decorate{ -- (-2*\Msize,-4*\Mshift)} -- (-2*\Msize,\Mshift);
+        \fill[decoration={snake,amplitude=-1.5,segment length=\Msize*1.5}] [color=white] (-2*\Msize,\Mshift) arc [start angle=180, end angle=0, radius=2*\Msize] (2*\Msize,\Mshift) -- (2*\Msize,-4*\Mshift) decorate{ -- (-2*\Msize,-4*\Mshift)} -- (-2*\Msize,\Mshift);
         
-        \fill[fill=white] (-4*\Msize/5,\Mshift) circle [radius=\Msize/2];
-        \fill[fill=white] (4*\Msize/5,\Mshift) circle [radius=\Msize/2];
+        \fill[fill=left] (-4*\Msize/5,\Mshift) circle [radius=\Msize/2];
+        \fill[fill=left] (4*\Msize/5,\Mshift) circle [radius=\Msize/2];
         }}
 }
 \NewDocumentCommand\RGhost{}{
 \tikzset{
       RGhost/.pic={
-        \fill[decoration={snake,amplitude=-1.5,segment length=\Msize*1.5}] [color=right] (-2*\Msize,\Mshift) arc [start angle=180, end angle=0, radius=2*\Msize] (2*\Msize,\Mshift) -- (2*\Msize,-4*\Mshift) decorate{ -- (-2*\Msize,-4*\Mshift)} -- (-2*\Msize,\Mshift);
+        \fill[decoration={snake,amplitude=-1.5,segment length=\Msize*1.5}] [color=white] (-2*\Msize,\Mshift) arc [start angle=180, end angle=0, radius=2*\Msize] (2*\Msize,\Mshift) -- (2*\Msize,-4*\Mshift) decorate{ -- (-2*\Msize,-4*\Mshift)} -- (-2*\Msize,\Mshift);
         
-        \fill[fill=white] (-4*\Msize/5,\Mshift) circle [radius=\Msize/2];
-        \fill[fill=white] (4*\Msize/5,\Mshift) circle [radius=\Msize/2];
+        \fill[fill=right] (-4*\Msize/5,\Mshift) circle [radius=\Msize/2];
+        \fill[fill=right] (4*\Msize/5,\Mshift) circle [radius=\Msize/2];
         }}
 }
 \NewDocumentCommand\Symb{}{

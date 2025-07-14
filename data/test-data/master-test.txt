@@ -1,7 +1,7 @@
 |||D(Master-test)
-||T(right)(left)
-|M REd FAl SIb MIm SOLu LAh GOs GOq
-|M REm GOq MIm
+||T(demarage à droite)(left)
+|M [R] REd FAl SIb MIm SOLu LAh GOs GOq
+|M [R] REm GOq MIm
 |M [L] REm GOs
 |M [L] REd FAl SIb MIm SOLu LAh GOq GOs
 ||T (real)(empty)

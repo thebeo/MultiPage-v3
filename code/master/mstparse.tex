@@ -63,6 +63,7 @@
     % Temp variables
     \tl_set:Ne \l__MstTmp_tl {#1} % fill by Master to be parsed
     \seq_clear_new:N \l__MstTmp_seq
+    \tl_clear_new:N \l__MstTmpContent_tl
     
     % extract [R/L]
     \regex_extract_once:nVN {\[(.*?)\]} \l__MstTmp_tl \l__MstTmp_seq
@@ -73,11 +74,30 @@
     
     \int_compare:nNnTF {\seq_count:N \l__MstTmp_seq} > {1} % test if found
         {% yes found
-                % Trace
-                \iow_term:n {MstParseRL-Found} 
-            
-            \bool_set_true:N #2            
-            % delete R/L +  no space
+	                % Trace
+	                \iow_term:n {MstParseRL-Found} 
+                
+                % Get the extracted content (second item in sequence)
+                \tl_set:Ne \l__MstTmpContent_tl {\seq_item:Nn \l__MstTmp_seq {2}}
+                
+	                % Trace
+	                \iow_term:n {MstParseRL-seq-extract}
+	                \tl_show:N \l__MstTmpContent_tl
+                
+                % Check if content is L
+                \str_if_eq:VnTF \l__MstTmpContent_tl {L}
+                {% Content is L - set true
+                	\bool_set_true:N #2
+                	% Trace
+                	\iow_term:n {MstParseRL-Left}
+                }
+                {% Content is not L (R or other) - set false
+                	\bool_set_false:N #2
+                	% Trace
+                	\iow_term:n {MstParseRL-Right~or~Other}
+                }
+                    
+           % delete R/L +  no space
             \regex_replace_once:nnN {\[.*?\]} {} \l__MstTmp_tl
         }
         {% no R by default
