@@ -153,6 +153,10 @@
 %
 % Oo
 %	add a post for a  straight arrow path + (no use for left)
+%  BUG
+%  /xREd -> unknown
+%  + ou - après double =
+% 
 %
 % Shape
 %   Ajouter nom à Shape
@@ -167,7 +171,7 @@
 %%%%%%%%
 % Définition du fichier par défaut
 
-%\def\defaultfile{../data/test-data/test.txt}
+\def\defaultfile{../data/test-data/test.txt}
 %\def\defaultfile{../data/test-data/multi-test.txt}
 
 %\def\defaultfile{../data/test-data/note-test.txt}
@@ -199,6 +203,7 @@
 % use filename in argument
 % pdflatex -synctex=0 -interaction=nonstopmode "\def\datafile{../data/musique/Lucid Dream.txt} \input{MusicaProManupan.tex}"
 
+% warning: rerun when "Rerun to get cross-references right" in the log
 
 \begin{document}
 

@@ -7,3 +7,5 @@ main.pdf
 *.aux
 code/MusicaProManupan.dvi
 *.pdf
+*.pdf
+data/test-data/test.txt
