@@ -10,3 +10,5 @@ code/MusicaProManupan.dvi
 *.pdf
 data/test-data/test.txt
 *.pdf
+*.pdf
+*.gz
