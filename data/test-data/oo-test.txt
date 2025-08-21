@@ -6,7 +6,7 @@
 |O 2xSOLh- 2xLAh- 2xFAh- 2xREh 2xFAu- 2xLAu >
 
 ||T(Double)(Name)(Loop)
-|O REd=SIb 2xDOb=SIb SOLl=SIb- 3xREm=SIb- DOu=SIb
+|O REd=SIb 2xDOb=MIm SOLl=FAh- 3xREm=LAbb- DOu=SOLl
 |O MIl=SIb- 2xSOLl=SIb- 2xFAl=SIb >|O MIh=SIb- SOLh=SIb- LAh=SIb- FAh=SIb- REh=SIb
 |O REd DOb!LAb- DOb 3xREm- DOu!FAu (new)>
 |O DOb SOLu SOLu FAu (2x court)
